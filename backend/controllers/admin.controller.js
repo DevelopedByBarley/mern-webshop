@@ -60,13 +60,16 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
 
 // Get Admin Data
-const getAdmin = asyncHandler(async (req, res) => {
-  const { _id, email } = await Admin.findById(req.admin._id);
+const getMe = asyncHandler(async (req, res) => {
+  const { admin } = req;
 
-  res.status(200).json({
-    id: _id,
-    email
-  })
+  if (admin) {
+    res.status(200).json({ admin: admin, message: "Admin succesfully found!" })
+  } else {
+    res.status(400).json({ admin: false, message: "Error finding Admin!" })
+  }
+
+
 
 })
 
@@ -86,5 +89,5 @@ function generateToken(id) {
 module.exports = {
   loginAdmin,
   //registerAdmin,
-  getAdmin
+  getMe
 }

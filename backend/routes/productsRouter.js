@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { protect } = require('../middlewares/admin.auth.middleware')
+const { protect } = require('../middlewares/auth.middleware')
 const { getProducts, setProduct, deleteProduct, updateProduct } = require('../controllers/product.controller')
 
 router.get('/', protect, getProducts)
