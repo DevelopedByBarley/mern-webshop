@@ -1,0 +1,14 @@
+@import '../utils/variables';
+@import '../utils/mixins';
+
+.nav {
+  background-color: $backgroundColor;
+  @include displayFlex(flex,center,space-between,row);
+  height: 50px;
+
+  .nav-list {
+    .list-item {
+      background-color: red;
+    }
+  }
+}

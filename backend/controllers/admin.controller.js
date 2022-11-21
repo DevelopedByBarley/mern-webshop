@@ -19,9 +19,9 @@ const Admin = require('../database/models/adminModel')
       password: hashedPassword
     })
 
-    res.status(201).json({ status: "ok" })
+    res.({ status: "ok" })
   } catch (error) {
-    res.status(400).json({ status: "register is failed" })
+    res.({ status: "register is failed" })
   }
 
 
@@ -52,7 +52,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
 
     }
   } catch (error) {
-    res.status(400).json({ status: "login is failed" })
+    res.json({ status: "login is failed" })
     console.log(error);
   }
 })
@@ -64,9 +64,9 @@ const getMe = asyncHandler(async (req, res) => {
   const { admin } = req;
 
   if (admin) {
-    res.status(200).json({ admin: admin, message: "Admin succesfully found!" })
+    res.json({ admin: admin, message: "Admin succesfully found!" })
   } else {
-    res.status(400).json({ admin: false, message: "Error finding Admin!" })
+    res.json({ admin: false, message: "Error finding Admin!" })
   }
 
 
