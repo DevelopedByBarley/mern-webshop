@@ -1,5 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans+Narrow&family=Rubik+Distressed&display=swap");
 .nav {
-  background-color: green;
+  background-color: black;
+  height: 50px;
+}
+
+.nav .nav-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -13,10 +18,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  height: 50px;
+  height: 100%;
+  display: flex;
+  width: 100%;
 }
 
-.nav .nav-list .list-item {
-  background-color: red;
+.nav .nav-list .list-items .nav-link {
+  color: white;
+  text-decoration: none;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  padding: 50px;
+  font-family: "Rubik Distressed", cursive;
+}
+
+.nav .nav-list .list-items .nav-link:hover {
+  border-radius: 20px;
+  background-color: white;
+  color: black;
 }
 /*# sourceMappingURL=Nav.css.map */

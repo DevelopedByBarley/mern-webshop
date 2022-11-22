@@ -5,9 +5,8 @@ const Admin = require('../database/models/adminModel')
 
 
 
-// Admin Register
-/**
-  const registerAdmin = async (req, res) => {
+
+const registerAdmin = async (req, res) => {
   const { email, password } = req.body
 
   const salt = await bcrypt.genSalt(10)
@@ -19,14 +18,14 @@ const Admin = require('../database/models/adminModel')
       password: hashedPassword
     })
 
-    res.({ status: "ok" })
+    res.json({ status: "ok" })
   } catch (error) {
-    res.({ status: "register is failed" })
+    res.json({ status: "register is failed" })
   }
 
 
 }
- */
+
 
 
 
@@ -42,7 +41,6 @@ const loginAdmin = asyncHandler(async (req, res) => {
       email: email,
     })
 
-
     if (user && await bcrypt.compare(password, user.password)) {
       res.status(200).json({
         id: user._id,
@@ -50,9 +48,12 @@ const loginAdmin = asyncHandler(async (req, res) => {
         token: generateToken(user._id)
       })
 
+    } else {
+      res.json({ status: "login is failed" })
+      console.log(error);
     }
   } catch (error) {
-    res.json({ status: "login is failed" })
+    res.json({ status: "Can not fin user" })
     console.log(error);
   }
 })
@@ -66,7 +67,7 @@ const getMe = asyncHandler(async (req, res) => {
   if (admin) {
     res.json({ admin: admin, message: "Admin succesfully found!" })
   } else {
-    res.json({ admin: false, message: "Error finding Admin!" })
+    res.json({ message: "Error finding Admin!" })
   }
 
 
@@ -88,6 +89,6 @@ function generateToken(id) {
 
 module.exports = {
   loginAdmin,
-  //registerAdmin,
+  registerAdmin,
   getMe
 }

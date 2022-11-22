@@ -30,6 +30,7 @@ const register = async (req, res) => {
 
       res.status(200).json({ user: user, message: "User succesfully created!" })
     } catch (error) {
+      console.log(error);
       res.status(400).json({ user: false, message: "Error creating user!" })
     }
   } else {
@@ -42,16 +43,22 @@ const register = async (req, res) => {
 const login = async (req, res) => {
   const { email, password } = req.body;
 
-  const user = await User.findOne({
-    email: email
-  })
-
-  if (user && (bcrypt.compare(password, user.password))) {
-    res.status(200).json({
-      id: user._id,
-      email: user.email,
-      token: generateToken(user._id)
+  try {
+    const user = await User.findOne({
+      email: email
     })
+  
+    if (user && (bcrypt.compare(password, user.password))) {
+      res.status(200).json({
+        id: user._id,
+        email: user.email,
+        token: generateToken(user._id)
+      })
+    } else {
+      res.json({user: false, message: "Invalid email or password!"})
+    }
+  } catch (error) {
+    console.log(error);
   }
 
 }

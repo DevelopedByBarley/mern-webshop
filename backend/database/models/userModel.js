@@ -5,6 +5,7 @@ const userSchema = new Schema({
   email: { type: String, required: true },
   userName: { type: String, required: true},
   password: { type: String, required: true },
+  cart: { type: [{String}], required: false },
   firstName: { type: String, required: true },
   lastName: { type: String, required: true },
   settlement: { type: String, required: true },
