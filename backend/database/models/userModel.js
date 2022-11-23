@@ -13,6 +13,7 @@ const userSchema = new Schema({
   streetNumber: { type: String, required: true },
   postCode: { type: String, required: true },
   phoneNumber: { type: String, required: true },
+  shoppingCart: [{type: String, required: false}]
 })
 
 module.exports = mongoose.model('User', userSchema)

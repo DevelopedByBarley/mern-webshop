@@ -3,26 +3,6 @@
 
 
 .nav {
-  background-color: black;
-  height: 50px;
-  .nav-list {
-    @include displayFlex(flex,center,space-between,row);
-    height: 100%;
-    display: flex;
-    width: 100%;
-    .list-items {
-      .nav-link {
-        color: white;
-        text-decoration: none;
-        transition: all .2s ease-in-out;
-        padding: 50px;
-        font-family: $extremeFont;
-      }
-      .nav-link:hover {
-        border-radius: 20px;
-        background-color: white;
-        color: black;
-      }
-    }
-  }
-  }
+  background-color: red;
+}
+

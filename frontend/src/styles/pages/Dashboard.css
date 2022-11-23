@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans+Narrow&family=Rubik+Distressed&display=swap");
 .products-container {
   background-color: red;
   display: -ms-grid;
@@ -12,8 +13,8 @@
 
 @media (min-width: 768px) {
   .products-container {
-    -ms-grid-columns: (1fr)[4];
-        grid-template-columns: repeat(4, 1fr);
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
   }
 }
 /*# sourceMappingURL=Dashboard.css.map */

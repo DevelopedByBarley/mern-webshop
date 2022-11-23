@@ -1,40 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans+Narrow&family=Rubik+Distressed&display=swap");
 .nav {
-  background-color: black;
-  height: 50px;
-}
-
-.nav .nav-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  height: 100%;
-  display: flex;
-  width: 100%;
-}
-
-.nav .nav-list .list-items .nav-link {
-  color: white;
-  text-decoration: none;
-  -webkit-transition: all .2s ease-in-out;
-  transition: all .2s ease-in-out;
-  padding: 50px;
-  font-family: "Rubik Distressed", cursive;
-}
-
-.nav .nav-list .list-items .nav-link:hover {
-  border-radius: 20px;
-  background-color: white;
-  color: black;
+  background-color: red;
 }
 /*# sourceMappingURL=Nav.css.map */

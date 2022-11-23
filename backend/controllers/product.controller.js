@@ -7,11 +7,13 @@ const getProducts = asyncHandler(async (req, res) => {
     res.status(200).json({ products: products, message: "Product is successfully found!" })
   } catch (error) {
     console.log(error);
-    res.status(400).json({ message: 'Products is not found' })
+    res.status(400).json({ message: 'Products finding Error!' })
   }
 })
 
 const setProduct = asyncHandler(async (req, res) => {
+
+  const { price, discount } = req.body;
 
   try {
     const newProduct = await Product.create({
@@ -20,8 +22,8 @@ const setProduct = asyncHandler(async (req, res) => {
       manufacturer: req.body.manufacturer,
       guarantee: req.body.guarantee,
       isInStock: req.body.isInStock,
-      grossPrice: req.body.grossPrice,
-      netPrice: req.body.netPrice,
+      discount: discount,
+      price: discount ? price - price * (discount / 100) : price,
       description: req.body.description,
       video: req.body.video,
       image: req.body.image,
@@ -48,14 +50,16 @@ const deleteProduct = asyncHandler(async (req, res) => {
 
 const updateProduct = asyncHandler(async (req, res) => {
   const { productId } = req.params;
+  const { price, discount } = req.body;
+  
   const newProduct = {
     title: req.body.title,
     categorie: req.body.categorie,
     manufacturer: req.body.manufacturer,
     guarantee: req.body.guarantee,
     isInStock: req.body.isInStock,
-    grossPrice: req.body.grossPrice,
-    netPrice: req.body.netPrice,
+    discount: discount,
+    price: discount ? price - price * (discount / 100) : price,
     description: req.body.description,
     video: req.body.video,
     image: req.body.image,

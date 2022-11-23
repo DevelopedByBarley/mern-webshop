@@ -7,11 +7,11 @@ const productSchema = new Schema({
   manufacturer: { type: String, required: true },
   guarantee: { type: String, required: false },
   isInStock: { type: Boolean, required: true },
-  grossPrice: { type: String, required: true },
-  netPrice: { type: String, required: true },
+  price: { type: Number, required: true },
   description: { type: String, required: true },
   video: { type: String, required: false },
-  image: { type: String, required: false }
+  image: { type: String, required: false },
+  discount: { type: Number, required: false}
 }, { timestamps: true })
 
 module.exports = mongoose.model('Product', productSchema)

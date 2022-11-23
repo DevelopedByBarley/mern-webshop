@@ -16,16 +16,21 @@ export function UserLogin({setUser}) {
     axios.post('/api/user/login', userData)
       .then((res) => {
         const token = res.data.token;
+
         if (!token) {
           alert('Invalid email or password!')
+
         } else {
           axios.get('/api/user/getMe', {
             headers: { Authorization: `Bearer ${token}` }
+
           }).then((res) => {
             const user = res.data.user;
             setUser(user)
+            
             if (user) {
               localStorage.setItem('userToken', token)
+              alert('Login succesfull')
               navigate('/')
             }
           })
