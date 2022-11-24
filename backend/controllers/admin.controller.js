@@ -51,7 +51,7 @@ const loginAdmin = asyncHandler(async (req, res) => {
     } else {
       res.json({ status: "login is failed" })
     }
-  } catch (error) {
+  } catch {
     res.json({ status: "Can not fin user" })
   }
 })

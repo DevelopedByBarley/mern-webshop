@@ -11,7 +11,8 @@ const productSchema = new Schema({
   description: { type: String, required: true },
   video: { type: String, required: false },
   image: { type: String, required: false },
-  discount: { type: Number, required: false}
+  discount: { type: Number, required: false},
+  cart: [{}]
 }, { timestamps: true })
 
 module.exports = mongoose.model('Product', productSchema)

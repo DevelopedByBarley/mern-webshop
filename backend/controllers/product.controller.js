@@ -1,6 +1,24 @@
 const asyncHandler = require('express-async-handler');
 const Product = require('../database/models/productModel')
 
+
+/**
+ * const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, './public/assets/files')
+  },
+  filename: function (req, file, cb) {
+    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
+    cb(null, file.fieldname + '-' + uniqueSuffix)
+  }
+})
+
+ const upload = multer({ storage: storage })
+
+ * 
+ */
+
+
 const getProducts = asyncHandler(async (req, res) => {
   try {
     const products = await Product.find({})
@@ -10,6 +28,19 @@ const getProducts = asyncHandler(async (req, res) => {
     res.status(400).json({ message: 'Products finding Error!' })
   }
 })
+
+const getSingleProduct = asyncHandler(async (req,res) => {
+  const id = req.params.productId
+  
+  try {
+    const product = await Product.findById(id);
+    res.json({product: product, message: 'Product is succisfully found'});
+  } catch (error) {
+    console.log(error);
+  }
+
+})
+
 
 const setProduct = asyncHandler(async (req, res) => {
 
@@ -51,7 +82,7 @@ const deleteProduct = asyncHandler(async (req, res) => {
 const updateProduct = asyncHandler(async (req, res) => {
   const { productId } = req.params;
   const { price, discount } = req.body;
-  
+
   const newProduct = {
     title: req.body.title,
     categorie: req.body.categorie,
@@ -75,6 +106,7 @@ const updateProduct = asyncHandler(async (req, res) => {
 
 module.exports = {
   getProducts,
+  getSingleProduct,
   setProduct,
   deleteProduct,
   updateProduct
