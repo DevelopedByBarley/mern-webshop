@@ -1,9 +1,14 @@
 import '../styles/components/Nav.css'
-import { Link, useNavigate } from 'react-router-dom';
-export function Nav() {
-  const navigate = useNavigate();
+import { Link } from 'react-router-dom';
+export function Nav({ shoppingCart }) {
 
   return (
-    <div className='nav'></div>
+    <div className='nav'>
+      <Link to='/shopping-cart-form'>
+        <div className='shopping-cart'>
+          {shoppingCart.length}
+        </div>
+      </Link>
+    </div>
   )
 }

@@ -12,7 +12,9 @@ import axios from 'axios';
 import { AddProduct } from './pages/Admin/AddProduct';
 import { UpdateProduct } from './pages/Admin/UpdateProduct';
 import { ProductSingle } from './pages/ProductSingle';
+import { ShoppingCartForm } from './pages/ShoppingCartForm';
 function App() {
+  const [shoppingCart, setShoppingCart] = useState(!localStorage.getItem("shopping_cart") ? [] : JSON.parse(localStorage.getItem("shopping_cart")));
   const [user, setUser] = useState()
 
   useEffect(() => {
@@ -27,14 +29,24 @@ function App() {
     }
   }, [])
 
+  // set Localstorage
+
+  useEffect(() => {
+    localStorage.setItem('shopping_cart', JSON.stringify(shoppingCart))
+  }, [shoppingCart])
+
+
+
+
 
 
 
   return (
     <div className="app-component">
-      <Nav />
+      <Nav shoppingCart={shoppingCart} />
       <Routes>
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home setShoppingCart={setShoppingCart} user={user} />} />
+        <Route path='/shopping-cart-form' element={<ShoppingCartForm shoppingCart={shoppingCart} />} />
 
         {/*Admin*/}
         <Route path='/dashboard' element={<Dashboard />} />
