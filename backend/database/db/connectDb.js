@@ -4,7 +4,7 @@ const colors = require('colors');
 
 function connectDb() {
   mongoose.connect(db)
-    .then(() => console.log('Database is connected succesfully'.underline.bgCyan))
+    .then(() => console.log('Database is connected succesfully'.underline.bgYellow))
     .catch(() => console.log("Database is can not connect".underline.bgRed))
 }
 

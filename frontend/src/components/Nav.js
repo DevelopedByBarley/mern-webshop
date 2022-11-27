@@ -6,7 +6,10 @@ export function Nav({ shoppingCart }) {
     <div className='nav'>
       <Link to='/shopping-cart-form'>
         <div className='shopping-cart'>
-          {shoppingCart.length}
+          <h1>
+            Shopping cart items = {shoppingCart.reduce(function (acc, product) { ; return acc + product.quantity; }, 0)} <br/>
+            Fullprice = {shoppingCart.reduce(function (acc, product) { return acc + (product.quantity * product.price); }, 0)}
+          </h1>
         </div>
       </Link>
     </div>

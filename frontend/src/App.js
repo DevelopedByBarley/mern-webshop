@@ -46,7 +46,7 @@ function App() {
       <Nav shoppingCart={shoppingCart} />
       <Routes>
         <Route path='/' element={<Home setShoppingCart={setShoppingCart} user={user} />} />
-        <Route path='/shopping-cart-form' element={<ShoppingCartForm shoppingCart={shoppingCart} />} />
+        <Route path='/shopping-cart-form' element={<ShoppingCartForm shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}/>} />
 
         {/*Admin*/}
         <Route path='/dashboard' element={<Dashboard />} />

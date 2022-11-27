@@ -21,11 +21,11 @@ export function Home({ setShoppingCart }) {
     setShoppingCart((prev) => {
       const next = [...prev];
       const id = product._id;
-      const index = next.find(item => item._id === id);
-      if(!index) {
+      let duplicatedItem = next.find(item => item._id === id);
+      if(!duplicatedItem) {
         next.push(product);
       } else {
-        index.quantity = index.quantity + 1
+        duplicatedItem.quantity += 1
       }
       return next;
     })
@@ -50,7 +50,7 @@ export function Home({ setShoppingCart }) {
             <Link to={`/product-single/${product._id}`}>
               <div className="product-header" style={{ border: "1px solid" }}>
                 <h1>{product.title}</h1>
-                <h1>{product._id}</h1>
+                <h1>{product.price}</h1>
               </div>
             </Link>
             <button className="add-to-cart" onClick={() => { getProductSingle(product._id) }}>cart </button>
