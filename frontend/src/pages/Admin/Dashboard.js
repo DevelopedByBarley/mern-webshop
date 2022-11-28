@@ -10,7 +10,7 @@ export function Dashboard() {
   useEffect(() => {
     const adminToken = localStorage.getItem('adminToken');
     if (adminToken) {
-      getProducts(adminToken);
+      getProducts();
     } else {
       navigate('/')
     }
@@ -20,8 +20,9 @@ export function Dashboard() {
 
   const getProducts = async () => {
     const res = await axios.get('/api/products')
-
-    setProducts(res.data.products)
+    setProducts(res.data.products);
+    
+    console.log(products);
   }
 
 
@@ -56,11 +57,13 @@ export function Dashboard() {
       ) : (
         <div className="products-container">
           {products.map((product) => {
+            console.log(product);
             return (
 
               <div key={product._id} className="product-card">
                 <Link to={`/product-single/${product._id}`}>
                   <div className="product-header">
+                    <img style={{height: "100px", width: "200px"}} src={`/assets/files/${product.image}`}/>
                     <h1>{product.title}</h1>
                     <h1>{product.price}</h1>
                   </div>
@@ -73,7 +76,7 @@ export function Dashboard() {
           })}
         </div>
       )}
-      <button className="admin-logout" onClick={() => { localStorage.removeItem('adminToken'); navigate('/home') }}>Logout</button>
+      <button className="admin-logout" onClick={() => { localStorage.removeItem('adminToken'); navigate('/') }}>Logout</button>
       <Link to={`/product-add`}><button className="add-product" >+</button> </Link>
     </div>
   )

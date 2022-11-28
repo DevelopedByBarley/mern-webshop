@@ -1,8 +1,10 @@
-@import '../utils/variables';
-@import '../utils/mixins';
-
+@import "../utils/variables";
+@import "../utils/mixins";
 
 .nav {
-  background-color: red;
+  background-color: black;
+  margin-bottom: 2rem;
+  .link {
+    color: white;
+  }
 }
-

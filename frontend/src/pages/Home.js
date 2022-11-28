@@ -1,15 +1,20 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
+import { Spinner } from "../components/Spinner";
 
 export function Home({ setShoppingCart }) {
   const [products, setProduct] = useState([]);
+  const [isPending, setPending] = useState(true);
 
 
   // Get all of products
   useEffect(() => {
-    axios.get('/api/products')
-      .then(res => setProduct(res.data.products))
+    setTimeout(() => {
+      axios.get('/api/products')
+        .then(res => setProduct(res.data.products))
+        .finally(() => {setPending(false)})
+    }, 1200)
   }, [])
 
 
@@ -22,7 +27,7 @@ export function Home({ setShoppingCart }) {
       const next = [...prev];
       const id = product._id;
       let duplicatedItem = next.find(item => item._id === id);
-      if(!duplicatedItem) {
+      if (!duplicatedItem) {
         next.push(product);
       } else {
         duplicatedItem.quantity += 1
@@ -41,22 +46,31 @@ export function Home({ setShoppingCart }) {
 
 
   return (
-    <div className="home-container">
-      <h1>Home</h1>
+    <div>
+      {isPending ? (
+        <Spinner />
+      )
+        :
+      (
+          <div className="home-container">
+            <h1>Home</h1>
 
-      {products.map((product) => {
-        return (
-          <div key={product._id} className="product-card" >
-            <Link to={`/product-single/${product._id}`}>
-              <div className="product-header" style={{ border: "1px solid" }}>
-                <h1>{product.title}</h1>
-                <h1>{product.price}</h1>
-              </div>
-            </Link>
-            <button className="add-to-cart" onClick={() => { getProductSingle(product._id) }}>cart </button>
-          </div>
-        )
-      })}
-    </div >
+            {products.map((product) => {
+              return (
+                <div key={product._id} className="product-card" >
+                  <Link to={`/product-single/${product._id}`}>
+                    <div className="product-header" style={{ border: "1px solid" }}>
+                    <img style={{height: "100px", width: "200px"}} src={`/assets/files/${product.image}`}/>
+                      <h1>{product.title}</h1>
+                      <h1>{product.price}</h1>
+                    </div>
+                  </Link>
+                  <button className="add-to-cart" onClick={() => { getProductSingle(product._id) }}>cart </button>
+                </div>
+              )
+            })}
+          </div >
+        )}
+    </div>
   )
 }

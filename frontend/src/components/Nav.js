@@ -4,7 +4,7 @@ export function Nav({ shoppingCart }) {
 
   return (
     <div className='nav'>
-      <Link to='/shopping-cart-form'>
+      <Link to='/checkout/cart' className='link'>
         <div className='shopping-cart'>
           <h1>
             Shopping cart items = {shoppingCart.reduce(function (acc, product) { ; return acc + product.quantity; }, 0)} <br/>

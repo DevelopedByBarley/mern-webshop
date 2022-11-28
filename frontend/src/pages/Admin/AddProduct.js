@@ -6,7 +6,7 @@ export function AddProduct() {
   const adminToken = localStorage.getItem('adminToken');
   const addProduct = async (event) => {
     event.preventDefault();
-    const newProduct = {
+    const product = {
       title: event.target.elements.title.value,
       categorie: event.target.elements.categorie.value,
       manufacturer: event.target.elements.manufacturer.value,
@@ -17,11 +17,20 @@ export function AddProduct() {
       description: event.target.elements.description.value,
     }
 
+    const file = event.target.elements.imageCover.files[0]
+
+    const formData = new FormData();
+    formData.append('product', JSON.stringify(product))
+    formData.append('coverImage', file);
+
+
     if (adminToken) {
-      const product = await axios.post('/api/products', newProduct, {
+      await axios({
+        method: "POST",
+        url: "/api/products",
+        data: formData,
         headers: { Authorization: `Bearer ${adminToken}` }
       })
-
       navigate('/dashboard')
     }
   }
@@ -42,6 +51,7 @@ export function AddProduct() {
         </select>
         <input type="number" name="price" placeholder="price" required />
         <input type="number" name="discount" placeholder="discount" required />
+        <input type="file" name="imageCover" />
         <textarea placeholder='description' name="description" required></textarea>
         <button type="submit" >Send Product</button>
       </form>

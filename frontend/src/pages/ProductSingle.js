@@ -10,10 +10,8 @@ export function ProductSingle() {
   useEffect(() => {
     axios.get(`/api/products/${id}`)
     .then(res => setProduct(res.data.product))
-  }, [])
+  }, [id])
 
-
-  console.log(product);
 
   return (
     <div>

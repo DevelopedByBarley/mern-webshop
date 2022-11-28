@@ -12,7 +12,8 @@ import axios from 'axios';
 import { AddProduct } from './pages/Admin/AddProduct';
 import { UpdateProduct } from './pages/Admin/UpdateProduct';
 import { ProductSingle } from './pages/ProductSingle';
-import { ShoppingCartForm } from './pages/ShoppingCartForm';
+import { ShoppingCart } from './pages/Checkout/ShoppingCart';
+import { Order } from './pages/Checkout/Order';
 function App() {
   const [shoppingCart, setShoppingCart] = useState(!localStorage.getItem("shopping_cart") ? [] : JSON.parse(localStorage.getItem("shopping_cart")));
   const [user, setUser] = useState()
@@ -46,7 +47,8 @@ function App() {
       <Nav shoppingCart={shoppingCart} />
       <Routes>
         <Route path='/' element={<Home setShoppingCart={setShoppingCart} user={user} />} />
-        <Route path='/shopping-cart-form' element={<ShoppingCartForm shoppingCart={shoppingCart} setShoppingCart={setShoppingCart}/>} />
+        <Route path='/checkout/cart' element={<ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
+        <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
 
         {/*Admin*/}
         <Route path='/dashboard' element={<Dashboard />} />

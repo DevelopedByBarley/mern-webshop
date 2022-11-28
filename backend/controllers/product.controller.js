@@ -2,21 +2,7 @@ const asyncHandler = require('express-async-handler');
 const Product = require('../database/models/productModel')
 
 
-/**
- * const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/assets/files')
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9)
-    cb(null, file.fieldname + '-' + uniqueSuffix)
-  }
-})
 
- const upload = multer({ storage: storage })
-
- * 
- */
 
 
 const getProducts = asyncHandler(async (req, res) => {
@@ -44,20 +30,23 @@ const getSingleProduct = asyncHandler(async (req,res) => {
 
 const setProduct = asyncHandler(async (req, res) => {
 
-  const { price, discount } = req.body;
+  const fileName= req.file.filename
+  const  product  = JSON.parse(req.body.product);
+  const {discount, price} = product
 
+ 
   try {
     const newProduct = await Product.create({
-      title: req.body.title,
-      categorie: req.body.categorie,
-      manufacturer: req.body.manufacturer,
-      guarantee: req.body.guarantee,
-      isInStock: req.body.isInStock,
+      title: product.title,
+      categorie: product.categorie,
+      manufacturer: product.manufacturer,
+      guarantee: product.guarantee,
+      isInStock: product.isInStock,
       discount: discount,
       price: discount ? price - price * (discount / 100) : price,
-      description: req.body.description,
-      video: req.body.video,
-      image: req.body.image,
+      description: product.description,
+      video: product.video,
+      image: fileName
     })
 
     res.status(200).json({ newProduct: newProduct, message: "Product is successfully created!" })
@@ -65,6 +54,7 @@ const setProduct = asyncHandler(async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+   
 })
 
 const deleteProduct = asyncHandler(async (req, res) => {

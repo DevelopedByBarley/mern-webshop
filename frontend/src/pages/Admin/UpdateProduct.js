@@ -32,10 +32,9 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
     }
 
     if (adminToken) {
-      const product = await axios.put(`/api/products/${id}`, newProduct, {
+      await axios.put(`/api/products/${id}`, newProduct, {
         headers: { Authorization: `Bearer ${adminToken}` }
       })
-      console.log(product.data)
       navigate('/dashboard')
     }
   }
@@ -44,17 +43,17 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
     <div className="add-product-form-container">
       <h1>Update product</h1>
       <form onSubmit={updateProduct}>
-        <input name="title" placeholder="title" required/>
+        <input name="title" placeholder="title" required />
         <select name="categorie" required>
           <option value="ps4">ps4</option>
         </select>
-        <input name="manufacturer" placeholder="manufacturer" required/>
-        <input name="guarantee" placeholder="guarantee" required/>
+        <input name="manufacturer" placeholder="manufacturer" required />
+        <input name="guarantee" placeholder="guarantee" required />
         <select name="isInStock" required>
           <option value="true">true</option>
           <option value="false">false</option>
         </select>
-        <input type="number" name="price" placeholder="price" required/>
+        <input type="number" name="price" placeholder="price" required />
         <input type="number" name="discount" placeholder="discount" />
         <textarea placeholder='description' name="description" required></textarea>
         <button type="submit" >Send Product</button>
