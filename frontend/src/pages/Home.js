@@ -2,10 +2,12 @@ import axios from "axios"
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom";
 import { Spinner } from "../components/Spinner";
+import { Toast } from "../components/Toast";
 
 export function Home({ setShoppingCart }) {
   const [products, setProduct] = useState([]);
   const [isPending, setPending] = useState(true);
+  const [isToastActive, setToastActive] = useState(false);
 
 
   // Get all of products
@@ -13,9 +15,10 @@ export function Home({ setShoppingCart }) {
     setTimeout(() => {
       axios.get('/api/products')
         .then(res => setProduct(res.data.products))
-        .finally(() => {setPending(false)})
+        .finally(() => { setPending(false) })
     }, 1200)
   }, [])
+
 
 
   // Get a single product and set the state
@@ -42,30 +45,57 @@ export function Home({ setShoppingCart }) {
 
 
 
+  const homeStyles = {
+    display: "grid",
+    gridTemplateColumns: "repeat(4,1fr)",
+    gridGap: "1rem",
+    margin: "3rem"
+  }
 
+  const imageStyles = {
+    width: "100%",
+    height: "300px",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    marginBottom: "3rem"
+  }
 
 
   return (
     <div>
+      {
+        isToastActive && <Toast
+          setToastActive={setToastActive}
+          toastMessage={"Termék hozzáadva a kosárhoz!"}
+          duration={2000} color={"#53BF9D"} />
+      }
+
       {isPending ? (
         <Spinner />
       )
         :
-      (
-          <div className="home-container">
-            <h1>Home</h1>
-
+        (
+          <div className="home-container" style={homeStyles}>
             {products.map((product) => {
               return (
-                <div key={product._id} className="product-card" >
+                <div key={product._id} className="product-card" style={{ boxShadow: "-1px 3px 19px -5px rgba(0,0,0,0.75)", padding: "1rem", borderRadius: "20px" }} >
                   <Link to={`/product-single/${product._id}`}>
-                    <div className="product-header" style={{ border: "1px solid" }}>
-                    <img style={{height: "100px", width: "200px"}} src={`/assets/files/${product.image}`}/>
+                    <div className="product-header" >
+                      <div className="product-image" style={imageStyles}>
+                        <img style={{ height: "100%", width: "250px" }} src={`/assets/files/${product.image}`} alt="product-image" />
+                      </div>
                       <h1>{product.title}</h1>
-                      <h1>{product.price}</h1>
+                      <h2 style={{ color: `${product.isInStock ? "green" : "red"}` }}>{product.isInStock ? "Készleten!" : "Nem elérhető!"}</h2>
+                      <h4>Ár:{product.price} Ft</h4>
+
                     </div>
                   </Link>
-                  <button className="add-to-cart" onClick={() => { getProductSingle(product._id) }}>cart </button>
+                  <button disabled={!product.isInStock} className="add-to-cart" onClick={() => {
+                    getProductSingle(product._id)
+                    setToastActive(true)
+
+                  }}>cart </button>
                 </div>
               )
             })}

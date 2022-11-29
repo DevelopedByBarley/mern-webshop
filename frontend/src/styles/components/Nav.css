@@ -1,10 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=PT+Sans+Narrow&family=Rubik+Distressed&display=swap");
 .nav {
-  background-color: black;
-  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid;
 }
 
 .nav .link {
-  color: white;
+  text-decoration: none;
+}
+
+.nav .link .shopping-cart {
+  background-color: green;
+  width: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.nav .link .shopping-cart .numer-of-items {
+  font-size: 1.4rem;
+  position: relative;
+  right: 5px;
+  top: -8px;
+  background-color: red;
+  border-radius: 50%;
 }
 /*# sourceMappingURL=Nav.css.map */

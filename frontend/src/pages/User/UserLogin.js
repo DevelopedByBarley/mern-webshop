@@ -1,8 +1,10 @@
 import axios from "axios";
+import { useState } from 'react';
 import { useNavigate } from "react-router-dom";
+import { Toast } from '../../components/Toast'
 
-export function UserLogin({setUser}) {
-
+export function UserLogin({ setUser }) {
+  const [isToastActive, setToastActive] = useState(false);
   const navigate = useNavigate();
 
 
@@ -27,23 +29,32 @@ export function UserLogin({setUser}) {
           }).then((res) => {
             const user = res.data.user;
             setUser(user)
-            
+
             if (user) {
               localStorage.setItem('userToken', token)
-              alert('Login succesfull')
-              navigate('/')
+              setToastActive(true)
+              setTimeout(() => {
+                navigate('/')
+              }, 2000)
             }
           })
         }
       })
   }
 
-  
+
   return (
-    <form onSubmit={loginUser}>
-      <input type="email" name="email" className="email" />
-      <input type="password" name="password" className="password" />
-      <button type="submit">Login</button>
-    </form>
+    <div>
+      {isToastActive && <Toast
+        toastMessage={"Sikeres bejelentkezés!"}
+        duration={2000}
+        color={"#53BF9D"}
+      />}
+      <form onSubmit={loginUser}>
+        <input type="email" name="email" className="email" />
+        <input type="password" name="password" className="password" />
+        <button type="submit">Login</button>
+      </form>
+    </div>
   )
 }

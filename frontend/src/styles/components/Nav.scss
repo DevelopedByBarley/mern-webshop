@@ -2,9 +2,26 @@
 @import "../utils/mixins";
 
 .nav {
-  background-color: black;
-  margin-bottom: 2rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid ;
   .link {
-    color: white;
+    text-decoration: none;
+    .shopping-cart {
+      background-color: green;
+      width: 150px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .numer-of-items {
+        font-size: 1.4rem;
+        position: relative;
+        right: 5px;
+        top: -8px;
+        background-color: red;
+        border-radius: 50%;
+        
+      }
+
+    }
   }
 }

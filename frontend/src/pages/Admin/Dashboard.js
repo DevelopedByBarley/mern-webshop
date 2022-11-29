@@ -63,7 +63,7 @@ export function Dashboard() {
               <div key={product._id} className="product-card">
                 <Link to={`/product-single/${product._id}`}>
                   <div className="product-header">
-                    <img style={{height: "100px", width: "200px"}} src={`/assets/files/${product.image}`}/>
+                    <img style={{height: "200px", width: "200px"}} src={`/assets/files/${product.image}`}/>
                     <h1>{product.title}</h1>
                     <h1>{product.price}</h1>
                   </div>

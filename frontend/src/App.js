@@ -1,5 +1,6 @@
 
 import './App.css'
+import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Nav } from './components/Nav';
@@ -8,7 +9,6 @@ import { Dashboard } from './pages/Admin/Dashboard';
 import { Home } from './pages/Home';
 import { UserRegister } from './pages/User/UserRegister';
 import { UserLogin } from './pages/User/UserLogin';
-import axios from 'axios';
 import { AddProduct } from './pages/Admin/AddProduct';
 import { UpdateProduct } from './pages/Admin/UpdateProduct';
 import { ProductSingle } from './pages/ProductSingle';
