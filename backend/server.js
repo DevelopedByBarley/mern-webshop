@@ -11,12 +11,14 @@ const orderRouter = require('./routes/orderRouter')
 
 const connectDb = require('./database/db/connectDb')
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+if (process.env.NODE_ENV === 'production') { // Set static folder 
+  app.use(express.static('frontend/build'));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'))
-  })
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
 }
+
+export default app;
 
 
 connectDb();
@@ -24,11 +26,11 @@ connectDb();
 app.use(express.static(__dirname + '/public'))
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({extended: false}))
+app.use(express.urlencoded({ extended: false }))
 app.use('/api/products', productsRouter)
 app.use('/api/admin', adminRouter)
 app.use('/api/user', userRouter)
 app.use('/api/order', orderRouter)
 
-app.listen(port, () => { console.log(`Server is running on ${port}` ) })
+app.listen(port, () => { console.log(`Server is running on ${port}`) })
 
