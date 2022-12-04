@@ -1,7 +1,7 @@
 import PuffLoader from "react-spinners/PuffLoader";
 
 
-export function Spinner() {
+export function Spinner( ) {
 
   const spinnerStyle =  {
     height: "100vh",

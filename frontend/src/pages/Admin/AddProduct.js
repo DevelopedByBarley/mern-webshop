@@ -8,7 +8,7 @@ export function AddProduct() {
     event.preventDefault();
     const product = {
       title: event.target.elements.title.value,
-      categorie: event.target.elements.categorie.value,
+      type: event.target.elements.type.value,
       manufacturer: event.target.elements.manufacturer.value,
       guarantee: event.target.elements.guarantee.value,
       isInStock: event.target.elements.isInStock.value,
@@ -40,8 +40,13 @@ export function AddProduct() {
       <h1>Add product</h1>
       <form onSubmit={addProduct}>
         <input name="title" placeholder="title" required />
-        <select name="categorie" required>
-          <option value="ps4">ps4</option>
+        <select name="type" required>
+          <option value="ps4">PS4</option>
+          <option value="ps5">PS5</option>
+          <option value="psVita">PSVita</option>
+          <option value="xboxOne">Xbox One</option>
+          <option value="xboxSeriesX">Xbox Series X</option>
+
         </select>
         <input name="manufacturer" placeholder="manufacturer" required />
         <input name="guarantee" placeholder="guarantee" required />
@@ -49,9 +54,9 @@ export function AddProduct() {
           <option value="true">true</option>
           <option value="false">false</option>
         </select>
-        <input type="number" name="price" placeholder="price" required />
-        <input type="number" name="discount" placeholder="discount" required />
-        <input type="file" name="imageCover" />
+        <input type="number" name="price" placeholder="price" min={1} required />
+        <input type="number" name="discount" placeholder="discount" min={0} max={99} required />
+        <input type="file" name="imageCover" required />
         <textarea placeholder='description' name="description" required></textarea>
         <button type="submit" >Send Product</button>
       </form>

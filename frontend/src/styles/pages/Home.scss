@@ -1,0 +1,23 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.home-container {
+  .discounts-container {
+    .discounts {
+      width: 85%;
+      margin: 5rem auto;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .home-container {
+    .discounts-container {
+      .discounts {
+        display: grid;
+        grid-gap: 2rem;
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+}

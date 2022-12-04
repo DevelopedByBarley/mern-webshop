@@ -1,5 +1,6 @@
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
+import '../../styles/pages/User/UserRegister.css'
 
 export function UserRegister(event) {
   const navigate = useNavigate();
@@ -23,7 +24,7 @@ export function UserRegister(event) {
     axios.post('/api/user/register', newUser)
       .then((res) => {
         const user = res.data.user;
-        if(user) {
+        if (user) {
           navigate('/user-login')
         }
       })
@@ -31,18 +32,27 @@ export function UserRegister(event) {
   }
 
   return (
-    <form onSubmit={registerUser} className="register-user" style={{ display: "flex", flexDirection: "column", width: "50%" }}>
-      <input type="text" name="userName" placeholder="userName" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="password" name="password" placeholder="Jelszó" required />
-      <input type="text" name="firstName" placeholder="Vezetéknév" required />
-      <input type="text" name="lastName" placeholder="Keresztnév" required />
-      <input type="text" name="settlement" placeholder="Település" required />
-      <input type="number" name="postCode" placeholder="Irányitószám" required />
-      <input type="text" name="street" placeholder="Utce" required />
-      <input type="text" name="streetNumber" placeholder="Ház szám" required />
-      <input type="tel" name="phoneNumber" placeholder="Telefonszám" required />
-      <button type="submit">Login</button>
-    </form>
+    <div className="register-user">
+      <h1 className="register-user-title">Regisztráció</h1>
+      <form onSubmit={registerUser}>
+        <input type="text" name="userName" placeholder="userName" required /> <br/>
+        <input type="email" name="email" placeholder="Email" required /><br/>
+        <input type="password" name="password" placeholder="Jelszó" required /><br/>
+        <input type="text" name="firstName" placeholder="Vezetéknév" required /><br/>
+        <input type="text" name="lastName" placeholder="Keresztnév" required /><br/>
+        <input type="text" name="settlement" placeholder="Település" required /><br/>
+        <input type="number" name="postCode" placeholder="Irányitószám" required /><br/>
+        <input type="text" name="street" placeholder="Utce" required /><br/>
+        <input type="text" name="streetNumber" placeholder="Ház szám" required /><br/>
+        <input type="tel" name="phoneNumber" placeholder="Telefonszám" required /><br/>
+
+   
+          <button className="register" type="submit">Regisztráció</button><br/>
+       
+        
+          <Link className="isRegistered" to="/user-login">Bejelentkezés</Link>
+      
+      </form>
+    </div>
   )
 }

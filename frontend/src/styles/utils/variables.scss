@@ -1,4 +1,9 @@
 @import "../base/typography";
-$primaryFont:  'PT Sans Narrow', sans-serif;
-$secondaryFont: 'Anton', sans-serif;
-$extremeFont: 'Rubik Distressed', cursive;
+$primaryFont: 'Anton', sans-serif;
+$secondaryFont: 'Zilla Slab', serif;
+$glitchFont: 'Rubik Glitch', cursive;
+$primaryBackground: #3a3a3a;
+$transition: all .4s ease-in-out;
+
+$tabletBreakPoint: 768px;
+

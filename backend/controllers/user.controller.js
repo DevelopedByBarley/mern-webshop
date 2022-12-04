@@ -1,4 +1,5 @@
 const User = require('../database/models/userModel')
+const Order = require('../database/models/orderModel')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken')
 
@@ -75,6 +76,20 @@ const getMe = (req, res) => {
 }
 
 
+const getOrders = async (req, res) => {
+  const {userName} = req.user
+  if (userName) {
+    const orderOfUser = await Order.find({userName: userName})
+    console.log(orderOfUser);
+    res.json({ message: "Orders of user found !", orderOfUser: orderOfUser })
+  } else {
+    res.json({ message: "Orders of user finding error !",  orderOfUser: false  })
+  }
+}
+
+
+
+
 function generateToken(id) {
   return jwt.sign({ id }, process.env.JWT_SECRET)
 }
@@ -82,5 +97,6 @@ function generateToken(id) {
 module.exports = {
   register,
   login,
-  getMe
+  getMe,
+  getOrders
 }

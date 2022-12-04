@@ -1,0 +1,23 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.error-container {
+  height: 100vh;
+  width: 100%;
+  background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+  background-position: center;
+  background-repeat: no-repeat;
+  @include displayFlex(flex, center, center, column);
+
+  .error-title {
+    height: 600px;
+    width: 100%;
+    @include displayFlex(flex, center, flex-end, column);
+    font-family: $primaryFont;
+    text-align: center;
+    margin-top: 2rem;
+    .status-code {
+      font-size: 5rem;
+    }
+  }
+}

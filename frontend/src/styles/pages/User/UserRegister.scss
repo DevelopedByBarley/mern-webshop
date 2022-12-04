@@ -1,0 +1,44 @@
+@import "../../utils//variables.scss";
+@import "../../utils//mixins.scss";
+
+.register-user {
+  height: 100vh;
+  width: 100%;
+  @include displayFlex(flex, center, center, column);
+  
+  .register-user-title {
+    font-size: 4rem;
+    color: $primaryBackground;
+    font-family: $primaryFont;
+    font-weight: bolder;
+    margin: 2rem 0;
+  }
+  
+  form {
+    width: 100%;
+    text-align: center;
+    
+    input {
+      border-radius: 3px;
+      padding: 1rem;
+      width: 80%;
+      margin: .5rem auto;
+      transition: $transition;
+      border: none;
+    }
+
+    @media(min-width: $tabletBreakPoint) {
+      input {
+        width: 30%;
+      }
+    }
+
+    .register {
+      @include grayButton();
+    }
+
+    .isRegistered {
+      @include link();
+    }
+  }
+}

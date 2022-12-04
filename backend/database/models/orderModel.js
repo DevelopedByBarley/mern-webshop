@@ -23,7 +23,7 @@ const orderSchema = new Schema({
   },
   shoppingCart: [{
     title: { type: String, required: true },
-    categorie: { type: String, required: true },
+    type: { type: String, required: true },
     manufacturer: { type: String, required: true },
     guarantee: { type: String, required: false },
     isInStock: { type: Boolean, required: true },
@@ -33,7 +33,11 @@ const orderSchema = new Schema({
     image: { type: String, required: false },
     discount: { type: Number, required: false },
     quantity: { type: Number, required: true, }
-  }]
-})
+  }],
+  state: {
+    type: String,
+    default: "under process"
+  }
+}, { timestamps: true })
 
 module.exports = mongoose.model('Order', orderSchema)

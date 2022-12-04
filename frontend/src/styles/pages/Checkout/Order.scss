@@ -1,0 +1,70 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.order-summary {
+  .order-summary-header {
+    text-align: center;
+    font-family: $primaryFont;
+    padding: 2rem;
+    margin: 1rem;
+  }
+  .order-products {
+    @include displayFlex(flex, center, center, column);
+    border-bottom: 1px solid;
+    margin: 1rem;
+    padding: 1rem;
+
+    .product-title {
+      font-family: $primaryFont;
+    }
+
+    .product-price {
+      font-family: $secondaryFont;
+    }
+  }
+
+  @media (min-width: $tabletBreakPoint) {
+    .order-products {
+      width: 50%;
+      margin: 2rem auto;
+      @include displayFlex(flex, center, space-around, row);
+    }
+  }
+}
+
+.send-order {
+  text-align: center;
+  padding: 2rem 0;
+  input {
+    border-radius: 10px;
+    padding: 0.5rem;
+    border: 0.5px solid gray;
+    width: 90%;
+    margin: 1rem auto;
+    font-family: $secondaryFont;
+    color: rgb(37, 114, 37);
+  }
+
+  @media (min-width: $tabletBreakPoint) {
+    input {
+      width: 30%;
+    }
+  }
+
+  label {
+    font-family: $secondaryFont;
+    font-size: 1.2rem;
+  }
+
+  h1 {
+    font-family: $primaryFont;
+    margin: 1rem 0;
+  }
+
+  .summary {
+    @include grayButton();
+    &:hover {
+      background-color: green;
+    }
+  }
+}

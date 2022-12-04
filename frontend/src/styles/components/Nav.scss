@@ -1,27 +1,80 @@
 @import "../utils/variables";
 @import "../utils/mixins";
 
-.nav {
-  padding: 1rem 0;
-  border-bottom: 1px solid ;
-  .link {
-    text-decoration: none;
-    .shopping-cart {
-      background-color: green;
-      width: 150px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      .numer-of-items {
-        font-size: 1.4rem;
-        position: relative;
-        right: 5px;
-        top: -8px;
-        background-color: red;
-        border-radius: 50%;
-        
-      }
+.header {
+  background-color: $primaryBackground;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  .menu-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+}
 
+.nav {
+  position: fixed;
+  margin-top: 50px;
+  background-color: $primaryBackground;
+  height: 100vh;
+  width: 100%;
+  background-color: $primaryBackground;
+  border-bottom: 1px solid;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  z-index: 101;
+  transition: $transition;
+  @include displayFlex(flex, center, center, column);
+
+  .account-container {
+    .account {
+      .login-button {
+        margin: 1rem;
+        @include grayButton();
+        border: 1px solid white;
+      }
+    }
+  }
+
+  .shopping-cart {
+    position: fixed;
+    top: 0;
+    left: -10px;
+    // background: rgb(40, 73, 83);
+    height: 50px;
+    width: 120px;
+    @include displayFlex(flex, center, center, row);
+
+    .numer-of-items {
+      color: rgb(114, 198, 219);
+      font-family: $primaryFont;
+      font-size: 1.2rem;
+      position: relative;
+    }
+  }
+}
+
+.active {
+  left: 0;
+}
+
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+  .nav {
+    left: 0;
+    height: 50px;
+    margin-top: 0;
+
+    .account-container {
+      position: fixed;
+      right: 60px;
     }
   }
 }

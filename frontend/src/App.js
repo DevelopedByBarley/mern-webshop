@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { Nav } from './components/Nav';
+import { Toast } from './components/Toast';
 import { AdminLogin } from './pages/Admin/AdminLogin';
 import { Dashboard } from './pages/Admin/Dashboard';
 import { Home } from './pages/Home';
@@ -14,6 +15,10 @@ import { UpdateProduct } from './pages/Admin/UpdateProduct';
 import { ProductSingle } from './pages/ProductSingle';
 import { ShoppingCart } from './pages/Checkout/ShoppingCart';
 import { Order } from './pages/Checkout/Order';
+import { ComingSoon } from './pages/Error/ComingSoon';
+
+
+
 function App() {
   const [shoppingCart, setShoppingCart] = useState(!localStorage.getItem("shopping_cart") ? [] : JSON.parse(localStorage.getItem("shopping_cart")));
   const [user, setUser] = useState()
@@ -43,19 +48,18 @@ function App() {
 
 
   return (
-    <div className="app-component">
-      <Nav shoppingCart={shoppingCart} />
+    <div className="app-component" style={{ marginTop: "3rem" }}>
+
+      <Nav shoppingCart={shoppingCart} user={user} setUser={setUser} />
       <Routes>
+        <Route path='/error-page' element={<ComingSoon />} />
         <Route path='/' element={<Home setShoppingCart={setShoppingCart} user={user} />} />
         <Route path='/checkout/cart' element={<ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
         <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
-
-        {/*Admin*/}
         <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/admin-login' element={<AdminLogin />} />
         <Route path='/product-update/:productId' element={<UpdateProduct />} />
         <Route path='/product-add' element={<AddProduct />} />
-        {/*User*/}
         <Route path='/product-single/:productId' element={<ProductSingle />} />
         <Route path='/user-register' element={<UserRegister />} />
         <Route path='/user-login' element={<UserLogin setUser={setUser} />} />

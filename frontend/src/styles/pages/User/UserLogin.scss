@@ -1,0 +1,49 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.user-login-container {
+  height: 100vh;
+  @include displayFlex(flex, center, center, column);
+
+  .user-login-title {
+    margin: 2rem;
+    font-size: 4rem;
+    color: $primaryBackground;
+    font-family: $primaryFont;
+    font-weight: bolder;
+  }
+
+  form {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    input {
+      border-radius: 3px;
+      padding: 1rem;
+      margin: 0.5rem;
+      width: 100%;
+      transition: $transition;
+      border: none;
+    }
+
+    .login-user:hover {
+      background-color: green;
+    }
+
+
+    @media(min-width: $tabletBreakPoint) {
+      input {
+        width: 30%;
+      }
+    }
+    .login-user {
+      @include grayButton();
+    }
+
+    .isRegistered {
+      @include link();
+    }
+  }
+}
+
+

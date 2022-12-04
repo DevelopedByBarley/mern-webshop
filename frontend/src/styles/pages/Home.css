@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.home-container .discounts-container .discounts {
+  width: 85%;
+  margin: 5rem auto;
+}
+
+@media (min-width: 768px) {
+  .home-container .discounts-container .discounts {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 2rem;
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+  }
+}
+/*# sourceMappingURL=Home.css.map */

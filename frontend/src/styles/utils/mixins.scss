@@ -4,3 +4,23 @@
   justify-content: $justifyContent;
   flex-direction: $flexDirection;
 }
+
+@mixin grayButton() {
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  margin: 1.2rem 0;
+  border: none;
+  background-color: $primaryBackground;
+  color: white;
+  cursor: pointer;
+  transition: $transition;
+  font-family: $primaryBackground;
+  font-weight: bolder;
+}
+
+@mixin link() {
+  color: green;
+  text-decoration: none;
+  font-family: $secondaryFont;
+  font-weight: bolder;
+}

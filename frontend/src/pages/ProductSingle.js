@@ -27,6 +27,7 @@ export function ProductSingle() {
           <img style={{ height: "200px", width: "200px" }} src={`/assets/files/${product.image}`} />
           <h1>{product.title}</h1>
           <h1>{product._id}</h1>
+          <h1>{product.discount}</h1>
         </div>
       )}
     </>

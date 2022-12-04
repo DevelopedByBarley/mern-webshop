@@ -2,6 +2,7 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const asyncHandler = require('express-async-handler');;
 const Admin = require('../database/models/adminModel')
+const Order = require('../database/models/orderModel')
 
 
 
@@ -74,6 +75,18 @@ const getMe = asyncHandler(async (req, res) => {
 
 
 
+const getOrders = async (req,res) => {
+  const {admin} = req;
+  if(admin) {
+    const orders = await Order.find({});
+    res.json({message: "Orders found!", orders: orders})
+  } else {
+    res.json({message: "Orders finding!", orders: orders})
+  }
+}
+
+
+
 
 
 
@@ -88,5 +101,6 @@ function generateToken(id) {
 module.exports = {
   loginAdmin,
   registerAdmin,
-  getMe
+  getMe,
+  getOrders
 }

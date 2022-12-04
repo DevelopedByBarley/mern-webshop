@@ -1,0 +1,33 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.account-toggle {
+  background-color: red;
+  position: fixed;
+  top: 40px;
+  right: 0px;
+  height: 200px;
+  width: 200px;
+  background-color: $primaryBackground;
+  color: white;
+  z-index: 99;
+  @include displayFlex(flex, center, center, column);
+  border-radius: 10px;
+
+  .user-name {
+    margin: 0.5rem;
+    font-size: 1.2rem;
+    font-family: $primaryFont;
+    letter-spacing: 1px;
+  }
+
+  .account-link {
+    @include link();
+    font-weight: bolder;
+  }
+
+  .logout-user {
+    margin: 1rem;
+    @include grayButton();
+    border: 1px solid white;
+  }}

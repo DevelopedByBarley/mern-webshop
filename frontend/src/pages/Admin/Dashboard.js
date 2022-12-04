@@ -27,11 +27,11 @@ export function Dashboard() {
 
 
 
-  const deleteProduct = async (id) => {
+  const deleteProduct = async (id, image) => {
     const adminToken = localStorage.getItem('adminToken')
-    console.log(adminToken);
     const deleteProduct = await axios.delete(`/api/products/${id}`, {
-      headers: { Authorization: `Bearer ${adminToken}` }
+      headers: { Authorization: `Bearer ${adminToken}` },
+
     })
     const productId = deleteProduct.data.id
 
@@ -68,7 +68,7 @@ export function Dashboard() {
                     <h1>{product.price}</h1>
                   </div>
                 </Link>
-                <button className="delete-product admin-button" onClick={() => deleteProduct(product._id)}>Delete</button>
+                <button className="delete-product admin-button" onClick={() => deleteProduct(product._id, product.image)}>Delete</button>
                 <Link to={`/product-update/${product._id}`}><button className="update-product admin-button" >Update</button></Link>
               </div>
 

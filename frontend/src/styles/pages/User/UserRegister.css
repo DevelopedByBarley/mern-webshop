@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.register-user {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.register-user .register-user-title {
+  font-size: 4rem;
+  color: #3a3a3a;
+  font-family: "Anton", sans-serif;
+  font-weight: bolder;
+  margin: 2rem 0;
+}
+
+.register-user form {
+  width: 100%;
+  text-align: center;
+}
+
+.register-user form input {
+  border-radius: 3px;
+  padding: 1rem;
+  width: 80%;
+  margin: .5rem auto;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  border: none;
+}
+
+@media (min-width: 768px) {
+  .register-user form input {
+    width: 30%;
+  }
+}
+
+.register-user form .register {
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  margin: 1.2rem 0;
+  border: none;
+  background-color: #3a3a3a;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-family: #3a3a3a;
+  font-weight: bolder;
+}
+
+.register-user form .isRegistered {
+  color: green;
+  text-decoration: none;
+  font-family: "Zilla Slab", serif;
+  font-weight: bolder;
+}
+/*# sourceMappingURL=UserRegister.css.map */

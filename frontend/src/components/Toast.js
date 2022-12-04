@@ -1,9 +1,11 @@
 
-export function Toast({setToastActive, toastMessage, duration, color}) {
-  
+export function Toast({ setToastActive, duration, isToastActive, toastMessage, color }) {
+
+
+
   setTimeout(() => {
-    setToastActive(false)
-  },duration)
+    setToastActive(isToastActive.isActive = false)
+  }, duration)
 
   const toastStyle = {
     background: color,
@@ -13,7 +15,7 @@ export function Toast({setToastActive, toastMessage, duration, color}) {
     top: "15%",
     right: "-6px",
     color: "white",
-    borderRadius: "20px" 
+    borderRadius: "20px"
   }
 
   return (
@@ -21,5 +23,5 @@ export function Toast({setToastActive, toastMessage, duration, color}) {
       <h1>{toastMessage}</h1>
     </div>
   )
-  
+
 }

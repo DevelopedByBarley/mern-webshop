@@ -1,0 +1,117 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.shopping-cart-container {
+  height: 100vh;
+  width: 100%;
+
+  .shopping-cart-empty {
+    height: 100%;
+    width: 100%;
+    @include displayFlex(flex, center, center, column);
+    text-align: center;
+
+    
+    .shopping-cart-title {
+      font-family: $primaryFont;
+      font-size: 2.5rem;
+    }
+
+    .back-link {
+      @include link();
+      font-size: 1.5rem;
+    }
+
+
+  }
+
+  .cart {
+    height: 100%;
+    width: 100%;
+
+    .shopping-cart-header {
+      @include displayFlex(flex, center, center, column);
+      padding: 2rem 0.2rem;
+
+      h1 {
+        font-family: $primaryFont;
+        font-size: 2.5rem;
+      }
+
+      .clear-cart {
+        @include grayButton();
+      }
+    }
+
+    @media (min-width: $tabletBreakPoint) {
+      .shopping-cart-header {
+        @include displayFlex(flex, center, space-between, row);
+        width: 70%;
+        margin: 0 auto;
+      }
+    }
+
+    .shopping-cart-products {
+      .shopping-products-card {
+        border-bottom: 1px solid;
+        @include displayFlex(flex, center, center, column);
+        margin: 1rem;
+
+        .delete-cart-item {
+          cursor: pointer;
+          margin: 1rem;
+        }
+
+        .product-title {
+          font-family: $primaryFont;
+          margin: 0.5rem;
+          font-size: 1.5rem;
+        }
+
+        .shop-quantity {
+          text-align: center;
+          font-size: 1rem;
+          width: 50px;
+        }
+
+        .product-quantity-unit,
+        .product-price,
+        .shop-quantity {
+          font-family: $secondaryFont;
+          margin: 0.3rem;
+        }
+
+        .product-price {
+          font-size: 1.3rem;
+          font-weight: bolder;
+        }
+      }
+
+      @media(min-width: $tabletBreakPoint) {
+        .shopping-products-card {
+          flex-direction: row;
+          margin: 2rem auto;
+          padding: 2rem;
+
+          .delete-cart-item, .product-title, .product-price {
+            margin: 0 2rem;
+          }
+
+        }
+      }
+    }
+    .shopping-cart-navigate {
+      margin-top: 2rem;
+      text-align: center;
+      padding: 2rem;
+      @include displayFlex(flex,center,center,column);
+      .shopping-cart-link {
+        @include link();
+        margin: 1rem;
+      }
+    }
+
+  }
+
+
+}
