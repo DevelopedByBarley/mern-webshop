@@ -32,7 +32,7 @@ const payCardOnline = async (req, res) => {
 
   })
 
-
+  try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -62,8 +62,11 @@ const payCardOnline = async (req, res) => {
       })
     }
     res.json({ url: session.url })
+  } catch (e) {
+    console.log(e)
+    res.json({ error: e.message })
   }
-
+}
 
 
 const getOrders = async (req,res) => {
