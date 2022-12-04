@@ -1,4 +1,4 @@
-const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
+const stripe = require("stripe")("sk_test_51M9RTYI38BdKXLU04UDDvzXyRq3MG0fE9sMQdxteOoVkjcQaEHZ2sRsf5aTTQlpIKFAdBe78W9R2ff8L2x3CT8Jy00CTDXBKje")
 const Order = require('../database/models/orderModel')
 
 
@@ -32,7 +32,7 @@ const payCardOnline = async (req, res) => {
 
   })
 
-  try {
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
@@ -62,11 +62,8 @@ const payCardOnline = async (req, res) => {
       })
     }
     res.json({ url: session.url })
-  } catch (e) {
-    console.log(e)
-    res.json({ error: e.message })
   }
-}
+
 
 
 const getOrders = async (req,res) => {

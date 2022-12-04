@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from '../../components/Spinner';
 import '../../styles/pages/Checkout/Order.css'
+import StripeCheckout from 'react-stripe-checkout';
 
 
 export function Order({ user, shoppingCart, setShoppingCart }) {
@@ -30,7 +31,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
   setTimeout(() => {
     setPending(false)
   }, 1200)
-  console.log(fullPrice);
+
 
 
   function handleUser(event) {
@@ -60,7 +61,8 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         paymentType: paymentType,
         fullPrice: fullPrice
       })
-        .then(() => {
+        .then((res) => {
+          console.log(res.data)
           setShoppingCart([])
           navigate('/')
         })
@@ -144,7 +146,6 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
 
         )
       }
-
 
 
     </div>
