@@ -7,6 +7,7 @@ import '../styles/pages/Home.css'
 export function Home({ setShoppingCart }) {
   const [products, setProduct] = useState([]);
   const [discountProducts, setDiscountProducts] = useState([]);
+  const [latestProducts, setLatestProducts] = useState([]);
   const [isPending, setPending] = useState(true);
 
 
@@ -18,10 +19,13 @@ export function Home({ setShoppingCart }) {
       .finally(() => { setPending(false) })
     }, 1200)
     axios.get('/api/products/discountedProducts')
-      .then(res => setDiscountProducts(res.data))
+      .then((res) => {
+        setDiscountProducts(res.data.discountProducts)
+        setLatestProducts(res.data.latestProducts)
+      })
   }, [])
 
-  console.log(discountProducts);
+  console.log(latestProducts);
 
 
   // Get a single product and set the state
@@ -53,12 +57,23 @@ export function Home({ setShoppingCart }) {
         :
         (
           <div className="home-container">
-            <div className="discounts-container">
-              <h1>Akciós termékek</h1>
-              <div className="discounts">
+            <div className="discount-products-container">
+              <h1 className="discount-products-title products-title">Kiemelt ajánlataink</h1>
+              <div className="discount-products products">
                 {discountProducts.map((product) => {
                   return (
-                    <ProductCard product={product} getProductSingle={getProductSingle} />
+                    <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
+                  )
+                })}
+              </div>
+            </div>
+
+            <div className="latest-products-container">
+              <h1 className="latest-products-title products-title">Újdonságok</h1>
+              <div className="latest-products products">
+                {discountProducts.map((product) => {
+                  return (
+                    <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
                   )
                 })}
               </div>

@@ -3,7 +3,7 @@ const router = express.Router();
 const { protect } = require('../middlewares/auth.middleware')
 const {
   getProducts,
-  getDiscountedProducts,
+  productQuerys,
   getSingleProduct,
   setProduct,
   deleteProduct,
@@ -25,7 +25,7 @@ const upload = multer({ storage: storage })
 
 
 router.get('/', getProducts);
-router.get('/discountedProducts', getDiscountedProducts)
+router.get('/discountedProducts', productQuerys)
 router.get('/:productId', getSingleProduct);
 router.post('/', upload.single("coverImage"), protect, setProduct);
 router.delete('/:productId', protect, deleteProduct);

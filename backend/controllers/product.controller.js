@@ -16,10 +16,22 @@ const getProducts = async (req, res) => {
   }
 }
 
-const getDiscountedProducts = async (req, res) => {
-  const discountedProducts = await Product.where("discount").gt(0);
-  res.send(discountedProducts);
+
+
+
+
+
+const productQuerys = async (req, res) => {
+  const discountProducts = await Product.where("discount").gt(0).limit(10);
+  const latestProducts = await Product.find().sort({_id: -1}).limit(10);
+
+  res.json({discountProducts: discountProducts, latestProducts: latestProducts});
 }
+
+
+
+
+
 
 const getSingleProduct = async (req, res) => {
   const id = req.params.productId
@@ -32,6 +44,8 @@ const getSingleProduct = async (req, res) => {
   }
 
 }
+
+
 
 
 
@@ -64,13 +78,14 @@ const setProduct = async (req, res) => {
 
 }
 
+
+
+
+
+
 const deleteProduct = async (req, res) => {
   const { productId } = req.params;
   const { image } = await Product.findById(productId)
-
-
-
-
 
   try {
     const deletedProductId = await Product.findByIdAndDelete(productId);
@@ -87,6 +102,11 @@ const deleteProduct = async (req, res) => {
   }
 
 }
+
+
+
+
+
 
 const updateProduct = async (req, res) => {
   const { productId } = req.params;
@@ -128,9 +148,11 @@ const updateProduct = async (req, res) => {
 }
 
 
+
+
 module.exports = {
   getProducts,
-  getDiscountedProducts,
+  productQuerys,
   getSingleProduct,
   setProduct,
   deleteProduct,

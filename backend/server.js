@@ -19,7 +19,6 @@ if (process.env.NODE_ENV === 'production') { // Set static folder
   });
 }
 
-export default app;
 
 
 connectDb();
