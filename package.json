@@ -4,6 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": { 
+    "build": "npm install && npm install && npm run build --prefix frontend",
     "client-install": "npm install --prefix frontend",
     "start": "node server.js",
     "server": "nodemon backend/server.js",
