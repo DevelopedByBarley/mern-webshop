@@ -3,8 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from '../../components/Spinner';
 import '../../styles/pages/Checkout/Order.css'
-import StripeCheckout from 'react-stripe-checkout';
-
 
 export function Order({ user, shoppingCart, setShoppingCart }) {
   const navigate = useNavigate();

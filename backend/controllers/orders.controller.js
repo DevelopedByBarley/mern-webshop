@@ -1,4 +1,4 @@
-const stripe = require("stripe")("sk_test_51M9RTYI38BdKXLU04UDDvzXyRq3MG0fE9sMQdxteOoVkjcQaEHZ2sRsf5aTTQlpIKFAdBe78W9R2ff8L2x3CT8Jy00CTDXBKje")
+const stripe = require("stripe")(process.env.STRIPE_PRIVATE_KEY)
 const Order = require('../database/models/orderModel')
 
 

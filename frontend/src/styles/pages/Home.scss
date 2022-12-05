@@ -2,39 +2,22 @@
 @import "../utils/mixins";
 
 .home-container {
+  width: 100%;
+  padding: 1rem;
   .products-title {
     text-align: center;
-    margin-top: 5rem;
     font-family: $primaryFont;
-    font-size: 2.5rem;
+    margin: 5rem 0;
+    font-size: 3rem;
   }
+}
 
+
+
+@media(min-width: 768px) {
   .products {
-    width: 85%;
-    margin: 5rem auto;
-  }
-}
-
-@media (min-width: 768px) {
-  .home-container {
-    .discount-products-container {
-      .discount-products {
-        display: grid;
-        grid-gap: .5rem;
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
-  }
-}
-
-@media (min-width: 768px) {
-  .home-container {
-    .latest-products-container {
-      .latest-products {
-        display: grid;
-        grid-gap: .7rem;
-        grid-template-columns: repeat(5, 1fr);
-      }
-    }
+    display: grid;
+    grid-gap: .7rem;
+    grid-template-columns: repeat(5, 1fr);
   }
 }

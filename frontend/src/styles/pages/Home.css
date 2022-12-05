@@ -1,28 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.home-container {
+  width: 100%;
+  padding: 1rem;
+}
+
 .home-container .products-title {
   text-align: center;
-  margin-top: 5rem;
   font-family: "Anton", sans-serif;
-  font-size: 2.5rem;
-}
-
-.home-container .products {
-  width: 85%;
-  margin: 5rem auto;
+  margin: 5rem 0;
+  font-size: 3rem;
 }
 
 @media (min-width: 768px) {
-  .home-container .discount-products-container .discount-products {
-    display: -ms-grid;
-    display: grid;
-    grid-gap: .5rem;
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
-  }
-}
-
-@media (min-width: 768px) {
-  .home-container .latest-products-container .latest-products {
+  .products {
     display: -ms-grid;
     display: grid;
     grid-gap: .7rem;
