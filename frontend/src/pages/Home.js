@@ -5,7 +5,9 @@ import { ProductCard } from "../components/ProductCard";
 import { Spinner } from "../components/Spinner";
 import '../styles/pages/Home.css'
 
-export function Home({ setShoppingCart }) {
+
+
+export function Home({ setShoppingCart, getProductSingle }) {
   const [products, setProduct] = useState([]);
   const [discountProducts, setDiscountProducts] = useState([]);
   const [latestProducts, setLatestProducts] = useState([]);
@@ -29,24 +31,8 @@ export function Home({ setShoppingCart }) {
   console.log(latestProducts);
 
 
-  // Get a single product and set the state
 
-  async function getProductSingle(productId) {
-    const res = await axios.get(`/api/products/${productId}`)
-    const product = res.data.product
-    setShoppingCart((prev) => {
-      const next = [...prev];
-      const id = product._id;
-      let duplicatedItem = next.find(item => item._id === id);
-      if (!duplicatedItem) {
-        next.push(product);
-      } else {
-        duplicatedItem.quantity += 1
-      }
-      return next;
-    })
-  }
-
+  
 
 
 

@@ -9,7 +9,7 @@ const productSchema = new Schema({
   isInStock: { type: Boolean, required: true },
   price: { type: Number, required: true },
   description: { type: String, required: true },
-  video: { type: String, required: false },
+  video: { type: String, required: false},
   image: { type: String, required: false },
   discount: { type: Number, required: false },
   quantity: { type: Number, required: false, default: 1 },

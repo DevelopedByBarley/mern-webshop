@@ -1,6 +1,7 @@
 
 const Product = require('../database/models/productModel');
-const fs = require('fs')
+const fs = require('fs');
+const { fork } = require('child_process');
 
 
 
@@ -113,39 +114,40 @@ const updateProduct = async (req, res) => {
   const { product, imageNameForDelete } = req.body
   const parsedProduct =JSON.parse(product)
   const { discount, price } = parsedProduct;
-  const fileName = req.file.filename
+  let fileName
 
 
-
-  const newProduct = {
-    title: parsedProduct.title,
-    type: parsedProduct.type,
-    manufacturer: parsedProduct.manufacturer,
-    guarantee: parsedProduct.guarantee,
-    isInStock: parsedProduct.isInStock,
-    discount: discount,
-    price: discount ? price - price * (discount / 100) : price,
-    description: parsedProduct.description,
-    video: parsedProduct.video,
-    image: fileName
-  }
   
-  console.log(newProduct);
-
+  
   try {
-    const product = await Product.findByIdAndUpdate({ _id: productId }, newProduct, { new: true });
-    res.status(200).json({ product: product, message: "Product is successfully Updated!" })
     if (req.file) {
+      fileName = req.file.fileName
       fs.unlink(`./backend/public/assets/files/${imageNameForDelete}`, function (err) {
-        console.log('file deleted successfully');
-
+        console.log('file deleted successfully'); 
       });
     }
+    const newProduct = {
+      title: parsedProduct.title,
+      type: parsedProduct.type,
+      manufacturer: parsedProduct.manufacturer,
+      guarantee: parsedProduct.guarantee,
+      isInStock: parsedProduct.isInStock,
+      discount: discount,
+      price: discount ? price - price * (discount / 100) : price,
+      description: parsedProduct.description,
+      video: parsedProduct.video,
+      image: fileName
+    }
+    console.log(newProduct.video)
+    const product = await Product.findByIdAndUpdate({ _id: productId }, newProduct, { new: true });
+    res.status(200).json({ product: product, message: "Product is successfully Updated!" })
   } catch (error) {
     console.log(error);
   }
 
 }
+
+
 
 
 

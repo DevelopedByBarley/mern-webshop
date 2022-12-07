@@ -1,0 +1,9 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.add-to-cart {
+  @include grayButton();
+  &:hover {
+    background-color: green;
+  }
+}

@@ -14,10 +14,18 @@
 
 
 
-@media(min-width: 768px) {
+@media(min-width: $tabletBreakPoint) {
   .products {
     display: grid;
-    grid-gap: .7rem;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom : .5rem;
+  }
+}
+@media(min-width: 1366px) {
+  .products {
+    display: grid;
+    grid-gap: 1.5rem;
     grid-template-columns: repeat(5, 1fr);
   }
 }

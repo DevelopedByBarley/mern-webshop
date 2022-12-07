@@ -15,6 +15,7 @@ export function AddProduct() {
       price: event.target.elements.price.value,
       discount: event.target.elements.discount.value,
       description: event.target.elements.description.value,
+      video: event.target.elements.video.value,
     }
 
     const file = event.target.elements.imageCover.files[0]
@@ -57,6 +58,7 @@ export function AddProduct() {
         <input type="number" name="price" placeholder="price" min={1} required />
         <input type="number" name="discount" placeholder="discount" min={0} max={99} required />
         <input type="file" name="imageCover" required />
+        <input type="text" name="video" placeholder="video src" required />
         <textarea placeholder='description' name="description" required></textarea>
         <button type="submit" >Send Product</button>
       </form>

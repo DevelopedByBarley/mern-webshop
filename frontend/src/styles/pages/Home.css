@@ -15,7 +15,17 @@
   .products {
     display: -ms-grid;
     display: grid;
-    grid-gap: .7rem;
+    grid-gap: 1.5rem;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1366px) {
+  .products {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1.5rem;
     -ms-grid-columns: (1fr)[5];
         grid-template-columns: repeat(5, 1fr);
   }

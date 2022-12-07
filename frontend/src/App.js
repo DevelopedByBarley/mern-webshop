@@ -2,9 +2,8 @@
 import './App.css'
 import axios from 'axios';
 import { Routes, Route } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import {  useEffect, useState } from 'react';
 import { Nav } from './components/Nav';
-import { Toast } from './components/Toast';
 import { AdminLogin } from './pages/Admin/AdminLogin';
 import { Dashboard } from './pages/Admin/Dashboard';
 import { Home } from './pages/Home';
@@ -19,9 +18,27 @@ import { ComingSoon } from './pages/Error/ComingSoon';
 
 
 
+
 function App() {
   const [shoppingCart, setShoppingCart] = useState(!localStorage.getItem("shopping_cart") ? [] : JSON.parse(localStorage.getItem("shopping_cart")));
-  const [user, setUser] = useState()
+  const [user, setUser] = useState();
+
+  const getProductSingle = async (productId) => {
+    const res = await axios.get(`/api/products/${productId}`)
+    const product = res.data.product
+    setShoppingCart((prev) => {
+      const next = [...prev];
+      const id = product._id;
+      let duplicatedItem = next.find(item => item._id === id);
+      if (!duplicatedItem) {
+        next.push(product);
+      } else {
+        duplicatedItem.quantity += 1
+      }
+      return next;
+    })
+  }
+
 
   useEffect(() => {
     const userToken = localStorage.getItem('userToken');
@@ -35,7 +52,7 @@ function App() {
     }
   }, [])
 
-  // set Localstorage
+
 
   useEffect(() => {
     localStorage.setItem('shopping_cart', JSON.stringify(shoppingCart))
@@ -47,24 +64,27 @@ function App() {
 
 
 
+
+
   return (
-    <div className="app-component" style={{ marginTop: "3rem" }}>
+    <div className="app-container" style={{ marginTop: "3rem" }}>
 
       <Nav shoppingCart={shoppingCart} user={user} setUser={setUser} />
-      <Routes>
-        <Route path='/error-page' element={<ComingSoon />} />
-        <Route path='/' element={<Home setShoppingCart={setShoppingCart} user={user} />} />
-        <Route path='/checkout/cart' element={<ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
-        <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
-        <Route path='/dashboard' element={<Dashboard />} />
-        <Route path='/admin-login' element={<AdminLogin />} />
-        <Route path='/product-update/:productId' element={<UpdateProduct />} />
-        <Route path='/product-add' element={<AddProduct />} />
-        <Route path='/product-single/:productId' element={<ProductSingle />} />
-        <Route path='/user-register' element={<UserRegister />} />
-        <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
-        <Route path='/user-account' element={"user account"} />
-      </Routes>
+
+        <Routes>
+          <Route path='/error-page' element={<ComingSoon />} />
+          <Route path='/' element={<Home getProductSingle={getProductSingle} setShoppingCart={setShoppingCart} user={user} />} />
+          <Route path='/checkout/cart' element={<ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
+          <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path='/admin-login' element={<AdminLogin />} />
+          <Route path='/product-single/:productId' element={<ProductSingle getProductSingle={getProductSingle}/>} />
+          <Route path='/product-update/:productId' element={<UpdateProduct />} />
+          <Route path='/product-add' element={<AddProduct />} />
+          <Route path='/user-register' element={<UserRegister />} />
+          <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
+          <Route path='/user-account' element={"user account"} />
+        </Routes>
     </div>
 
   )

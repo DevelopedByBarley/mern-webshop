@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import '../styles/components/ProductCard.css'
 import { CgClose } from 'react-icons/cg'
-import { MdDone } from 'react-icons/md'
-import { useState } from "react";
+import {MdDone} from 'react-icons/md'
 import { SiPlaystation4, SiPlaystation5, SiPlaystationvita } from 'react-icons/si'
+import SetShoppingCartButton from "./SetShoppingCartButton";
 
 
 
@@ -28,9 +28,8 @@ export function getProductIcon(productType) {
 }
 
 export function ProductCard({ product, getProductSingle }) {
-  const [isProductAdded, setProductAdded] = useState(false)
 
-
+  
   return (
     <div key={product._id} className="product-card">
       <Link className="product-card-link" to={`/product-single/${product._id}`}>
@@ -38,7 +37,7 @@ export function ProductCard({ product, getProductSingle }) {
           {product.discount > 0 && (
             <div className="product-discount">- {product.discount} %</div>
           )}
-          <input style={{ height: "265px", width: "250px", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
+          <input style={{ height: "210px", width: "150px", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
           <div className="product-content">
             <h1 className="product-title">{product.title}</h1>
             <div className="isInStock">{product.isInStock ? <MdDone color="green" /> : <CgClose color="red" />} <span style={{ color: product.isInStock ? 'green' : 'red' }}>{product.isInStock ? "Készleten" : "Nincs raktáron"}</span></div>
@@ -49,13 +48,10 @@ export function ProductCard({ product, getProductSingle }) {
           </div>
         </div>
       </Link>
-      <button style={{ background: `${isProductAdded ? "#3a3a3a" : ""}` }} disabled={!product.isInStock} className="add-to-cart" onClick={() => {
-        getProductSingle(product._id)
-        setProductAdded(true)
-        setTimeout(() => {
-          setProductAdded(false)
-        }, 2000)
-      }}> {isProductAdded ? <MdDone size={15} color={`${isProductAdded ? "green" : ""}`} /> : "Kosárhoz ad"} </button>
+      <SetShoppingCartButton getProductSingle={getProductSingle} product={product}/>
     </div>
   )
 }
+
+
+//Product
