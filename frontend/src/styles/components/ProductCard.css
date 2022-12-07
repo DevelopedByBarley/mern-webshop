@@ -6,6 +6,7 @@
   text-align: center;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
+  margin-bottom: 1.5rem;
 }
 
 .product-card .product-card-link {
@@ -55,20 +56,6 @@
   font-family: "Zilla Slab", serif;
   font-weight: bold;
   color: #af5f5f;
-}
-
-.product-card .add-to-cart {
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
-  margin: 1.2rem 0;
-  border: none;
-  background-color: #3a3a3a;
-  color: white;
-  cursor: pointer;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  font-family: #3a3a3a;
-  font-weight: bolder;
 }
 
 .product-card .add-to-cart:hover {

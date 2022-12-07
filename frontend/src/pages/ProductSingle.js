@@ -4,6 +4,10 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../components/Spinner';
 import SetShoppingCartButton from '../components/SetShoppingCartButton';
+import {TbTruckDelivery} from 'react-icons/tb';
+import {BsArrowRepeat} from 'react-icons/bs'
+import {IoCloudDone} from 'react-icons/io5'
+
 
 export function ProductSingle({ getProductSingle }) {
   const params = useParams();
@@ -53,12 +57,23 @@ export function ProductSingle({ getProductSingle }) {
               </div>
 
                 <div className='single-product-video'>
-                  <iframe width="560" height="315" src={product.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe className='product-video'  src={product.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
           </div>
           <div className='single-product-footer'>
-            <h1>Footer</h1>
+            <div className='icon-container'>
+              <TbTruckDelivery className='icon' size={80} color="hsla(194, 100%, 64%, 1)"/>
+              <p className='icon-title'>Ingyenes kiszállitás</p>
+            </div>
+            <div className='icon-container' >
+              <BsArrowRepeat className='icon' size={80} color="hsla(194, 100%, 64%, 1)"/>
+              <p className='icon-title'>30 Napos csere</p>
+            </div>
+            <div className='icon-container'>
+              <IoCloudDone className='icon' size={80} color="hsla(194, 100%, 64%, 1)"/>
+              <p className='icon-title'>2 év garancia</p>
+            </div>
           </div>
         </div>
       )}

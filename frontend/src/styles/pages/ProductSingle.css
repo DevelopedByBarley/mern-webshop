@@ -71,7 +71,9 @@
 .single-product-container .single-product-body .single-product-body-content .single-product-video iframe {
   -webkit-box-shadow: 10px 10px 79px -20px rgba(0, 0, 0, 0.7);
           box-shadow: 10px 10px 79px -20px rgba(0, 0, 0, 0.7);
-  margin: 2rem;
+  width: 90%;
+  margin: 5rem auto;
+  min-height: 350px;
 }
 
 @media (min-width: 1200px) {
@@ -85,8 +87,30 @@
 
 .single-product-container .single-product-footer {
   text-align: center;
-  margin: 4rem 0;
-  font-size: 5rem;
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.single-product-container .single-product-footer .icon-container {
+  cursor: pointer;
+  margin-bottom: 4rem;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.single-product-container .single-product-footer .icon-container .icon-title {
+  font-family: "Zilla Slab", serif;
+  font-weight: bolder;
+}
+
+.single-product-container .single-product-footer .icon-container .icon {
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+.single-product-container .single-product-footer .icon-container .icon:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 @media (min-width: 1366px) {
@@ -115,7 +139,26 @@
             flex-direction: column;
   }
   .single-product-container .single-product-header .single-product-header-content .title {
-    font-size: 4rem;
+    font-size: 5rem;
+  }
+  .single-product-container .single-product-body-content .description {
+    font-size: 1.2rem;
+  }
+  .single-product-container .single-product-body-content .single-product-video iframe {
+    width: 800px;
+    height: 400px;
+  }
+  .single-product-footer {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+  }
+  .single-product-footer .icon-container {
+    border: 1px solid #b9b9b9;
+    padding: 2rem;
+    border-radius: 14px;
   }
 }
 /*# sourceMappingURL=ProductSingle.css.map */
