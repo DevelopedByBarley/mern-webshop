@@ -11,6 +11,7 @@ export function Home({ setShoppingCart, getProductSingle }) {
   const [products, setProduct] = useState([]);
   const [discountProducts, setDiscountProducts] = useState([]);
   const [latestProducts, setLatestProducts] = useState([]);
+  console.log(latestProducts);
   const [isPending, setPending] = useState(true);
 
 
@@ -18,8 +19,8 @@ export function Home({ setShoppingCart, getProductSingle }) {
   useEffect(() => {
     setTimeout(() => {
       axios.get('/api/products')
-      .then(res => setProduct(res.data.products))
-      .finally(() => { setPending(false) })
+        .then(res => setProduct(res.data.products))
+        .finally(() => { setPending(false) })
     }, 1200)
     axios.get('/api/products/discountedProducts')
       .then((res) => {
@@ -32,7 +33,7 @@ export function Home({ setShoppingCart, getProductSingle }) {
 
 
 
-  
+
 
 
 
@@ -44,20 +45,20 @@ export function Home({ setShoppingCart, getProductSingle }) {
         :
         (
           <div className="home-container">
-            <div className="discount-products-container">
-              <h1 className="discount-products-title products-title">Kiemelt ajánlataink</h1>
-              <div className="discount-products products">
-                {discountProducts.map((product) => {
+
+            <div className="latest-products-container">
+              <h1 className="latest-products-title products-title">Újdonságok</h1>
+              <div className="latest-products products">
+                {latestProducts.map((product) => {
                   return (
                     <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
                   )
                 })}
               </div>
             </div>
-
-            <div className="latest-products-container">
-              <h1 className="latest-products-title products-title">Újdonságok</h1>
-              <div className="latest-products products">
+            <div className="discount-products-container">
+              <h1 className="discount-products-title products-title">Kiemelt ajánlataink</h1>
+              <div className="discount-products products">
                 {discountProducts.map((product) => {
                   return (
                     <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />

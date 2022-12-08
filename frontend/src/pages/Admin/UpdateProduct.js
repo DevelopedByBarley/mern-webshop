@@ -32,8 +32,11 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
     event.preventDefault();
     const product = {
       title: event.target.elements.title.value,
-      type: event.target.elements.type.value,
-      manufacturer: event.target.elements.manufacturer.value,
+      relaseDate: event.target.elements.relaseDate.value,
+      platform: event.target.elements.platform.value,
+      categories: event.target.elements.categories.value,
+      softwareType: event.target.elements.softwareType.value,
+      company: event.target.elements.company.value,
       guarantee: event.target.elements.guarantee.value,
       isInStock: event.target.elements.isInStock.value,
       price: event.target.elements.price.value,
@@ -60,15 +63,43 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
     <div className="add-product-form-container">
       <h1>Update product</h1>
       <form onSubmit={updateProduct}>
-        <input name="title" placeholder="title" defaultValue={product.title} required />
-        <select name="type" required>
+        <input type="text" name="title" placeholder="title" defaultValue={product.title} required />
+        <input type="number" name="relaseDate" defaultValue={product.relaseDate} placeholder="2022/01" />
+        <select name="categories" required>
+          <option value="gaming-software">Játék szoftver</option>
+          <option value="gaming-console">Játék konzol</option>
+          <option value="hardware">Hardver</option>
+          <option value="mobile">Mobil eszközök</option>
+          <option value="tv">Tv</option>
+          <option value="monitor">Monitor</option>
+          <option value="smart-watch">Okosóra</option>
+          <option value="smart-home">Okosotthon</option>
+        </select>
+        <select name="platform" >
+          <option value="null">Platform nélkül</option>
           <option value="ps4">PS4</option>
           <option value="ps5">PS5</option>
           <option value="psVita">PSVita</option>
-          <option value="XboxOne">Xbox One</option>
-          <option value="XboxSeriesX">Xbox Series X</option>
+          <option value="xboxOne">Xbox One</option>
+          <option value="xboxSeriesX">Xbox Series X</option>
+          <option value="pc">PC</option>
         </select>
-        <input name="manufacturer" placeholder="manufacturer" defaultValue={product.manufacturer} required />
+        <select name="softwareType" placeholder='Játékszoftver tipusa'>
+          <option value="null">Szoftver tipus nélkül</option>
+          <option value="action">Akció/Kaland</option>
+          <option value="for-kids">Gyerekeknek</option>
+          <option value="horror-thriller">Horror/Thriller</option>
+          <option value="strategy">Stratégiai</option>
+          <option value="rpg">Szerepjáték/RPG</option>
+          <option value="skillful">Ügyességi</option>
+          <option value="racing">Verseny</option>
+          <option value="simulator">Szimulátor</option>
+          <option value="fighting">Verekedős</option>
+          <option value="dance-music">Tánc/Zene</option>
+          <option value="sport">Sport</option>
+          <option value="party">Party</option>
+        </select>
+        <input name="company" placeholder="manufacturer" defaultValue={product.manufacturer} required />
         <input name="guarantee" placeholder="guarantee" defaultValue={product.guarantee} required />
         <select name="isInStock" required>
           <option value="true">true</option>
@@ -79,7 +110,7 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
         <input type="file" name="imageCover" />
         <input type="text" name="video" placeholder="video src" defaultValue={product.video} required />
 
-        <textarea placeholder='description' name="description"   defaultValue={product.description} required></textarea>
+        <textarea placeholder='description' name="description" defaultValue={product.description} required></textarea>
         <button type="submit" >Send Product</button>
       </form>
       <button onClick={() => navigate('/dashboard')}>Close</button>

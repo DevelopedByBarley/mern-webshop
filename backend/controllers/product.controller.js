@@ -23,10 +23,15 @@ const getProducts = async (req, res) => {
 
 
 const productQuerys = async (req, res) => {
+  const currentYear = new Date().getFullYear() ;
+  console.log(currentYear);
   const discountProducts = await Product.where("discount").gt(0).limit(10);
-  const latestProducts = await Product.find().sort({_id: -1}).limit(10);
+  const latestProducts = await Product.find({
+    relaseDate: currentYear
+  }).sort({ _id: -1 }).limit(10);
 
-  res.json({discountProducts: discountProducts, latestProducts: latestProducts});
+
+  res.json({ discountProducts: discountProducts, latestProducts: latestProducts });
 }
 
 
@@ -55,12 +60,16 @@ const setProduct = async (req, res) => {
   const fileName = req.file.filename
   const product = JSON.parse(req.body.product);
   const { discount, price } = product
+  console.log(product.platform);
 
 
   try {
     const newProduct = await Product.create({
       title: product.title,
-      type: product.type,
+      relaseDate: product.relaseDate,
+      platform: product.platform,
+      categories: product.categories,
+      softwareType: product.softwareType,
       manufacturer: product.manufacturer,
       guarantee: product.guarantee,
       isInStock: product.isInStock,
@@ -112,24 +121,28 @@ const deleteProduct = async (req, res) => {
 const updateProduct = async (req, res) => {
   const { productId } = req.params;
   const { product, imageNameForDelete } = req.body
-  const parsedProduct =JSON.parse(product)
+  const parsedProduct = JSON.parse(product)
+  console.log(parsedProduct)
   const { discount, price } = parsedProduct;
   let fileName
 
 
-  
-  
+
   try {
     if (req.file) {
-      fileName = req.file.fileName
+      fileName = req.file.filename
+      console.log(fileName);
       fs.unlink(`./backend/public/assets/files/${imageNameForDelete}`, function (err) {
-        console.log('file deleted successfully'); 
+        console.log('file deleted successfully');
       });
     }
     const newProduct = {
       title: parsedProduct.title,
-      type: parsedProduct.type,
-      manufacturer: parsedProduct.manufacturer,
+      relaseDate: parsedProduct.relaseDate,
+      platform: parsedProduct.platform,
+      categories: parsedProduct.categories,
+      softwareType: parsedProduct.softwareType,
+      company: parsedProduct.company,
       guarantee: parsedProduct.guarantee,
       isInStock: parsedProduct.isInStock,
       discount: discount,
@@ -138,7 +151,9 @@ const updateProduct = async (req, res) => {
       video: parsedProduct.video,
       image: fileName
     }
-    console.log(newProduct.video)
+
+    console.log(newProduct);
+  
     const product = await Product.findByIdAndUpdate({ _id: productId }, newProduct, { new: true });
     res.status(200).json({ product: product, message: "Product is successfully Updated!" })
   } catch (error) {

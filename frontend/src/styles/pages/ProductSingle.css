@@ -14,9 +14,10 @@
 .single-product-container .single-product-header .single-product-header-content .title {
   font-family: "Anton", sans-serif;
   font-size: 3rem;
-  margin-top: 2rem;
+  margin: 2rem 1rem;
   border-bottom: 1px solid gray;
   margin-bottom: 0.5rem;
+  text-align: left;
 }
 
 .single-product-container .single-product-header .single-product-header-content .isInStock {
@@ -30,6 +31,11 @@
   margin-top: 1rem;
   font-family: "Zilla Slab", serif;
   padding: 0.5rem;
+}
+
+.single-product-container .single-product-body .single-product-properties {
+  text-align: center;
+  font-family: "Zilla Slab", serif;
 }
 
 .single-product-container .single-product-body .single-product-body-content .description {
@@ -140,6 +146,9 @@
   }
   .single-product-container .single-product-header .single-product-header-content .title {
     font-size: 5rem;
+  }
+  .single-product-container .single-product-body-content {
+    margin-bottom: 2rem;
   }
   .single-product-container .single-product-body-content .description {
     font-size: 1.2rem;

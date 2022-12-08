@@ -15,9 +15,10 @@
       .title {
         font-family: $primaryFont;
         font-size: 3rem;
-        margin-top: 2rem;
+        margin: 2rem 1rem;
         border-bottom: 1px solid gray;
         margin-bottom: 0.5rem;
+        text-align: left;
       }
       .isInStock {
         font-family: $secondaryFont;
@@ -35,6 +36,11 @@
   }
 
   .single-product-body {
+    .single-product-properties {
+      text-align: center;
+      font-family: $secondaryFont;
+    }
+
     .single-product-body-content {
       .description {
         font-family: $secondaryFont;
@@ -103,6 +109,7 @@
       }
     }
     .single-product-body-content {
+      margin-bottom: 2rem;
       .description {
         font-size: 1.2rem;
       }

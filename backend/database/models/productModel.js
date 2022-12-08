@@ -3,8 +3,10 @@ const Schema = mongoose.Schema;
 
 const productSchema = new Schema({
   title: { type: String, required: true },
-  type: { type: String, required: true },
-  manufacturer: { type: String, required: true },
+  relaseDate: {type: String, required: true},
+  softwareType: { type: String},
+  platform: { type: String, required: true },
+  categories: { type: String, required: true },
   guarantee: { type: String, required: false },
   isInStock: { type: Boolean, required: true },
   price: { type: Number, required: true },

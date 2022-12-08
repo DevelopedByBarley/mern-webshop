@@ -4,9 +4,9 @@ import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../components/Spinner';
 import SetShoppingCartButton from '../components/SetShoppingCartButton';
-import {TbTruckDelivery} from 'react-icons/tb';
-import {BsArrowRepeat} from 'react-icons/bs'
-import {IoCloudDone} from 'react-icons/io5'
+import { TbTruckDelivery } from 'react-icons/tb';
+import { BsArrowRepeat } from 'react-icons/bs'
+import { IoCloudDone } from 'react-icons/io5'
 
 
 export function ProductSingle({ getProductSingle }) {
@@ -43,12 +43,25 @@ export function ProductSingle({ getProductSingle }) {
             <div className='single-product-header-content'>
               <h1 className='title'>{product.title}</h1>
               <h1 className='isInStock' style={isInStockStyle}>{product.isInStock ? "Raktáron, Szállitással 1-5 munkanap" : "Nincs raktáron"}</h1>
-              <h1 className='discount'>-{product.discount}%</h1>
+              {product.discount > 0 && <h1 className='discount'>-{product.discount}%</h1>}
               <SetShoppingCartButton product={product} getProductSingle={getProductSingle} />
             </div>
           </div>
           <div className='single-product-body'>
-        {/* <div className='product-properties'></div> */}
+            <div className='single-product-properties'>
+              <div className='product-property'>
+                <div className='property-name'>Platform: </div>
+                <div className='property-value'>{product.platform}</div>
+              </div>
+              <div className='product-property'>
+                <div className='property-name'>Kategória: </div>
+                <div className='property-value'>{product.categories}</div>
+              </div>
+              <div className='product-property'>
+                <div className='property-name'>Tipus: </div>
+                <div className='property-value'> { product.softwareType}</div>
+              </div>
+            </div>
             <div className='single-product-body-content'>
               <div className='description'>
                 <h1 className='description-title'>Termékleirás</h1>
@@ -56,22 +69,22 @@ export function ProductSingle({ getProductSingle }) {
                 <p>{product.description}</p>
               </div>
 
-                <div className='single-product-video'>
-                  <iframe className='product-video'  src={product.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+              <div className='single-product-video'>
+                <iframe className='product-video' src={product.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
             </div>
           </div>
           <div className='single-product-footer'>
             <div className='icon-container'>
-              <TbTruckDelivery className='icon' size={80} color="hsla(194, 100%, 64%, 1)"/>
+              <TbTruckDelivery className='icon' size={75} color="hsla(194, 100%, 64%, 1)" />
               <p className='icon-title'>Ingyenes kiszállitás</p>
             </div>
             <div className='icon-container' >
-              <BsArrowRepeat className='icon' size={80} color="hsla(194, 100%, 64%, 1)"/>
+              <BsArrowRepeat className='icon' size={75} color="hsla(194, 100%, 64%, 1)" />
               <p className='icon-title'>30 Napos csere</p>
             </div>
             <div className='icon-container'>
-              <IoCloudDone className='icon' size={80} color="hsla(194, 100%, 64%, 1)"/>
+              <IoCloudDone className='icon' size={75} color="hsla(194, 100%, 64%, 1)" />
               <p className='icon-title'>2 év garancia</p>
             </div>
           </div>
