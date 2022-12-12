@@ -7,6 +7,7 @@ import SetShoppingCartButton from '../components/SetShoppingCartButton';
 import { TbTruckDelivery } from 'react-icons/tb';
 import { BsArrowRepeat } from 'react-icons/bs'
 import { IoCloudDone } from 'react-icons/io5'
+import { ProductCard } from '../components/ProductCard';
 
 
 export function ProductSingle({ getProductSingle }) {
@@ -14,14 +15,28 @@ export function ProductSingle({ getProductSingle }) {
   const id = params.productId;
   const [isPending, setPending] = useState(true);
   const [product, setProduct] = useState('');
+  const [sameProducts, setSameProducts] = useState([]);
 
   useEffect(() => {
     setTimeout(() => {
       axios.get(`/api/products/${id}`)
-        .then(res => setProduct(res.data.product))
+        .then((res) => {
+          setProduct(res.data.product)
+          axios.post(`/api/products/sameProducts`, {
+            id: id,
+            categories: res.data.product.categories,
+            softwareType: res.data.product.softwareType,
+            platform: res.data.product.platform
+          })
+          .then((res) => {setSameProducts(res.data.sameProducts)})
+        })
         .finally(() => { setPending(false) })
     }, 1200)
+
   }, [id])
+
+
+
 
   const isInStockStyle = {
     color: `${product.isInStock ? "green" : "red"}`
@@ -50,16 +65,16 @@ export function ProductSingle({ getProductSingle }) {
           <div className='single-product-body'>
             <div className='single-product-properties'>
               <div className='product-property'>
-                <div className='property-name'>Platform: </div>
+                <h2 className='property-name'>Platform: </h2>
                 <div className='property-value'>{product.platform}</div>
               </div>
               <div className='product-property'>
-                <div className='property-name'>Kategória: </div>
+                <h2 className='property-name'>Kategória: </h2>
                 <div className='property-value'>{product.categories}</div>
               </div>
               <div className='product-property'>
-                <div className='property-name'>Tipus: </div>
-                <div className='property-value'> { product.softwareType}</div>
+                <h2 className='property-name'>Tipus: </h2>
+                <div className='property-value'> {product.softwareType}</div>
               </div>
             </div>
             <div className='single-product-body-content'>
@@ -70,21 +85,29 @@ export function ProductSingle({ getProductSingle }) {
               </div>
 
               <div className='single-product-video'>
-                <iframe className='product-video' src={product.video} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe className='product-video' src={product.video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
+            </div>
+          </div>
+          <div className='same-products-container'>
+            <h1 className='same-products-title'>További termékek neked!</h1>
+            <div className='same-products'>
+              {sameProducts.map((product) => {
+                return <ProductCard key={product._id} product={product} getProductSingle={getProductSingle}/>
+              })}
             </div>
           </div>
           <div className='single-product-footer'>
             <div className='icon-container'>
-              <TbTruckDelivery className='icon' size={75} color="hsla(194, 100%, 64%, 1)" />
+              <TbTruckDelivery className='icon' size={60} color="hsla(194, 100%, 64%, 1)" />
               <p className='icon-title'>Ingyenes kiszállitás</p>
             </div>
             <div className='icon-container' >
-              <BsArrowRepeat className='icon' size={75} color="hsla(194, 100%, 64%, 1)" />
+              <BsArrowRepeat className='icon' size={60} color="hsla(194, 100%, 64%, 1)" />
               <p className='icon-title'>30 Napos csere</p>
             </div>
             <div className='icon-container'>
-              <IoCloudDone className='icon' size={75} color="hsla(194, 100%, 64%, 1)" />
+              <IoCloudDone className='icon' size={60} color="hsla(194, 100%, 64%, 1)" />
               <p className='icon-title'>2 év garancia</p>
             </div>
           </div>

@@ -10,18 +10,36 @@
     margin: 5rem 0;
     font-size: 3rem;
   }
+
+  .gaming-consoles-container {
+    .gaming-consoles {
+      @media (min-width: $tabletBreakPoint) {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(9, 1fr);
+
+        .product-card:nth-child(1) {
+          grid-column: 1 / 5;
+        }
+        .product-card:nth-child(2) {
+          grid-column: 5 / 7;
+        }
+        .product-card:nth-child(3) {
+          grid-column: 7 / 10;
+        }
+      }
+    }
+  }
 }
 
-
-
-@media(min-width: $tabletBreakPoint) {
+@media (min-width: $tabletBreakPoint) {
   .products {
     display: grid;
     grid-gap: 1.5rem;
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media(min-width: 1366px) {
+@media (min-width: 1366px) {
   .products {
     display: grid;
     grid-gap: 1.5rem;

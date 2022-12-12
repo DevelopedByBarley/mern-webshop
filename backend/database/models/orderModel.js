@@ -23,8 +23,6 @@ const orderSchema = new Schema({
   },
   shoppingCart: [{
     title: { type: String, required: true },
-    type: { type: String, required: true },
-    manufacturer: { type: String, required: true },
     guarantee: { type: String, required: false },
     isInStock: { type: Boolean, required: true },
     price: { type: Number, required: true },

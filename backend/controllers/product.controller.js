@@ -22,17 +22,40 @@ const getProducts = async (req, res) => {
 
 
 
-const productQuerys = async (req, res) => {
-  const currentYear = new Date().getFullYear() ;
+const productQueries = async (req, res) => {
+  const currentYear = new Date().getFullYear();
   console.log(currentYear);
   const discountProducts = await Product.where("discount").gt(0).limit(10);
   const latestProducts = await Product.find({
     relaseDate: currentYear
   }).sort({ _id: -1 }).limit(10);
+  const gamingConsoles = await Product.find({
+    categories: "gaming-console",
+  }).limit(3)
 
-
-  res.json({ discountProducts: discountProducts, latestProducts: latestProducts });
+  res.json({ discountProducts, latestProducts, gamingConsoles });
 }
+
+
+const sameProducts = async (req, res) => {
+  const { id, categories, softwareType } = req.body;
+  console.log(id);
+  try {
+    const sameProducts = await Product.find({
+      categories: categories,
+      softwareType: softwareType,
+    }).limit(6)
+
+
+    const index = sameProducts.findIndex(product => product.id === id);
+    sameProducts.splice(index, 1)
+
+    res.json({ message: "Same products found for you!", sameProducts: sameProducts })
+  } catch (error) {
+    res.json({ message: "Same products finding error!", sameProducts: false })
+  }
+}
+
 
 
 
@@ -153,7 +176,7 @@ const updateProduct = async (req, res) => {
     }
 
     console.log(newProduct);
-  
+
     const product = await Product.findByIdAndUpdate({ _id: productId }, newProduct, { new: true });
     res.status(200).json({ product: product, message: "Product is successfully Updated!" })
   } catch (error) {
@@ -169,7 +192,8 @@ const updateProduct = async (req, res) => {
 
 module.exports = {
   getProducts,
-  productQuerys,
+  productQueries,
+  sameProducts,
   getSingleProduct,
   setProduct,
   deleteProduct,

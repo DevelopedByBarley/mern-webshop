@@ -9,6 +9,7 @@ import SetShoppingCartButton from "./SetShoppingCartButton";
 
 
 
+
 export function getProductIcon(productType) {
   switch (productType) {
     case 'ps4':
@@ -41,7 +42,7 @@ export function ProductCard({ product, getProductSingle }) {
           <div className="product-content">
             <h1 className="product-title">{product.title}</h1>
             <div className="isInStock">{product.isInStock ? <MdDone color="green" /> : <CgClose color="red" />} <span style={{ color: product.isInStock ? 'green' : 'red' }}>{product.isInStock ? "Készleten" : "Nincs raktáron"}</span></div>
-            <h4 className="price">Ár: {product.price} Ft</h4>
+            <h4 className="price">Ár: {new Intl.NumberFormat('hu-HU', { maximumSignificantDigits: 3, style: 'currency', currency: 'HUF' }).format(product.price)}</h4>
           </div>
           <div className="product-icons" >
             <div className="product-icon"> {getProductIcon(product.type)}</div>

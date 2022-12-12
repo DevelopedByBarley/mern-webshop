@@ -60,7 +60,6 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         fullPrice: fullPrice
       })
         .then((res) => {
-          console.log(res.data)
           setShoppingCart([])
           navigate('/')
         })
@@ -85,11 +84,13 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
           <>
             <div className="order-summary">
               <div className='order-summary-header'>
-                <h1> Rendelés értéke: {fullPrice} Ft</h1>
+                <h1> Rendelés értéke: {new Intl.NumberFormat('hu-HU', { 
+                  maximumSignificantDigits: 3, style: 'currency', currency: 'HUF' 
+                  }).format(fullPrice)}</h1>
               </div>
               {shoppingCart.map((product) => {
                 return (
-                  <div className='order-products'>
+                  <div className='order-products' key={product._id}>
                     <input style={{ height: "150px", width: "150px", borderRadius: "50%", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
                     <h1 className='product-title'>{product.title}</h1>
                     <h1 className='product-price'>{product.price} Ft</h1>

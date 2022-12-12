@@ -14,10 +14,11 @@
     .single-product-header-content {
       .title {
         font-family: $primaryFont;
-        font-size: 3rem;
+        font-size: 2rem;
         margin: 2rem 1rem;
         border-bottom: 1px solid gray;
         margin-bottom: 0.5rem;
+        width: 100%;
         text-align: left;
       }
       .isInStock {
@@ -39,7 +40,19 @@
     .single-product-properties {
       text-align: center;
       font-family: $secondaryFont;
+      margin: 4rem 0;
+      @media(min-width: $tabletBreakPoint) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .product-property {
+        border: 1px solid;
+        padding: 1rem;
+        .property-name {
+          font-family: $primaryFont;
+        }
     }
+  }
 
     .single-product-body-content {
       .description {
@@ -67,10 +80,33 @@
     }
   }
 
+  .same-products-container {
+    margin: 1rem;
+    text-align: center;
+
+    .same-products-title {
+      font-family: $primaryFont;
+      margin: 2rem 0;
+    }
+    .same-products {
+      margin: 2rem 0;
+      @media (min-width: $tabletBreakPoint) {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (min-width: 1366px) {
+        display: grid;
+        grid-gap: 1rem;
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+
   .single-product-footer {
     text-align: center;
     margin: 1rem 0;
-    font-size: 2rem;
+    font-size: 1.5rem;
 
     .icon-container {
       cursor: pointer;
@@ -81,7 +117,7 @@
         font-weight: bolder;
       }
       .icon {
-        transition: all .4s ease-in-out;
+        transition: all 0.4s ease-in-out;
         &:hover {
           transform: scale(1.1);
         }
@@ -104,7 +140,7 @@
         @include displayFlex(flex, flex-start, center, column);
 
         .title {
-          font-size: 5rem;
+          font-size: 4rem;
         }
       }
     }
