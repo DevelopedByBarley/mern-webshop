@@ -1,7 +1,6 @@
 
 const Product = require('../database/models/productModel');
 const fs = require('fs');
-const { fork } = require('child_process');
 
 
 
@@ -145,7 +144,6 @@ const updateProduct = async (req, res) => {
   const { productId } = req.params;
   const { product, imageNameForDelete } = req.body
   const parsedProduct = JSON.parse(product)
-  console.log(parsedProduct)
   const { discount, price } = parsedProduct;
   let fileName
 
@@ -188,6 +186,53 @@ const updateProduct = async (req, res) => {
 
 
 
+const sendComment = async (req, res) => {
+  const { id, userName, content } = req.body;
+
+  const newComment = {
+    userName: userName,
+    content: content
+  }
+
+  try {
+    const product = await Product.findByIdAndUpdate(
+      { _id: id },
+      { $push: { comments: newComment } },
+      { returnOriginal: false }
+    )
+
+    if (product) {
+      res.json({ message: "Product comment added succesfully!", newComment: newComment })
+    }
+  } catch (error) {
+    res.json({ message: "Product comment erorr!", product: false })
+    console.log(error)
+  }
+}
+
+
+const deleteComment = async (req, res) => {
+  const { id, commentId } = req.body
+
+  console.log(id, commentId)
+  try {
+    await Product.findByIdAndUpdate(
+      { _id: id },
+      { $pull: { comments: { _id: commentId } } },
+      { multi: true }
+    )
+    res.json({ message: "Comment deleted successfully!", commentId: commentId })
+
+  } catch (error) {
+    res.json({ message: "Comment delete error!", commentId: false })
+  }
+
+
+}
+
+
+
+
 
 
 module.exports = {
@@ -197,5 +242,7 @@ module.exports = {
   getSingleProduct,
   setProduct,
   deleteProduct,
-  updateProduct
+  updateProduct,
+  sendComment,
+  deleteComment
 }

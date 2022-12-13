@@ -78,7 +78,7 @@ function App() {
           <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
           <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/admin-login' element={<AdminLogin />} />
-          <Route path='/product-single/:productId' element={<ProductSingle getProductSingle={getProductSingle}/>} />
+          <Route path='/product-single/:productId' element={<ProductSingle user={user} getProductSingle={getProductSingle}/>} />
           <Route path='/product-update/:productId' element={<UpdateProduct />} />
           <Route path='/product-add' element={<AddProduct />} />
           <Route path='/user-register' element={<UserRegister />} />

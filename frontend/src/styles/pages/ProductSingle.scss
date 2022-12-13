@@ -41,7 +41,7 @@
       text-align: center;
       font-family: $secondaryFont;
       margin: 4rem 0;
-      @media(min-width: $tabletBreakPoint) {
+      @media (min-width: $tabletBreakPoint) {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
       }
@@ -51,8 +51,8 @@
         .property-name {
           font-family: $primaryFont;
         }
+      }
     }
-  }
 
     .single-product-body-content {
       .description {
@@ -120,6 +120,88 @@
         transition: all 0.4s ease-in-out;
         &:hover {
           transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  .comments-container {
+    .comments-title,
+    .comment-warning {
+      text-align: center;
+      font-family: $primaryFont;
+      font-size: 1.5rem;
+    }
+
+    .comment-warning {
+      font-size: 2rem;
+    }
+
+    .comment-form {
+      margin: 1rem;
+      .comment-form-title {
+        font-family: $primaryFont;
+      }
+      .content {
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid gray;
+        padding: 0.5rem;
+        margin: 1rem 0;
+      }
+
+      .send-comment {
+        @include grayButton();
+        &:hover {
+          background-color: rgb(52, 129, 218);
+        }
+        &:focus {
+          border: none;
+        }
+      }
+    }
+
+    .comments {
+      margin-top: 3rem;
+      .comment {
+        position: relative;
+        border-bottom: 1px solid gray;
+        margin: 1rem;
+        padding: 1rem;
+        .userName-icon {
+          border: 1px solid gray;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          @include displayFlex(flex, center, center, column);
+          font-family: $secondaryFont;
+          font-weight: bolder;
+          background-color: black;
+          color: white;
+        }
+
+        .comment-body {
+          .userName {
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+            font-family: $primaryFont;
+            letter-spacing: 0.5px;
+          }
+
+          @media (min-width: $tabletBreakPoint) {
+            margin: 0 1rem;
+          }
+        }
+
+        .delete-comment {
+          cursor: pointer;
+          position: absolute;
+          right: 10px;
+          top: 50%;
+        }
+
+        @media (min-width: $tabletBreakPoint) {
+          @include displayFlex(flex, center, flex-start, row);
         }
       }
     }

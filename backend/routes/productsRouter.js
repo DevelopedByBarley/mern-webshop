@@ -8,7 +8,10 @@ const {
   getSingleProduct,
   setProduct,
   deleteProduct,
-  updateProduct } = require('../controllers/product.controller')
+  updateProduct,
+  sendComment,
+  deleteComment
+} = require('../controllers/product.controller')
 const multer = require('multer')
 
 const storage = multer.diskStorage({
@@ -27,6 +30,8 @@ const upload = multer({ storage: storage })
 
 router.get('/', getProducts);
 router.get('/productQueries', productQueries)
+router.post('/comment', sendComment)
+router.put('/comment/delete', deleteComment)
 router.post('/sameProducts', sameProducts)
 router.get('/:productId', getSingleProduct);
 router.post('/', upload.single("coverImage"), protect, setProduct);
