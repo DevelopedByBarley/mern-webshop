@@ -23,11 +23,9 @@ const getProducts = async (req, res) => {
 
 const productQueries = async (req, res) => {
   const currentYear = new Date().getFullYear();
-  console.log(currentYear);
+  console.log(currentYear)
   const discountProducts = await Product.where("discount").gt(0).limit(10);
-  const latestProducts = await Product.find({
-    relaseDate: currentYear
-  }).sort({ _id: -1 }).limit(10);
+  const latestProducts = await Product.find({}).sort({ _id: -1 }).limit(10);
   const gamingConsoles = await Product.find({
     categories: "gaming-console",
   }).limit(3)
