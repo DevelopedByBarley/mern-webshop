@@ -18,6 +18,7 @@ export function Home({ getProductSingle }) {
   // Get all of products
   useEffect(() => {
     setTimeout(() => {
+      
 
       axios.get('/api/products/productQueries')
         .then((res) => {
@@ -25,7 +26,7 @@ export function Home({ getProductSingle }) {
           setLatestProducts(res.data.latestProducts)
           setGamingConsoleProducts(res.data.gamingConsoles)
         })
-        .finally(() => {setPending(false)})
+        .finally(() => { setPending(false) })
     }, 1200)
   }, [])
 
@@ -67,13 +68,14 @@ export function Home({ getProductSingle }) {
             </div>
 
             <div className="gaming-consoles-container">
-            <h1 className="gaming-consoles-title products-title">Hogy legyen mivel játszani!</h1>
-            <div className="gaming-consoles">
-              {gamingConsoleProducts.map((product) => {
-                return <ProductCard key={product._id} product={product} getProductSingle={getProductSingle}/>
-              })}
+              <h1 className="gaming-consoles-title products-title">Hogy legyen mivel játszani!</h1>
+              <div className="gaming-consoles">
+                {gamingConsoleProducts.map((product) => {
+                  return <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
+                })}
+              </div>
             </div>
-            </div>
+
             <Link to="/admin-login">Admin Login</Link>
           </div >
         )}

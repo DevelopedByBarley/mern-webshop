@@ -1,5 +1,6 @@
 import '../styles/pages/ProductSingle.css'
 import axios from 'axios';
+import moment, { } from 'moment'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../components/Spinner';
@@ -17,6 +18,8 @@ export function ProductSingle({ getProductSingle, user }) {
   const [product, setProduct] = useState('');
   const [comments, setComments] = useState([]);
   const [sameProducts, setSameProducts] = useState([]);
+
+
 
   useEffect(() => {
     setTimeout(() => {
@@ -65,21 +68,21 @@ export function ProductSingle({ getProductSingle, user }) {
   const deleteComment = (event, commentId) => {
     event.preventDefault();
     axios.put('/api/products/comment/delete', {
-      id : product._id,
+      id: product._id,
       commentId: commentId
     })
-    .then(res => {
-      const idForDeleteComment = res.data.commentId;
-      setComments((prev) => {
-        const next = [...prev];
-        const index = next.findIndex(item => item._id === idForDeleteComment);
-        next.splice(index, 1)
-        console.log(index);
-        return next;
+      .then(res => {
+        const idForDeleteComment = res.data.commentId;
+        setComments((prev) => {
+          const next = [...prev];
+          const index = next.findIndex(item => item._id === idForDeleteComment);
+          next.splice(index, 1)
+          console.log(index);
+          return next;
+        })
       })
-    })
   }
-  
+
 
 
 
@@ -111,8 +114,8 @@ export function ProductSingle({ getProductSingle, user }) {
                 <div className='property-value'>{product.categories}</div>
               </div>
               <div className='product-property'>
-                <h2 className='property-name'>Tipus: </h2>
-                <div className='property-value'> {product.softwareType}</div>
+                <h2 className='property-name'>Megjelenés: </h2>
+                <div className='property-value'>  {moment(product.relaseDate).format('LL')}</div>
               </div>
             </div>
             <div className='single-product-body-content'>
@@ -171,9 +174,10 @@ export function ProductSingle({ getProductSingle, user }) {
                       <h3 className='userName'>{comment.userName}</h3>
                       <p>{comment.content}</p>
                     </div>
-                    {user?.userName === comment.userName && <p className='delete-comment' onClick={(event) => deleteComment(event, comment._id)}><BsFillTrashFill size={25}/></p>}
+                    {user?.userName === comment.userName && <p className='delete-comment' onClick={(event) => deleteComment(event, comment._id)}><BsFillTrashFill size={25} /></p>}
                   </div>
                 )
+
               }).reverse()}
             </div>
           </div>

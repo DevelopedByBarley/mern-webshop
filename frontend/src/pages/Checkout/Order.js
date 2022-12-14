@@ -63,6 +63,8 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
           if(res.data.order) {
             navigate('/checkout/order/success');
             setShoppingCart([]);
+          } else {
+            navigate('/checkout/order/cancel');
           }
         })
     }

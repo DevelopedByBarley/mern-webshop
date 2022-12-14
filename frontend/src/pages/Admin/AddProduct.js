@@ -44,7 +44,7 @@ export function AddProduct() {
       <h1>Add product</h1>
       <form onSubmit={addProduct}>
         <input type="text" name="title" placeholder="title" required />
-        <input type="text" name="relaseDate" placeholder="2022/01"  />
+        <input type="date" name="relaseDate" placeholder="Megjelenés" />
         <select name="categories" defaultValue="nothing" required>
           <option value="gaming-software">Játék szoftver</option>
           <option value="gaming-console">Játék konzol</option>

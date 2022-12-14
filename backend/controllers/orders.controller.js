@@ -51,7 +51,7 @@ const payCardOnline = async (req, res) => {
         }
       }),
       success_url: `${process.env.CLIENT_URL}/checkout/order/success`,
-      cancel_url: `${process.env.CLIENT_URL}/checkout/order/success`,
+      cancel_url: `${process.env.CLIENT_URL}/checkout/order/cancel`,
     })
     if (session.url) {
       await Order.create({
@@ -69,18 +69,8 @@ const payCardOnline = async (req, res) => {
 }
 
 
-const getOrders = async (req,res) => {
-  const {admin} = req;
-  if(admin) {
-    const orders = await Order.find({});
-    res.json({message: "Orders found!", orders: orders})
-  } else {
-    res.json({message: "Orders finding error!", orders: orders})
-  }
-}
-
 module.exports = {
   sendOrderWithoutPay,
   payCardOnline,
-  getOrders
+
 }

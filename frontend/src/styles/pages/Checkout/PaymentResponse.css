@@ -26,6 +26,7 @@
 .payment-response-container .payment-response-title {
   font-family: "Anton", sans-serif;
   font-size: 3.5rem;
+  text-align: center;
 }
 
 .payment-response-container .payment-response-link {

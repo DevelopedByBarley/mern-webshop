@@ -9,7 +9,7 @@ const commentSchema = new Schema({
 
 const productSchema = new Schema({
   title: { type: String, required: true },
-  relaseDate: { type: String, required: true },
+  relaseDate: { type: Date, required: true },
   softwareType: { type: String },
   platform: { type: String, required: true },
   categories: { type: String, required: true },

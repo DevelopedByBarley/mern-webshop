@@ -11,6 +11,31 @@
   font-size: 3rem;
 }
 
+.home-container .products {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .home-container .products {
+    display: -ms-grid;
+    display: grid;
+    grid-gap: 1.5rem;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1366px) {
+  .home-container .products {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+  }
+}
+
 @media (min-width: 768px) {
   .home-container .gaming-consoles-container .gaming-consoles {
     display: -ms-grid;
@@ -33,26 +58,6 @@
     -ms-grid-column: 7;
     -ms-grid-column-span: 3;
     grid-column: 7 / 10;
-  }
-}
-
-@media (min-width: 768px) {
-  .products {
-    display: -ms-grid;
-    display: grid;
-    grid-gap: 1.5rem;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 1366px) {
-  .products {
-    display: -ms-grid;
-    display: grid;
-    grid-gap: 1.5rem;
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
   }
 }
 /*# sourceMappingURL=Home.css.map */
