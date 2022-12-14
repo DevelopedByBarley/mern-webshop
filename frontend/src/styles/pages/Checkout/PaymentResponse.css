@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.payment-response-container {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.payment-response-container .payment-response-icon {
+  font-size: 10rem;
+  -webkit-animation: iconScale 0.5s linear;
+          animation: iconScale 0.5s linear;
+}
+
+.payment-response-container .payment-response-title {
+  font-family: "Anton", sans-serif;
+  font-size: 3.5rem;
+}
+
+.payment-response-container .payment-response-link {
+  color: green;
+  text-decoration: none;
+  font-family: "Zilla Slab", serif;
+  font-weight: bolder;
+  font-size: 1.2rem;
+}
+
+@-webkit-keyframes iconScale {
+  0% {
+    font-size: 0rem;
+  }
+  30% {
+    font-size: 14rem;
+  }
+  50% {
+    font-size: 10rem;
+  }
+}
+
+@keyframes iconScale {
+  0% {
+    font-size: 0rem;
+  }
+  30% {
+    font-size: 14rem;
+  }
+  50% {
+    font-size: 10rem;
+  }
+}
+/*# sourceMappingURL=PaymentResponse.css.map */

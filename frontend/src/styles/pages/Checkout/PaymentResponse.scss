@@ -1,0 +1,36 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.payment-response-container {
+  height: 100vh;
+  width: 100%;
+  @include displayFlex(flex, center, center, column);
+
+  .payment-response-icon {
+    font-size: 10rem;
+    animation: iconScale 0.5s linear;
+  }
+
+  .payment-response-title {
+    font-family: $primaryFont;
+    font-size: 3.5rem;
+  }
+
+
+  .payment-response-link {
+    @include link();
+    font-size: 1.2rem;
+  }
+}
+
+@keyframes iconScale {
+  0% {
+    font-size: 0rem;
+  }
+  30% {
+    font-size: 14rem;
+  }
+  50% {
+    font-size: 10rem;
+  }
+}

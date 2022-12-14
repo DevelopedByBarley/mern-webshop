@@ -50,7 +50,7 @@ const payCardOnline = async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/checkout/order/success`,
+      success_url: `${process.env.CLIENT_URL}/`,
       cancel_url: `${process.env.CLIENT_URL}/`,
     })
     if (session.url) {
