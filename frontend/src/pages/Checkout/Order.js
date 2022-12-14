@@ -49,6 +49,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
       }).then((res) => {
         const url = res.data.url;
         window.location.href = url
+        setShoppingCart([]);
       })
     } else {
       axios.post('/api/order', {
@@ -60,7 +61,8 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
       })
         .then((res) => {
           if(res.data.order) {
-            navigate('/checkout/order/success')
+            navigate('/checkout/order/success');
+            setShoppingCart([]);
           }
         })
     }

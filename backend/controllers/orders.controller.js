@@ -50,8 +50,8 @@ const payCardOnline = async (req, res) => {
           quantity: item.quantity,
         }
       }),
-      success_url: `${process.env.CLIENT_URL}/`,
-      cancel_url: `${process.env.CLIENT_URL}/`,
+      success_url: `${process.env.CLIENT_URL}/checkout/order/success`,
+      cancel_url: `${process.env.CLIENT_URL}/checkout/order/success`,
     })
     if (session.url) {
       await Order.create({

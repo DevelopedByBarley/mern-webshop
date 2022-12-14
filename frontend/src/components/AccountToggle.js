@@ -21,7 +21,7 @@ export function AccountToggle({user, setUser, setUserToggle}) {
       <div className="user-data">
       <h4 className='user-name'>Szia {user.userName}!</h4>
       <Link to='/error-page' className='account-link account-data'>Adataim <span><CiSettings color='white' size={25}/></span></Link><br/>
-      <Link  to='/error-page' className='account-link account-latest-deliveries'>Korábbi rendeléseim  <span><TbTruckDelivery color='white' size={25}/></span></Link>
+      <Link  to='/user/prev-orders' className='account-link account-latest-deliveries'>Korábbi rendeléseim  <span><TbTruckDelivery color='white' size={25}/></span></Link>
       </div>
       <button className='logout-user' onClick={logoutUser}>Kijelentkezés</button>
     </div>
