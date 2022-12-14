@@ -15,6 +15,7 @@ import { ProductSingle } from './pages/ProductSingle';
 import { ShoppingCart } from './pages/Checkout/ShoppingCart';
 import { Order } from './pages/Checkout/Order';
 import { ComingSoon } from './pages/Error/ComingSoon';
+import Success from './pages/Checkout/Success';
 
 
 
@@ -73,6 +74,7 @@ function App() {
 
         <Routes>
           <Route path='/error-page' element={<ComingSoon />} />
+          <Route path='/checkout/order/success' element={<Success />} />
           <Route path='/' element={<Home getProductSingle={getProductSingle} setShoppingCart={setShoppingCart} user={user} />} />
           <Route path='/checkout/cart' element={<ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
           <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
