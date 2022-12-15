@@ -22,7 +22,9 @@ export function ProductSingle({ getProductSingle, user }) {
 
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
+
       axios.get(`/api/products/${id}`)
         .then((res) => {
           setProduct(res.data.product);

@@ -1,14 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
 .account-toggle {
-  background-color: red;
   position: fixed;
-  top: 40px;
-  right: 0px;
-  height: 200px;
-  width: 200px;
+  top: 50px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  height: 100vh;
+  width: 250px;
   background-color: #3a3a3a;
   color: white;
   z-index: 99;
+  right: -100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,12 +23,11 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  border-radius: 10px;
 }
 
 .account-toggle .user-name {
   margin: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   font-family: "Anton", sans-serif;
   letter-spacing: 1px;
 }
@@ -54,5 +54,9 @@
   font-family: #3a3a3a;
   font-weight: bolder;
   border: 1px solid white;
+}
+
+.userToggleActive {
+  right: 0;
 }
 /*# sourceMappingURL=AccountToggle.css.map */

@@ -17,8 +17,9 @@ export function Home({ getProductSingle }) {
 
   // Get all of products
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
-      
+
 
       axios.get('/api/products/productQueries')
         .then((res) => {

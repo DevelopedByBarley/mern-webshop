@@ -19,8 +19,8 @@ const productSchema = new Schema({
   description: { type: String, required: true },
   video: { type: String, required: false },
   image: { type: String, required: false },
-  discount: { type: Number, required: false },
-  quantity: { type: Number, required: false, default: 1 },
+  discount: { type: Number, required: true },
+  quantity: { type: Number, required: true, default: 1 },
   comments: [commentSchema]
 }, { timestamps: true })
 

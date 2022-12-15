@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from '../../components/Spinner';
 import '../../styles/pages/Checkout/Order.css'
@@ -26,9 +26,12 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
 
 
 
-  setTimeout(() => {
-    setPending(false)
-  }, 1200)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setPending(false)
+    }, 1200)
+  },[])
 
 
 

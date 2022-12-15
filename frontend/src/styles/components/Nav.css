@@ -1,27 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
 .header {
-  background-color: #3a3a3a;
-  height: 50px;
-  position: fixed;
   top: 0;
-  width: 100%;
   z-index: 100;
-}
-
-.header .menu-toggle {
   position: fixed;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-}
-
-.nav {
-  position: fixed;
-  margin-top: 50px;
+  width: 100%;
+  height: 50px;
   background-color: #3a3a3a;
   border-bottom: 1px solid;
   top: 0;
-  left: -100%;
   width: 100%;
   z-index: 101;
   -webkit-transition: all 0.4s ease-in-out;
@@ -41,8 +27,13 @@
           flex-direction: column;
 }
 
-.nav .account-container .account .login-button {
-  margin: 1rem;
+.header .account-container {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+}
+
+.header .account-container .account .login-button {
   padding: 0.8rem 2rem;
   border-radius: 10px;
   margin: 1.2rem 0;
@@ -55,12 +46,13 @@
   font-family: #3a3a3a;
   font-weight: bolder;
   border: 1px solid white;
+  margin: 0;
 }
 
-.nav .shopping-cart {
+.header .shopping-cart {
   position: fixed;
   top: 0;
-  left: -10px;
+  left: -30px;
   height: 50px;
   width: 120px;
   display: -webkit-box;
@@ -78,29 +70,62 @@
           flex-direction: row;
 }
 
-.nav .shopping-cart .numer-of-items {
+.header .shopping-cart .numer-of-items {
   color: #72c6db;
   font-family: "Anton", sans-serif;
   font-size: 1.2rem;
   position: relative;
 }
 
-.active {
-  left: 0;
+.header .searchBox-container {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-  .nav {
-    left: 0;
-    height: 50px;
-    margin-top: 0;
-  }
-  .nav .account-container {
-    position: fixed;
-    right: 60px;
-  }
+.header .searchBox-container .searchBox input {
+  padding: .5rem;
+  border-radius: 15px;
+  font-family: "Zilla Slab", serif;
+  border: none;
+}
+
+.header .searchBox-container .foundProducts {
+  margin-top: 8px;
+  background-color: white;
+}
+
+.header .searchBox-container .foundProducts .product-link {
+  text-decoration: none;
+}
+
+.header .searchBox-container .foundProducts .product-link .product {
+  border-bottom: 1px solid gray;
+  padding: .5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.header .searchBox-container .foundProducts .product-link .product .product-title {
+  font-family: "Anton", sans-serif;
+  color: black;
+}
+
+.header .searchBox-container .foundProducts .product-link .product .product-price {
+  font-family: "Zilla Slab", serif;
+  color: black;
+  font-size: 1.2rem;
 }
 /*# sourceMappingURL=Nav.css.map */

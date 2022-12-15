@@ -22,8 +22,6 @@ const getProducts = async (req, res) => {
 
 
 const productQueries = async (req, res) => {
-  const currentYear = new Date().getFullYear();
-  console.log(currentYear)
   const discountProducts = await Product.where("discount").gt(0).limit(10);
   const latestProducts = await Product.find({}).sort({ _id: -1 }).limit(10);
   const gamingConsoles = await Product.find({
@@ -31,6 +29,23 @@ const productQueries = async (req, res) => {
   }).limit(3)
 
   res.json({ discountProducts, latestProducts, gamingConsoles });
+}
+
+
+const searchProducts = async (req, res) => {
+  const { title} = req.body;
+  let query = Product.find();
+  if (title != null && title != '') {
+    query =  query.regex('title', new RegExp(title, 'i')).limit(8)
+  }
+  
+  try {
+    const products = await query.exec();
+    res.send(products)
+    console.log(products)
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 
@@ -236,6 +251,7 @@ const deleteComment = async (req, res) => {
 module.exports = {
   getProducts,
   productQueries,
+  searchProducts,
   sameProducts,
   getSingleProduct,
   setProduct,
@@ -244,3 +260,34 @@ module.exports = {
   sendComment,
   deleteComment
 }
+
+
+/**
+ *   if (title != null && title != '') {
+    query =  query.regex('title', new RegExp(title, 'i'))
+  }
+  if (platform != null && platform != '') {
+    query = query.regex('platform', new RegExp(platform, 'i'))
+  }
+  if (categories != null && categories != '') {
+    query = query.regex('categories', new RegExp(categories, 'i'))
+  }
+  if (softwareType != null && softwareType != '') {
+    query = query.regex('softwareType', new RegExp(softwareType, 'i'))
+  }
+  if (discount != null && discount != '' ) {
+    query = query.where('discount').gt(1)
+  }
+  if (isInStock != null && isInStock != '') {
+    query = query.where('isInStock').equals(isInStock)
+  }
+
+  if(gtPrice != null && gtPrice != '') {
+    query = query.where('price').gte(gtPrice)
+  }
+  if(ltPrice != null && ltPrice != '') {
+    query = query.where('price').lte(ltPrice)
+  }
+
+ * 
+ */

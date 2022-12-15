@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "../../components/Spinner";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import '../../styles/pages/Checkout/ShoppingCart.css'
@@ -9,9 +9,12 @@ export function ShoppingCart({ shoppingCart, setShoppingCart }) {
   const [isPending, setPending] = useState(true)
 
 
-  setTimeout(() => {
-    setPending(false)
-  }, 1200)
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      setPending(false)
+    }, 1200)
+  },[])
 
 
 

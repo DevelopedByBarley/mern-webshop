@@ -7,8 +7,6 @@
   margin-top: 2rem;
   width: 60%;
   max-width: 350px;
-  -webkit-box-shadow: 10px 10px 79px -20px rgba(0, 0, 0, 0.7);
-          box-shadow: 10px 10px 79px -20px rgba(0, 0, 0, 0.7);
 }
 
 .single-product-container .single-product-header .single-product-header-content .title {

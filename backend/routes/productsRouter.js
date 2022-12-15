@@ -4,6 +4,7 @@ const { protect } = require('../middlewares/auth.middleware')
 const {
   getProducts,
   productQueries,
+  searchProducts,
   sameProducts,
   getSingleProduct,
   setProduct,
@@ -30,6 +31,7 @@ const upload = multer({ storage: storage })
 
 router.get('/', getProducts);
 router.get('/productQueries', productQueries)
+router.post('/searchProducts', searchProducts)
 router.post('/comment', sendComment)
 router.put('/comment/delete', deleteComment)
 router.post('/sameProducts', sameProducts)

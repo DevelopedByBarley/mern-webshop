@@ -3,6 +3,7 @@
 
 .payment-response-container {
   height: 100vh;
+  padding: 2rem;
   width: 100%;
   @include displayFlex(flex, center, center, column);
 
