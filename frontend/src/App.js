@@ -15,9 +15,9 @@ import { ProductSingle } from './pages/ProductSingle';
 import { ShoppingCart } from './pages/Checkout/ShoppingCart';
 import { Order } from './pages/Checkout/Order';
 import { ComingSoon } from './pages/Error/ComingSoon';
-import Success from './pages/Checkout/Success';
-import Cancel from './pages/Checkout/Cancel';
-import PrevOrders from './pages/User/PrevOrders';
+import {Success} from './pages/Checkout/Success';
+import {Cancel} from './pages/Checkout/Cancel';
+import {Oders, Orders} from './pages/User/Orders';
 
 
 
@@ -89,7 +89,7 @@ function App() {
         <Route path='/user-register' element={<UserRegister />} />
         <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
         <Route path='/user-account' element={"user account"} />
-        <Route path='/user/prev-orders' element={<PrevOrders /> } />
+        <Route path='/user/prev-orders' element={<Orders /> } />
       </Routes>
     </div>
 

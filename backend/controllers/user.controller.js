@@ -77,13 +77,25 @@ const getMe = (req, res) => {
 
 
 const getOrders = async (req, res) => {
-  const {userName} = req.user
+  const { userName } = req.user
   if (userName) {
-    const orderOfUser = await Order.find({userName: userName})
+    const orderOfUser = await Order.find({ userName: userName })
     console.log(orderOfUser);
     res.json({ message: "Orders of user found !", orderOfUser: orderOfUser })
   } else {
-    res.json({ message: "Orders of user finding error !",  orderOfUser: false  })
+    res.json({ message: "Orders of user finding error !", orderOfUser: false })
+  }
+}
+
+const getOrder = async (req, res) => {
+  const id = req.params.orderId;
+
+  try {
+    const order = await Order.findById(id);
+    res.json({order: order})
+  } catch (error) {
+    console.log(error)
+    res.json({order: false})
   }
 }
 
@@ -98,5 +110,6 @@ module.exports = {
   register,
   login,
   getMe,
-  getOrders
+  getOrders,
+  getOrder
 }

@@ -3,7 +3,7 @@ import { VscError } from 'react-icons/vsc'
 import { Link, useNavigate } from 'react-router-dom'
 import '../../styles/pages/Checkout/PaymentResponse.css'
 
-export default function Cancel() {
+export function Cancel() {
 
   const navigate = useNavigate();
   useEffect(() => {

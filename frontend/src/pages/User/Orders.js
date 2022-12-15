@@ -1,14 +1,14 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 
-export default function PrevOrders() {
+export function Orders() {
 
   const [ordersOufUsers, setOrdersOfUsers] = useState([]);
 
   useEffect(() => {
     const userToken = localStorage.getItem('userToken');
     if (userToken) {
-      axios.get('/api/user/getOrders', {
+      axios.get('/api/user/orders', {
         headers: { Authorization: `Bearer ${userToken}` }
       })
         .then(res => setOrdersOfUsers(res.data.orderOfUser));
