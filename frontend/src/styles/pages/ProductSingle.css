@@ -12,7 +12,8 @@
 .single-product-container .single-product-header .single-product-header-content .title {
   font-family: "Anton", sans-serif;
   font-size: 2rem;
-  margin: 2rem 1rem;
+  margin: 2rem 0;
+  padding: .5rem;
   border-bottom: 1px solid gray;
   margin-bottom: 0.5rem;
   width: 100%;

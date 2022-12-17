@@ -32,6 +32,7 @@ const orderSchema = new Schema({
     discount: { type: Number, required: false },
     quantity: { type: Number, required: true, }
   }],
+  fullPrice: {type: String, require: true},
   state: {
     type: String,
     default: "under process"

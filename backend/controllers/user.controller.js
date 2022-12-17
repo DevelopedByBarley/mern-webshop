@@ -98,6 +98,18 @@ const getOrder = async (req, res) => {
   }
 }
 
+const deleteOrder = async (req,res) => {
+  const orderId = req.params.orderId;
+
+  try {
+    await Order.findByIdAndDelete(orderId);
+    res.json({message: "Order succesfully deleted!"})
+  } catch (error) {
+    console.log(error)
+  }
+
+}
+
 
 
 
@@ -110,5 +122,6 @@ module.exports = {
   login,
   getMe,
   getOrders,
-  getOrder
+  getOrder,
+  deleteOrder
 }

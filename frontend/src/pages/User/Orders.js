@@ -44,7 +44,6 @@ export function Orders() {
                   <p>{order.state}</p>
                 </div>
               </div>
-
             </Link>
           )
         })}

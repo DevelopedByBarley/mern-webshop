@@ -3,13 +3,14 @@ const Order = require('../database/models/orderModel')
 
 
 const sendOrderWithoutPay = async (req, res) => {
-  const { user, shoppingCart, shippingType, paymentType } = req.body;
+  const { user, shoppingCart, shippingType, paymentType, fullPrice } = req.body;
   try {
     const order = await Order.create({
       user: user,
       shippingType: shippingType,
       paymentType: paymentType,
-      shoppingCart: shoppingCart
+      shoppingCart: shoppingCart,
+      fullPrice: fullPrice
     })
     if (order) {
       res.json({ message: "Product is ordered succesfully", order: order })
@@ -21,7 +22,7 @@ const sendOrderWithoutPay = async (req, res) => {
 }
 
 const payCardOnline = async (req, res) => {
-  const { user, shoppingCart, shippingType, paymentType } = req.body;
+  const { user, shoppingCart, shippingType, paymentType, fullPrice } = req.body;
 
 
 
@@ -58,7 +59,8 @@ const payCardOnline = async (req, res) => {
         user: user,
         shippingType: shippingType,
         paymentType: paymentType,
-        shoppingCart: shoppingCart
+        shoppingCart: shoppingCart,
+        fullPrice: fullPrice
       })
     }
     res.json({ url: session.url })

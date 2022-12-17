@@ -49,6 +49,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         shoppingCart: shoppingCart,
         shippingType: shippingType,
         paymentType: paymentType,
+        fullPrice: fullPrice
       }).then((res) => {
         const url = res.data.url;
         window.location.href = url
