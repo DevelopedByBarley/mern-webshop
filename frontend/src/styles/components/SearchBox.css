@@ -1,11 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
 .searchBox-container {
   text-align: left;
-  margin: 5rem 0 2rem .5rem;
+  margin: 5rem 0 2rem 0.5rem;
+}
+
+.searchBox-container .searchBox {
+  -webkit-animation: fading 0.2s;
+          animation: fading 0.2s;
+  position: relative;
 }
 
 .searchBox-container .searchBox input {
-  padding: .5rem 2.5rem;
+  padding: 0.5rem 2.5rem;
   font-family: "Zilla Slab", serif;
   margin: 0 1rem;
 }
@@ -31,8 +37,8 @@
 }
 
 .searchBox-container .foundProducts .product-link .product {
-  border-bottom: .5px solid gray;
-  padding: .5rem 0;
+  border-bottom: 0.5px solid gray;
+  padding: 0.5rem 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -59,7 +65,51 @@
   font-size: 1.2rem;
 }
 
-.searchBox-container .search-icon {
+.searchBox-container .search {
+  height: 50px;
+  width: 50px;
+  border: 1px solid;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #3a3a3a;
+}
+
+.searchBox-container .search .icon {
   cursor: pointer;
+  color: white;
+}
+
+@-webkit-keyframes fading {
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
+}
+
+@keyframes fading {
+  from {
+    opacity: 0;
+    left: -100%;
+  }
+  to {
+    opacity: 1;
+    left: 0;
+  }
 }
 /*# sourceMappingURL=SearchBox.css.map */

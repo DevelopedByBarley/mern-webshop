@@ -39,7 +39,7 @@ export function SearchBox() {
                 <span><AiOutlineCloseCircle className='close-icon' size={20} onClick={() => {
                   setSearchBoxToggle(false)
                   setFoundProducts([])
-                }}/></span>
+                }} /></span>
                 <input type="text" name="title" placeholder='Keresés..' onChange={searchProducts} />
               </div>
               <div className='foundProducts'>
@@ -62,7 +62,9 @@ export function SearchBox() {
           )
           :
           (
-            <BsSearch className='search-icon' size={30} onClick={() => { setSearchBoxToggle(true) }} />
+            <div className='search'>
+              <BsSearch className='icon' size={30} onClick={() => { setSearchBoxToggle(true) }} />
+            </div>
           )
         }
       </div>

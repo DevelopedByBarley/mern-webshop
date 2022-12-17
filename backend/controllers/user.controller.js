@@ -9,6 +9,7 @@ const register = async (req, res) => {
 
   const salt = await bcrypt.genSalt(10);
   const hashedPw = await bcrypt.hash(password, salt);
+  console.log(hashedPw)
   const isUserExist = await User.findOne({
     email: email,
     userName: userName
@@ -49,7 +50,7 @@ const login = async (req, res) => {
       email: email
     })
 
-    if (user && (bcrypt.compare(password, user.password))) {
+    if (user && ( await bcrypt.compare(password, user.password))) {
       res.status(200).json({
         id: user._id,
         email: user.email,
