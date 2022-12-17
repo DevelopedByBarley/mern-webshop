@@ -1,17 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
-.nav {
-  top: 0;
-  z-index: 100;
+.shopping-cart {
   position: fixed;
-  width: 100%;
-  height: 50px;
-  background-color: #3a3a3a;
-  border-bottom: 1px solid;
   top: 0;
-  width: 100%;
-  z-index: 99;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  left: -20px;
+  z-index: 100;
+  height: 50px;
+  width: 120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -21,9 +15,16 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-box-orient: vertical;
+  -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+      -ms-flex-direction: row;
+          flex-direction: row;
 }
-/*# sourceMappingURL=Nav.css.map */
+
+.shopping-cart .numer-of-items {
+  color: #72c6db;
+  font-family: "Anton", sans-serif;
+  font-size: 1.2rem;
+  position: relative;
+}
+/*# sourceMappingURL=ShoppingCart.css.map */

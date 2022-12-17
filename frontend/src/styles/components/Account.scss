@@ -1,0 +1,17 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+
+.account-container {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  z-index: 102;
+  .account {
+    .login-button {
+      @include grayButton();
+      border: 1px solid white;
+      margin: 0;
+    }
+  }
+}

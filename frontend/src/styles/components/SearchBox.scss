@@ -1,0 +1,53 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+
+.searchBox-container {
+  text-align: left;
+  margin: 5rem 0 2rem .5rem;
+  .searchBox {
+    
+    input {
+      padding: .5rem 2.5rem;
+      font-family: $secondaryFont;
+      margin: 0 1rem;
+    }
+
+    .close-icon {
+      position: relative;
+      top: 5px;
+    }
+  }
+
+  .foundProducts {
+    margin-top: 8px;
+    position: absolute;
+    left: 0;  
+    width: 100%;
+    max-width: 700px;
+
+    background-color: white;
+    z-index: 98;
+    .product-link {
+      text-decoration: none;
+      .product {
+        border-bottom: .5px solid gray;
+        padding: .5rem 0;
+        @include displayFlex(flex, center, space-around, row);
+        .product-title {
+          font-family: $primaryFont;
+          color: black;
+          margin: 0 2rem;
+        }
+
+        .product-price {
+          font-family: $secondaryFont;
+          color: black;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+
+  
+}

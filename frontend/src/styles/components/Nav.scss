@@ -1,7 +1,7 @@
 @import "../utils/variables";
 @import "../utils/mixins";
 
-.header {
+.nav {
   top: 0;
   z-index: 100;
   position: fixed;
@@ -11,78 +11,9 @@
   border-bottom: 1px solid;
   top: 0;
   width: 100%;
-  z-index: 101;
+  z-index: 99;
   transition: $transition;
   @include displayFlex(flex, center, center, column);
-  .account-container {
-    position: fixed;
-    right: 10px;
-    top: 5px;
-    .account {
-      .login-button {
-        @include grayButton();
-        border: 1px solid white;
-        margin: 0;
-      }
-    }
-  }
-
-  .shopping-cart {
-    position: fixed;
-    top: 0;
-    left: -30px;
-    // background: rgb(40, 73, 83);
-    height: 50px;
-    width: 120px;
-    @include displayFlex(flex, center, center, row);
-
-    .numer-of-items {
-      color: rgb(114, 198, 219);
-      font-family: $primaryFont;
-      font-size: 1.2rem;
-      position: relative;
-    }
-  }
 }
 
-/*
-    .searchBox-container {
-    position: fixed;
-    top: 10px;
-    width: 100%;
-    max-width: 700px;
-    text-align: center;
-    .searchBox {
-      input {
-        padding: .5rem;
-        border-radius: 15px;
-        font-family: $secondaryFont;
-        border: none;
-      }
-    }
 
-    .foundProducts {
-      margin-top: 8px;
-      background-color: white;
-      .product-link {
-        text-decoration: none;
-        .product {
-          border-bottom: 1px solid gray;
-          padding: .5rem 0;
-          @include displayFlex(flex, center, space-around, row);
-
-          .product-title {
-            font-family: $primaryFont;
-            color: black;
-          }
-
-          .product-price {
-            font-family: $secondaryFont;
-            color: black;
-            font-size: 1.2rem;
-          }
-        }
-      }
-    }
-  }
-*/

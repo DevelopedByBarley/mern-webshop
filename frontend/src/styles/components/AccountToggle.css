@@ -2,6 +2,7 @@
 .account-toggle {
   position: fixed;
   top: 50px;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   height: 100vh;
   width: 250px;
@@ -9,17 +10,28 @@
   color: white;
   z-index: 99;
   right: -100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
+
 .account-toggle .user-name {
   margin: 0.5rem;
   font-size: 1.5rem;
   font-family: "Anton", sans-serif;
   letter-spacing: 1px;
 }
+
 .account-toggle .account-link {
   color: green;
   text-decoration: none;
@@ -27,6 +39,7 @@
   font-weight: bolder;
   font-weight: bolder;
 }
+
 .account-toggle .logout-user {
   margin: 1rem;
   padding: 0.8rem 2rem;
@@ -36,6 +49,7 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
@@ -44,4 +58,5 @@
 
 .userToggleActive {
   right: 0;
-}/*# sourceMappingURL=AccountToggle.css.map */
+}
+/*# sourceMappingURL=AccountToggle.css.map */

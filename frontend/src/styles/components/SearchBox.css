@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.searchBox-container {
+  text-align: left;
+  margin: 5rem 0 2rem .5rem;
+}
+
+.searchBox-container .searchBox input {
+  padding: .5rem 2.5rem;
+  font-family: "Zilla Slab", serif;
+  margin: 0 1rem;
+}
+
+.searchBox-container .searchBox .close-icon {
+  position: relative;
+  top: 5px;
+}
+
+.searchBox-container .foundProducts {
+  margin-top: 8px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: 700px;
+  background-color: white;
+  z-index: 98;
+}
+
+.searchBox-container .foundProducts .product-link {
+  text-decoration: none;
+}
+
+.searchBox-container .foundProducts .product-link .product {
+  border-bottom: .5px solid gray;
+  padding: .5rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.searchBox-container .foundProducts .product-link .product .product-title {
+  font-family: "Anton", sans-serif;
+  color: black;
+  margin: 0 2rem;
+}
+
+.searchBox-container .foundProducts .product-link .product .product-price {
+  font-family: "Zilla Slab", serif;
+  color: black;
+  font-size: 1.2rem;
+}
+/*# sourceMappingURL=SearchBox.css.map */

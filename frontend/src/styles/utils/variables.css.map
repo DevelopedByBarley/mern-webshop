@@ -1,1 +1,10 @@
-{"version":3,"sources":["../base/typography.scss"],"names":[],"mappings":"AAAQ,yHAAA","file":"variables.css"}
+{
+    "version": 3,
+    "mappings": "ACAA,OAAO,CAAC,iHAAI",
+    "sources": [
+        "variables.scss",
+        "../base/typography.scss"
+    ],
+    "names": [],
+    "file": "variables.css"
+}

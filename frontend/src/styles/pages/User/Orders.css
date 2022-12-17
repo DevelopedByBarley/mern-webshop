@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.user-orders-container {
+  padding: 1rem;
+  background-color: #e6e6e6;
+}
+
+.user-orders-container .user-orders-title {
+  font-family: "Zilla Slab", serif;
+  font-size: 2.5rem;
+  margin: 1.5rem;
+}
+
+.user-orders-container .user-orders {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .user-orders-container .user-orders {
+    -ms-grid-columns: (1fr)[5];
+        grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.user-orders-container .user-orders .link {
+  text-decoration: none;
+}
+
+.user-orders-container .user-orders .link .order {
+  border: 1px solid;
+  padding: 0.5rem;
+  font-family: "Zilla Slab", serif;
+  background-color: #c75a5a;
+  color: white;
+}
+
+.user-orders-container .user-orders .link .order .order-title {
+  font-family: "Anton", sans-serif;
+}
+
+.user-orders-container .user-orders .link .order :where(h3) {
+  font-family: "Zilla Slab", serif;
+  font-weight: bolder;
+  margin-top: .4rem;
+}
+
+.user-orders-container .user-orders .link .order hr {
+  margin: 1rem 0;
+}
+/*# sourceMappingURL=Orders.css.map */

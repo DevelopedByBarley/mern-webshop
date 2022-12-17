@@ -1,3 +1,4 @@
+import '../../styles/pages/User/Orders.css'
 import axios from 'axios';
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
@@ -19,20 +20,31 @@ export function Orders() {
   console.log(ordersOufUsers)
 
   return (
-    <div className='ordersOfUser-container'>
+    <div className='user-orders-container'>
+      <h1 className='user-orders-title'>Korábbi rendelések</h1>
       <div className='user-orders'>
         {ordersOufUsers.map((order) => {
           return (
-            <Link to={`/user/order/${order._id}`}>
+            <Link className="link" to={`/user/order/${order._id}`} >
               <div className='order'>
-                <div className='user-order'>
-                  <h1>Rendelés azonosító:</h1>
-                  <p>{order._id}</p>
-                  <h3>{order.paymentType}</h3>
-                  <h3>{order.shippingType}</h3>
-                  <h3>{order.state}</h3>
+
+                <h1 className='order-title'>Rendelés azonosító:</h1>
+                <p className='order-id'>{order._id}</p>
+                <hr />
+                <div className='order-payment-type order-data'>
+                  <h3>Fizetés módja:</h3>
+                  <p>{order.paymentType}</p>
+                </div>
+                <div className='order-delivery-type'>
+                  <h3>Kiszállitás módja:</h3>
+                  <p>{order.shippingType}</p>
+                </div>
+                <div className='order-status'>
+                  <h3>Rendelés státusza:</h3>
+                  <p>{order.state}</p>
                 </div>
               </div>
+
             </Link>
           )
         })}

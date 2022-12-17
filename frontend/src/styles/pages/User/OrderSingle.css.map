@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,uBAAuB,CAAC;EACtB,gBAAgB,EAAE,MAAM;CACzB",
+    "sources": [
+        "OrderSingle.scss"
+    ],
+    "names": [],
+    "file": "OrderSingle.css"
+}

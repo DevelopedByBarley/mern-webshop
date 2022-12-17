@@ -1,5 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
-.add-to-cart {
+.account-container {
+  position: fixed;
+  right: 10px;
+  top: 5px;
+  z-index: 102;
+}
+
+.account-container .account .login-button {
   padding: 0.8rem 2rem;
   border-radius: 10px;
   margin: 1.2rem 0;
@@ -11,9 +18,7 @@
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
+  border: 1px solid white;
+  margin: 0;
 }
-
-.add-to-cart:hover {
-  background-color: green;
-}
-/*# sourceMappingURL=SetShoppingCartButton.css.map */
+/*# sourceMappingURL=Account.css.map */
