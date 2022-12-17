@@ -24,7 +24,7 @@ export function UserLogin({ setUser }) {
 
         setTimeout(() => {
           if (!token) {
-            alert('Invalid email or password!')
+            alert('Érvénytelen Email vagy Jelszó')
             setPending(false)
 
           } else {

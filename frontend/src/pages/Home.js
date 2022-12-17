@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { AdminLoginButton } from "../components/AdminLoginButton";
 import { ProductCard } from "../components/ProductCard";
 import { Spinner } from "../components/Spinner";
 import '../styles/pages/Home.css'
@@ -77,7 +77,7 @@ export function Home({ getProductSingle }) {
               </div>
             </div>
 
-            <Link to="/admin-login">Admin Login</Link>
+            <AdminLoginButton/>
           </div >
         )}
     </div>

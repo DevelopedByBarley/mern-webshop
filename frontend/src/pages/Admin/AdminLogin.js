@@ -1,3 +1,4 @@
+import '../../styles/pages/Admin/AdminLogin.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
 import { useState } from "react";
@@ -18,7 +19,7 @@ export function AdminLogin() {
       .then((res) => {
         const token = res.data.token;
         if (!token) {
-          alert('Bad email or passwod')
+          alert('Érvénytelen Email vagy Jelszó!')
         } else {
           axios.get('/api/admin/getMe', {
             headers: { Authorization: `Bearer ${token}` }
@@ -38,15 +39,23 @@ export function AdminLogin() {
 
 
     <form className="admin-login-form" onSubmit={loginAdmin}>
-      <input type="email" name="email" className="email" onChange={(event) => setAdmin((prev) => {
+      <h1 className='admin-login-title'>Admin bejelentkezés!</h1>
+      <input type="email" name="email" className="email" placeholder='Email' onChange={(event) => setAdmin((prev) => {
         prev.email = event.target.value;
         return prev
       })} />
-      <input type="password" name="password" className="password" onChange={(event) => setAdmin((prev) => {
+      <input type="password" name="password"  placeholder='Jelszó' className="password" onChange={(event) => setAdmin((prev) => {
         prev.password = event.target.value;
         return prev
       })} />
-      <button type="submit">Login</button>
+      <button type="submit" className='admin-login'>Login</button>
+      <div className='info'>
+        <p>
+          Az admin felületen való bejelentkezés kizáróla Admin részére készült
+          ez a funkció termékekkel, felhasználókkal vagy megrendelésekkel 
+          való müveletek elvégzésére készült! 
+        </p>
+      </div>
     </form>
   )
 }

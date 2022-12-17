@@ -2,7 +2,7 @@
 @import "../../utils/mixins.scss";
 
 .user-login-container {
-  height: 100vh;
+  height: 80vh;
   @include displayFlex(flex, center, center, column);
 
   .user-login-title {

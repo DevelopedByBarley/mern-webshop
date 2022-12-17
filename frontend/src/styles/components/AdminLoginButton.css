@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.admin-login-container {
+  text-align: right;
+}
+
+.admin-login-container .admin-login {
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  margin: 1.2rem 0;
+  border: none;
+  background-color: #3a3a3a;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-family: #3a3a3a;
+  font-weight: bolder;
+}
+
+.admin-login-container .admin-login:hover {
+  background-color: red;
+}
+/*# sourceMappingURL=AdminLoginButton.css.map */

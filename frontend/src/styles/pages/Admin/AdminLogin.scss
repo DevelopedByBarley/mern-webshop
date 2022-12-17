@@ -1,0 +1,34 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.admin-login-form {
+  height: 80vh;
+  width: 100%;
+  @include displayFlex(flex, center, center, column);
+  text-align: center;
+
+  .admin-login-title {
+    font-family: $primaryFont;
+    color: $primaryBackground;
+    font-size: 4rem;
+    margin-bottom: 2rem;
+  }
+
+  & :where(input) {
+    margin: 0.5rem;
+    padding: 0.5rem 3rem;
+    font-family: $secondaryFont;
+  }
+
+  .admin-login {
+    @include grayButton();
+    &:hover {
+      background-color: green;
+    }
+  }
+
+  .info {
+    font-family: $secondaryFont;
+    font-weight: bolder;
+  }
+}

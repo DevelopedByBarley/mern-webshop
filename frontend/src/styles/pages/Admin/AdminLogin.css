@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
-.user-login-container {
+.admin-login-form {
   height: 80vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -14,43 +15,23 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-}
-
-.user-login-container .user-login-title {
-  margin: 2rem;
-  font-size: 4rem;
-  color: #3a3a3a;
-  font-family: "Anton", sans-serif;
-  font-weight: bolder;
-}
-
-.user-login-container form {
-  width: 80%;
-  margin: 0 auto;
   text-align: center;
 }
 
-.user-login-container form input {
-  border-radius: 10px;
-  border: 1px solid gray;
-  padding: 1rem;
+.admin-login-form .admin-login-title {
+  font-family: "Anton", sans-serif;
+  color: #3a3a3a;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.admin-login-form :where(input) {
   margin: 0.5rem;
-  width: 100%;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
+  padding: 0.5rem 3rem;
+  font-family: "Zilla Slab", serif;
 }
 
-.user-login-container form .login-user:hover {
-  background-color: green;
-}
-
-@media (min-width: 768px) {
-  .user-login-container form input {
-    width: 30%;
-  }
-}
-
-.user-login-container form .login-user {
+.admin-login-form .admin-login {
   padding: 0.8rem 2rem;
   border-radius: 10px;
   margin: 1.2rem 0;
@@ -64,10 +45,12 @@
   font-weight: bolder;
 }
 
-.user-login-container form .isRegistered {
-  color: green;
-  text-decoration: none;
+.admin-login-form .admin-login:hover {
+  background-color: green;
+}
+
+.admin-login-form .info {
   font-family: "Zilla Slab", serif;
   font-weight: bolder;
 }
-/*# sourceMappingURL=UserLogin.css.map */
+/*# sourceMappingURL=AdminLogin.css.map */
