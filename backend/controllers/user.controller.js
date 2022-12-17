@@ -80,7 +80,6 @@ const getOrders = async (req, res) => {
   const { userName } = req.user
   if (userName) {
     const orderOfUser = await Order.find({ userName: userName })
-    console.log(orderOfUser);
     res.json({ message: "Orders of user found !", orderOfUser: orderOfUser })
   } else {
     res.json({ message: "Orders of user finding error !", orderOfUser: false })
@@ -89,7 +88,7 @@ const getOrders = async (req, res) => {
 
 const getOrder = async (req, res) => {
   const id = req.params.orderId;
-
+  console.log(id)
   try {
     const order = await Order.findById(id);
     res.json({order: order})

@@ -18,6 +18,7 @@ import { ComingSoon } from './pages/Error/ComingSoon';
 import {Success} from './pages/Checkout/Success';
 import {Cancel} from './pages/Checkout/Cancel';
 import {Oders, Orders} from './pages/User/Orders';
+import { OrderSingle } from './pages/User/OrderSingle';
 
 
 
@@ -88,8 +89,9 @@ function App() {
         <Route path='/product-add' element={<AddProduct />} />
         <Route path='/user-register' element={<UserRegister />} />
         <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
-        <Route path='/user-account' element={"user account"} />
-        <Route path='/user/prev-orders' element={<Orders /> } />
+        <Route path='/user' element={"user account"} />
+        <Route path='/user/orders' element={<Orders /> } />
+        <Route path='/user/order/:orderId' element={<OrderSingle /> } />
       </Routes>
     </div>
 

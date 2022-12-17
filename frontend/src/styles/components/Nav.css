@@ -10,29 +10,17 @@
   top: 0;
   width: 100%;
   z-index: 101;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
 .header .account-container {
   position: fixed;
   right: 10px;
   top: 5px;
 }
-
 .header .account-container .account .login-button {
   padding: 0.8rem 2rem;
   border-radius: 10px;
@@ -41,91 +29,68 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
   border: 1px solid white;
   margin: 0;
 }
-
 .header .shopping-cart {
   position: fixed;
   top: 0;
   left: -30px;
   height: 50px;
   width: 120px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
 }
-
 .header .shopping-cart .numer-of-items {
-  color: #72c6db;
+  color: rgb(114, 198, 219);
   font-family: "Anton", sans-serif;
   font-size: 1.2rem;
   position: relative;
 }
 
-.header .searchBox-container {
-  position: fixed;
-  top: 10px;
-  width: 100%;
-  max-width: 700px;
-  text-align: center;
-}
+/*
+    .searchBox-container {
+    position: fixed;
+    top: 10px;
+    width: 100%;
+    max-width: 700px;
+    text-align: center;
+    .searchBox {
+      input {
+        padding: .5rem;
+        border-radius: 15px;
+        font-family: $secondaryFont;
+        border: none;
+      }
+    }
 
-.header .searchBox-container .searchBox input {
-  padding: .5rem;
-  border-radius: 15px;
-  font-family: "Zilla Slab", serif;
-  border: none;
-}
+    .foundProducts {
+      margin-top: 8px;
+      background-color: white;
+      .product-link {
+        text-decoration: none;
+        .product {
+          border-bottom: 1px solid gray;
+          padding: .5rem 0;
+          @include displayFlex(flex, center, space-around, row);
 
-.header .searchBox-container .foundProducts {
-  margin-top: 8px;
-  background-color: white;
-}
+          .product-title {
+            font-family: $primaryFont;
+            color: black;
+          }
 
-.header .searchBox-container .foundProducts .product-link {
-  text-decoration: none;
-}
-
-.header .searchBox-container .foundProducts .product-link .product {
-  border-bottom: 1px solid gray;
-  padding: .5rem 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.header .searchBox-container .foundProducts .product-link .product .product-title {
-  font-family: "Anton", sans-serif;
-  color: black;
-}
-
-.header .searchBox-container .foundProducts .product-link .product .product-price {
-  font-family: "Zilla Slab", serif;
-  color: black;
-  font-size: 1.2rem;
-}
-/*# sourceMappingURL=Nav.css.map */
+          .product-price {
+            font-family: $secondaryFont;
+            color: black;
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+  }
+*//*# sourceMappingURL=Nav.css.map */

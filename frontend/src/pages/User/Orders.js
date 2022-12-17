@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 
 export function Orders() {
 
@@ -22,12 +23,17 @@ export function Orders() {
       <div className='user-orders'>
         {ordersOufUsers.map((order) => {
           return (
-            <div className='user-order'>
-              <h1>{order.createdAt}</h1>
-              <h3>{order.paymentType}</h3>
-              <h3>{order.shippingType}</h3>
-              <h3>{order.state}</h3>
-            </div>
+            <Link to={`/user/order/${order._id}`}>
+              <div className='order'>
+                <div className='user-order'>
+                  <h1>Rendelés azonosító:</h1>
+                  <p>{order._id}</p>
+                  <h3>{order.paymentType}</h3>
+                  <h3>{order.shippingType}</h3>
+                  <h3>{order.state}</h3>
+                </div>
+              </div>
+            </Link>
           )
         })}
       </div>

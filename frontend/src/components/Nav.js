@@ -16,18 +16,18 @@ export function Nav({ shoppingCart, user, setUser }) {
   const searchProducts = (event) => {
     event.preventDefault();
     const title = event.target.value;
-   
-      axios.post('/api/products/searchProducts', {
-        title: title
+
+    axios.post('/api/products/searchProducts', {
+      title: title
+    })
+      .then((res) => {
+        if (event.target.value.length > 0) {
+          setFoundProducts(res.data)
+        } else {
+          setFoundProducts([])
+        }
       })
-        .then((res) => {
-          if (event.target.value.length > 0) {
-            setFoundProducts(res.data)
-          } else {
-            setFoundProducts([])
-          }
-        })
-  
+
   }
 
 
@@ -55,7 +55,25 @@ export function Nav({ shoppingCart, user, setUser }) {
             <AccountToggle user={user} setUser={setUser} userToggle={userToggle} setUserToggle={setUserToggle} />
           </div>
         </div>
-        <div className='searchBox-container'>
+
+      </div>
+      <nav className='nav'></nav>
+    </>
+  )
+}
+
+{/**
+
+      <div className={`nav ${toggle ? "active" : ""}`} >
+
+
+
+      </div>*/}
+
+
+{
+  /**
+   *         <div className='searchBox-container'>
           <div className='searchBox'>
             <input type="text" name="title" placeholder='Keresés..' onChange={searchProducts} />
           </div>
@@ -76,18 +94,7 @@ export function Nav({ shoppingCart, user, setUser }) {
             {foundProducts.length === 8 && <Link onClick={setFoundProducts([])} to="/error-page">További találatok..</Link>}
           </div>
         </div>
-      </div>
-      <nav className='nav'></nav>
-    </>
-  )
+   * 
+   */
 }
-
-{/**
-
-      <div className={`nav ${toggle ? "active" : ""}`} >
-
-
-
-      </div>*/}
-
 

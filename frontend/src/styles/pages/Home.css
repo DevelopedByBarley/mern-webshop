@@ -3,61 +3,42 @@
   width: 100%;
   padding: 1rem;
 }
-
 .home-container .products-title {
   text-align: center;
   font-family: "Anton", sans-serif;
   margin: 5rem 0;
   font-size: 3rem;
 }
-
 .home-container .products {
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 1fr;
-      grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-gap: 1rem;
 }
-
 @media (min-width: 768px) {
   .home-container .products {
-    display: -ms-grid;
     display: grid;
     grid-gap: 1.5rem;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-
 @media (min-width: 1366px) {
   .home-container .products {
-    -ms-grid-columns: (1fr)[5];
-        grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
   }
 }
-
 @media (min-width: 768px) {
   .home-container .gaming-consoles-container .gaming-consoles {
-    display: -ms-grid;
     display: grid;
     grid-gap: 1rem;
-    -ms-grid-columns: (1fr)[9];
-        grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr);
   }
   .home-container .gaming-consoles-container .gaming-consoles .product-card:nth-child(1) {
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 4;
-    grid-column: 1 / 5;
+    grid-column: 1/5;
   }
   .home-container .gaming-consoles-container .gaming-consoles .product-card:nth-child(2) {
-    -ms-grid-column: 5;
-    -ms-grid-column-span: 2;
-    grid-column: 5 / 7;
+    grid-column: 5/7;
   }
   .home-container .gaming-consoles-container .gaming-consoles .product-card:nth-child(3) {
-    -ms-grid-column: 7;
-    -ms-grid-column-span: 3;
-    grid-column: 7 / 10;
+    grid-column: 7/10;
   }
-}
-/*# sourceMappingURL=Home.css.map */
+}/*# sourceMappingURL=Home.css.map */

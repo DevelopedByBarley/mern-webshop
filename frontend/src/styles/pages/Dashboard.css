@@ -1,20 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
 .products-container {
   background-color: red;
-  display: -ms-grid;
   display: grid;
   padding: 2rem;
-  grid-gap: .5rem;
+  grid-gap: 0.5rem;
 }
-
 .products-container .product-card {
   border: 1px solid;
 }
 
 @media (min-width: 768px) {
   .products-container {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
-}
-/*# sourceMappingURL=Dashboard.css.map */
+}/*# sourceMappingURL=Dashboard.css.map */

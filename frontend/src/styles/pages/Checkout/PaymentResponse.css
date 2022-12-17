@@ -3,33 +3,21 @@
   height: 100vh;
   padding: 2rem;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
-
 .payment-response-container .payment-response-icon {
   font-size: 10rem;
   -webkit-animation: iconScale 0.5s linear;
           animation: iconScale 0.5s linear;
 }
-
 .payment-response-container .payment-response-title {
   font-family: "Anton", sans-serif;
   font-size: 3.5rem;
   text-align: center;
 }
-
 .payment-response-container .payment-response-link {
   color: green;
   text-decoration: none;
@@ -60,5 +48,4 @@
   50% {
     font-size: 10rem;
   }
-}
-/*# sourceMappingURL=PaymentResponse.css.map */
+}/*# sourceMappingURL=PaymentResponse.css.map */
