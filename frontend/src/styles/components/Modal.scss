@@ -1,0 +1,53 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.modal-container {
+
+  background-color: $primaryBackground;
+  position: fixed;
+  border: 1px solid rgb(167, 24, 24);
+  top: 1px;
+  right: 50%;
+  transform: translate(50%);
+  z-index: 103;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  padding: 2rem;
+  animation: fadeIn .4s linear;
+  transition: $transition;
+
+  .modal-header {
+    .message {
+      color: White;
+      font-family: $primaryFont;
+      font-size: 1.3rem;
+
+      .danger {
+        color: rgb(167, 24, 24);
+        font-size: 1.5rem;
+      }
+    }
+  }
+  
+  .modal-button-container {
+    margin: 1rem 0;
+    & :where(button) {
+      @include grayButton();
+      margin: .5rem;
+      border: .5px solid gray;
+    }
+    & :nth-child(1):hover {
+      background-color: rgb(185, 138, 50);
+    }
+    & :nth-child(2):hover {
+      background-color: rgb(182, 77, 77);
+    }
+  }
+}
+
+@keyframes fadeIn {
+  0%{top: -100%} 
+  100% {top: 0}
+
+}

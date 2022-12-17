@@ -12,10 +12,11 @@
       font-family: $secondaryFont;
       margin: 0 1rem;
     }
-
+    
     .close-icon {
       position: relative;
       top: 5px;
+      cursor: pointer;
     }
   }
 
@@ -49,5 +50,8 @@
     }
   }
 
+  .search-icon {
+    cursor: pointer
+  }
   
 }

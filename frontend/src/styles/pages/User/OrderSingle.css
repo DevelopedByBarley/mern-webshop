@@ -1,8 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
-.order-single-container {
-  background-color: yellow;
-}
-
 .order-single-container .order .order-title {
   font-family: "Anton", sans-serif;
 }
@@ -15,11 +11,9 @@
 
 .order-single-container .order .order-shopping-cart {
   padding: 2rem 0;
-  background-color: rgba(255, 0, 0, 0.747);
 }
 
 .order-single-container .order .order-shopping-cart .order-products {
-  background-color: rgba(255, 255, 0, 0.473);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

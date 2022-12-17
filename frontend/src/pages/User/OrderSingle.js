@@ -17,7 +17,13 @@ export function OrderSingle() {
 			axios.get(`/api/user/order/${orderId}`, {
 				headers: { Authorization: `Bearer ${userToken}` }
 			})
-				.then(res => setOrder(res.data.order));
+				.then(res => {
+					if (res.data.order) {
+						setOrder(res.data.order)
+					} else {
+						navigate('/user/orders')
+					}
+				});
 		}
 	}, [])
 
@@ -37,7 +43,9 @@ export function OrderSingle() {
 
 	return (
 		<>
-			{modalToggle && <Modal message={`Biztosan szeretnéd törölni a ${orderId} számú rendelést?`} onApprove={deleteOrder} onDecline={() => setModalToggle(false)} />}
+			{modalToggle && <Modal message={`Biztosan szeretnéd törölni a ${orderId} számú rendelést?`} onApprove={deleteOrder} onDecline={() => setModalToggle(false)}>
+				<p className='message'>Valóban szeretnéd <span className='danger'>törölni</span> a <span className='danger'>{order._id}</span> számú megrendelésed?</p>
+			</Modal>}
 			<div className='order-single-container'>
 				<div className='order'>
 					<h1 className='order-title'>Rendelés azonositó:</h1>
@@ -59,7 +67,7 @@ export function OrderSingle() {
 						})}
 					</div>
 					<div className='order-status'>
-						<h1  className='order-status-title order-title'>Rendelés státuasza</h1>
+						<h1 className='order-status-title order-title'>Rendelés státuasza</h1>
 						<p className='order-status'>{order.state} </p>
 					</div>
 					<button className='delete-order' onClick={() => setModalToggle(true)}>Megrendelés törlése</button>

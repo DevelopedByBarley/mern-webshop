@@ -62,7 +62,7 @@ export function SearchBox() {
           )
           :
           (
-            <BsSearch size={30} onClick={() => { setSearchBoxToggle(true) }} />
+            <BsSearch className='search-icon' size={30} onClick={() => { setSearchBoxToggle(true) }} />
           )
         }
       </div>

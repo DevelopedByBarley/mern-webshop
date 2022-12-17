@@ -3,8 +3,6 @@
 
 
   .order-single-container {
-    background-color: yellow;
-
     .order {
       .order-title {
         font-family: $primaryFont;
@@ -17,9 +15,9 @@
       
       .order-shopping-cart {
         padding: 2rem 0;
-        background-color: rgba(255, 0, 0, 0.747);
+        //background-color: rgba(255, 0, 0, 0.747);
         .order-products {
-          background-color: rgba(255, 255, 0, 0.473);
+         // background-color: rgba(255, 255, 0, 0.473);
           display: flex;
           border-bottom: 1px solid;
 

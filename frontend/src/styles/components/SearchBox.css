@@ -13,6 +13,7 @@
 .searchBox-container .searchBox .close-icon {
   position: relative;
   top: 5px;
+  cursor: pointer;
 }
 
 .searchBox-container .foundProducts {
@@ -56,5 +57,9 @@
   font-family: "Zilla Slab", serif;
   color: black;
   font-size: 1.2rem;
+}
+
+.searchBox-container .search-icon {
+  cursor: pointer;
 }
 /*# sourceMappingURL=SearchBox.css.map */
