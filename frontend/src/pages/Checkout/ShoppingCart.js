@@ -1,9 +1,10 @@
+import '../../styles/pages/Checkout/ShoppingCart.css'
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {BackButton} from '../../components/BackButton'
 import { Spinner } from "../../components/Spinner";
 import PuffLoader from "react-spinners/PuffLoader";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
-import '../../styles/pages/Checkout/ShoppingCart.css'
 
 
 export function ShoppingCart({ shoppingCart, setShoppingCart }) {
@@ -15,7 +16,7 @@ export function ShoppingCart({ shoppingCart, setShoppingCart }) {
     setTimeout(() => {
       setPending(false)
     }, 1200)
-  },[])
+  }, [])
 
 
 
@@ -77,13 +78,14 @@ export function ShoppingCart({ shoppingCart, setShoppingCart }) {
                 })}
               </div>
               <div className="shopping-cart-navigate">
+                
                 <Link to="/checkout/order" className="shopping-cart-link">Tovább a fizetéshez</Link>
-                <Link to='/' className="shopping-cart-link">Vásárlás folytatása!</Link>
               </div>
             </div>
           )}
         </>
       )}
+      <BackButton url={'/'}/>
     </div>
 
   )

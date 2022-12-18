@@ -1,0 +1,15 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.back-button-container {
+  background-color: $primaryBackground;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 70px;
+  left: 20px;
+  transition: $transition;
+  &:hover {
+    transform: scale(1.10);
+  }
+}

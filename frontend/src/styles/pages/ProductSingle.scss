@@ -206,6 +206,9 @@
         }
       }
     }
+    @media(max-width: $tabletBreakPoint) {
+      text-align: center;
+    }
   }
 }
 

@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.back-button-container {
+  background-color: #3a3a3a;
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  bottom: 70px;
+  left: 20px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.back-button-container:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=BackButton.css.map */

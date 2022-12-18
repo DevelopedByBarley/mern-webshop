@@ -39,7 +39,6 @@ const payCardOnline = async (req, res) => {
       mode: "payment",
       line_items: shoppingCart.map(item => {
         const storeItem = storeItems.get(item._id)
-        console.log(storeItem);
         return {
           price_data: {
             currency: "huf",

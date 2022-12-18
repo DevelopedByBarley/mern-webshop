@@ -10,10 +10,8 @@ const protect = asyncHandler(async (req, res, next) => {
     const originalUrl = req.originalUrl.split('/')[2];
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     if (originalUrl === 'admin') {
-      console.log('Admin login successfull!');
       req.admin = await Admin.findById(decoded.id).select('-password')
     } else {
-      console.log('User login successfull!');
       req.user = await User.findById(decoded.id).select('-password')
     }
 

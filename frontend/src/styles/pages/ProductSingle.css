@@ -298,6 +298,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .single-product-container .comments-container {
+    text-align: center;
+  }
+}
+
 @media (min-width: 1366px) {
   .single-product-container .single-product-header {
     display: -ms-grid;

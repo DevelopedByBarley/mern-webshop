@@ -3,6 +3,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { Modal } from '../../components/Modal';
+import { BackButton } from '../../components/BackButton';
 
 export function OrderSingle() {
 	const navigate = useNavigate()
@@ -72,6 +73,7 @@ export function OrderSingle() {
 					</div>
 					<button className='delete-order' onClick={() => setModalToggle(true)}>Megrendelés törlése</button>
 				</div>
+				<BackButton url={"/user/orders"} />
 			</div>
 		</>
 	)

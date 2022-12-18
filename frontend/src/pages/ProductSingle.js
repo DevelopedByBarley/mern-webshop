@@ -11,6 +11,7 @@ import { BsArrowRepeat } from 'react-icons/bs'
 import { IoCloudDone } from 'react-icons/io5'
 import { ProductCard } from '../components/ProductCard';
 import { Comments } from '../components/Comments';
+import { BackButton } from '../components/BackButton';
 
 
 export function ProductSingle({ getProductSingle, user }) {
@@ -113,6 +114,7 @@ export function ProductSingle({ getProductSingle, user }) {
             </div>
           </div>
           <Comments comments={comments} setComments={setComments} product={product} user={user} />
+          <BackButton url={"/"} />
         </div>
       )}
     </>

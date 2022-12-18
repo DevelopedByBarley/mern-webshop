@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { Spinner } from '../../components/Spinner';
 import PuffLoader from "react-spinners/PuffLoader";
 import '../../styles/pages/Checkout/Order.css'
+import { BackButton } from '../../components/BackButton';
 
 export function Order({ user, shoppingCart, setShoppingCart }) {
   const navigate = useNavigate();
@@ -155,7 +156,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         )
       }
 
-
+      <BackButton url={"/checkout/cart"} />
     </div>
   )
 }

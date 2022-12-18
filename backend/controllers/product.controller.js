@@ -42,7 +42,6 @@ const searchProducts = async (req, res) => {
   try {
     const products = await query.exec();
     res.send(products)
-    console.log(products)
   } catch (error) {
     console.log(error)
   }
@@ -51,7 +50,6 @@ const searchProducts = async (req, res) => {
 
 const sameProducts = async (req, res) => {
   const { id, categories, softwareType } = req.body;
-  console.log(id);
   try {
     const sameProducts = await Product.find({
       categories: categories,
@@ -95,7 +93,6 @@ const setProduct = async (req, res) => {
   const fileName = req.file.filename
   const product = JSON.parse(req.body.product);
   const { discount, price } = product
-  console.log(product.platform);
 
 
   try {
@@ -165,11 +162,12 @@ const updateProduct = async (req, res) => {
   try {
     if (req.file) {
       fileName = req.file.filename
-      console.log(fileName);
+
       fs.unlink(`./backend/public/assets/files/${imageNameForDelete}`, function (err) {
         console.log('file deleted successfully');
       });
     }
+
     const newProduct = {
       title: parsedProduct.title,
       relaseDate: parsedProduct.relaseDate,
@@ -186,7 +184,6 @@ const updateProduct = async (req, res) => {
       image: fileName
     }
 
-    console.log(newProduct);
 
     const product = await Product.findByIdAndUpdate({ _id: productId }, newProduct, { new: true });
     res.status(200).json({ product: product, message: "Product is successfully Updated!" })
@@ -227,7 +224,6 @@ const sendComment = async (req, res) => {
 const deleteComment = async (req, res) => {
   const { id, commentId } = req.body
 
-  console.log(id, commentId)
   try {
     await Product.findByIdAndUpdate(
       { _id: id },

@@ -4,8 +4,20 @@ import { useNavigate } from 'react-router-dom';
 export function AddProduct() {
   const navigate = useNavigate();
   const adminToken = localStorage.getItem('adminToken');
+
+
+  // Making embed youtube url from simple share link copy
+  const getEmbedUrl = (event) => {
+    const videoUrl = event.target.elements.video.value;
+    const videoId = videoUrl.split("/")[3];
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`
+    return embedUrl
+  }
+
+
   const addProduct = async (event) => {
     event.preventDefault();
+    const embedUrl = getEmbedUrl(event); 
     const product = {
       title: event.target.elements.title.value,
       relaseDate: event.target.elements.relaseDate.value,
@@ -18,7 +30,7 @@ export function AddProduct() {
       price: event.target.elements.price.value,
       discount: event.target.elements.discount.value,
       description: event.target.elements.description.value,
-      video: event.target.elements.video.value,
+      video: embedUrl,
     }
 
     const file = event.target.elements.imageCover.files[0]
