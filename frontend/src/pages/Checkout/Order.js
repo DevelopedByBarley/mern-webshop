@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Spinner } from '../../components/Spinner';
+import PuffLoader from "react-spinners/PuffLoader";
 import '../../styles/pages/Checkout/Order.css'
 
 export function Order({ user, shoppingCart, setShoppingCart }) {
@@ -31,7 +32,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
     setTimeout(() => {
       setPending(false)
     }, 1200)
-  },[])
+  }, [])
 
 
 
@@ -64,7 +65,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         fullPrice: fullPrice
       })
         .then((res) => {
-          if(res.data.order) {
+          if (res.data.order) {
             navigate('/checkout/order/success');
             setShoppingCart([]);
           } else {
@@ -85,16 +86,16 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
     <div>
       {isPending ?
         (
-          <Spinner />
+          <Spinner color={"#9b3b40"} size={100} SpinnerName={PuffLoader} isFullPage={true} />
         )
         :
         (
           <>
             <div className="order-summary">
               <div className='order-summary-header'>
-                <h1> Rendelés értéke: {new Intl.NumberFormat('hu-HU', { 
-                  maximumSignificantDigits: 3, style: 'currency', currency: 'HUF' 
-                  }).format(fullPrice)}</h1>
+                <h1> Rendelés értéke: {new Intl.NumberFormat('hu-HU', {
+                  maximumSignificantDigits: 3, style: 'currency', currency: 'HUF'
+                }).format(fullPrice)}</h1>
               </div>
               {shoppingCart.map((product) => {
                 return (

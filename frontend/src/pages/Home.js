@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { AdminLoginButton } from "../components/AdminLoginButton";
 import { ProductCard } from "../components/ProductCard";
 import { Spinner } from "../components/Spinner";
+import PuffLoader from "react-spinners/PuffLoader";
 import '../styles/pages/Home.css'
 
 
@@ -41,7 +42,7 @@ export function Home({ getProductSingle }) {
   return (
     <div>
       {isPending ? (
-        <Spinner />
+        <Spinner color={"#9b3b40"} size={100} SpinnerName={PuffLoader} isFullPage={true} />
       )
         :
         (

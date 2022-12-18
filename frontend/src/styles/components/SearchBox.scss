@@ -8,7 +8,7 @@
     animation: fading 0.2s;
     position: relative;
     input {
-      padding: 0.5rem 2.5rem;
+      padding: 0.5rem 4rem;
       font-family: $secondaryFont;
       margin: 0 1rem;
     }
@@ -18,22 +18,31 @@
       top: 5px;
       cursor: pointer;
     }
+
+    @media(max-width: 768px) {
+      text-align: center;
+    }
   }
 
   .foundProducts {
+    text-align: center;
     margin-top: 8px;
     position: absolute;
     left: 0;
     width: 100%;
-    max-width: 700px;
-
+    max-width: 400px;
     background-color: white;
+    margin: 0 auto;
     z-index: 98;
+    .spinner-container {
+      height: 80px;
+      @include displayFlex(flex, center, center, cover);
+    }
     .product-link {
       text-decoration: none;
       .product {
         border-bottom: 0.5px solid gray;
-        padding: 0.5rem 0;
+        padding: 1rem;
         @include displayFlex(flex, center, space-around, row);
         .product-title {
           font-family: $primaryFont;
@@ -47,6 +56,11 @@
           font-size: 1.2rem;
         }
       }
+    }
+
+    @media(max-width: 768px) {
+      width: 100%;
+      max-width: 1000px;
     }
   }
 

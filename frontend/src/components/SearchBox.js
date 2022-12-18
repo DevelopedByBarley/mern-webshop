@@ -5,9 +5,12 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import { BsSearch } from 'react-icons/bs'
+import { Spinner } from './Spinner';
+import ScaleLoader from "react-spinners/ScaleLoader";
 
 export function SearchBox() {
   const [searchBoxToggle, setSearchBoxToggle] = useState(false);
+  const [isPending, setPending] = useState(false)
   const [foundProducts, setFoundProducts] = useState([]);
 
 
@@ -17,15 +20,18 @@ export function SearchBox() {
 
     axios.post('/api/products/searchProducts', {
       title: title
-    })
-      .then((res) => {
-        if (event.target.value.length > 2) {
+    }).then((res) => {
+      setPending(true)
+      if (event.target.value.length > 2) {
+        setTimeout(() => {
           setFoundProducts(res.data)
-        } else {
-          setFoundProducts([])
-        }
-      })
-
+          setPending(false)
+        }, 1200)
+      } else {
+        setFoundProducts([])
+        setPending(false)
+      }
+    })
   }
 
 
@@ -43,18 +49,27 @@ export function SearchBox() {
                 <input type="text" name="title" placeholder='Keresés..' onChange={searchProducts} />
               </div>
               <div className='foundProducts'>
+                {isPending ?
+                  <div className='spinner-container' style={{ textAlign: "center" }}>
+                    <Spinner color={"#9b3b40"} size={40} isFullPage={false} SpinnerName={ScaleLoader} className="spinner" />
+                  </div>
+                  :
+                  (
+                    <>
+                      {foundProducts.map((product) => {
+                        return (
+                          <Link to={`/product-single/${product._id}`} className="product-link">
+                            <div key={product._id} className='product' onClick={() => { setFoundProducts([]); setSearchBoxToggle(false) }}>
+                              <input style={{ height: "40px", width: "40px", borderRadius: "50%", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
+                              <h2 className='product-title'>{product.title}</h2>
+                              <p className='product-price'>{product.price} Ft</p>
+                            </div>
+                          </Link>
+                        )
+                      })}
+                    </>
+                  )}
 
-                {foundProducts.map((product) => {
-                  return (
-                    <Link to={`/product-single/${product._id}`} className="product-link">
-                      <div key={product._id} className='product' onClick={() => { setFoundProducts([]); setSearchBoxToggle(false) }}>
-                        <input style={{ height: "40px", width: "40px", borderRadius: "50%", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
-                        <h2 className='product-title'>{product.title}</h2>
-                        <p className='product-price'>{product.price} Ft</p>
-                      </div>
-                    </Link>
-                  )
-                })}
 
                 {foundProducts.length === 8 && <Link onClick={setFoundProducts([])} to="/error-page">További találatok..</Link>}
               </div>

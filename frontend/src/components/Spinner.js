@@ -1,10 +1,8 @@
-import PuffLoader from "react-spinners/PuffLoader";
 
+export function Spinner({ color, size, isFullPage, SpinnerName }) {
 
-export function Spinner( ) {
-
-  const spinnerStyle =  {
-    height: "100vh",
+  const spinnerStyle = {
+    height: "80vh",
     width: "100%",
     display: "flex",
     alignItems: "center",
@@ -13,10 +11,10 @@ export function Spinner( ) {
   }
 
   return (
-    <div className="spinner" style={spinnerStyle}>
-      <PuffLoader
-        color={"#9b3b40"}
-        size={100}
+    <div className="spinner" style={isFullPage ? spinnerStyle : {}}>
+      <SpinnerName
+        color={color}
+        size={size}
         aria-label="Loading Spinner"
         data-testid="loader"
       />

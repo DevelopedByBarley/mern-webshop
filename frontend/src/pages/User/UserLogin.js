@@ -1,9 +1,11 @@
 import axios from "axios";
 import '../../styles/pages/User/UserLogin.css'
+import ClipLoader from "react-spinners/ClipLoader";
 
 import { useNavigate, Link } from "react-router-dom";
-import { ButtonSpinner } from "../../components/ButtonSpinner";
+
 import { useState } from "react";
+import { Spinner } from "../../components/Spinner";
 
 export function UserLogin({ setUser }) {
   const navigate = useNavigate();
@@ -53,7 +55,7 @@ export function UserLogin({ setUser }) {
         <input type="email" name="email" className="email" /><br />
         <input type="password" name="password" className="password" /><br />
         <button type="submit" className="login-user">
-          {isPending && <ButtonSpinner />}
+          {isPending && <Spinner color={"#9b3b40"} size={34} isFullPage={false} SpinnerName={ClipLoader} />}
           {!isPending && "Bejelentkezés"}
         </button>
 

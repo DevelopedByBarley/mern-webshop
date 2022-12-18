@@ -4,9 +4,10 @@ import moment, { } from 'moment'
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Spinner } from '../components/Spinner';
+import PuffLoader from "react-spinners/PuffLoader";
 import SetShoppingCartButton from '../components/SetShoppingCartButton';
 import { TbTruckDelivery } from 'react-icons/tb';
-import { BsFillTrashFill, BsArrowRepeat } from 'react-icons/bs'
+import { BsArrowRepeat } from 'react-icons/bs'
 import { IoCloudDone } from 'react-icons/io5'
 import { ProductCard } from '../components/ProductCard';
 import { Comments } from '../components/Comments';
@@ -48,7 +49,7 @@ export function ProductSingle({ getProductSingle, user }) {
   return (
     <>
       {isPending ? (
-        <Spinner />
+        <Spinner color={"#9b3b40"} size={100} SpinnerName={PuffLoader} isFullPage={true} />
       ) : (
         <div className='single-product-container'>
           <div className='single-product-header'>
@@ -85,7 +86,7 @@ export function ProductSingle({ getProductSingle, user }) {
               </div>
 
               <div className='single-product-video'>
-                <iframe className='product-video' src={product.video} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe className='product-video' src={product.video} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </div>
           </div>

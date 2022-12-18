@@ -126,6 +126,7 @@
   }
 
   .comments-container {
+    margin: 4rem;
     .comments-title,
     .comment-warning {
       text-align: center;
@@ -222,7 +223,7 @@
         @include displayFlex(flex, flex-start, center, column);
 
         .title {
-          font-size: 4rem;
+          font-size: 2.7rem;
         }
       }
     }

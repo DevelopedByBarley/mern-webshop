@@ -2,7 +2,7 @@
 @import "../../utils/mixins.scss";
 
 .payment-response-container {
-  height: 100vh;
+  height: 80vh;
   padding: 2rem;
   width: 100%;
   @include displayFlex(flex, center, center, column);

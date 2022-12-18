@@ -172,6 +172,10 @@
           transform: scale(1.1);
 }
 
+.single-product-container .comments-container {
+  margin: 4rem;
+}
+
 .single-product-container .comments-container .comments-title,
 .single-product-container .comments-container .comment-warning {
   text-align: center;
@@ -320,7 +324,7 @@
             flex-direction: column;
   }
   .single-product-container .single-product-header .single-product-header-content .title {
-    font-size: 4rem;
+    font-size: 2.7rem;
   }
   .single-product-container .single-product-body-content {
     margin-bottom: 2rem;

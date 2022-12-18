@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Spinner } from "../../components/Spinner";
+import PuffLoader from "react-spinners/PuffLoader";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
 import '../../styles/pages/Checkout/ShoppingCart.css'
 
@@ -45,7 +46,7 @@ export function ShoppingCart({ shoppingCart, setShoppingCart }) {
   return (
 
     <div className="shopping-cart-container">
-      {isPending ? (<Spinner />) : (
+      {isPending ? (<Spinner color={"#9b3b40"} size={100} SpinnerName={PuffLoader} isFullPage={true} />) : (
         <>
           {shoppingCart.length === 0 ? (
             <div className="shopping-cart-empty">
