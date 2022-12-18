@@ -17,7 +17,7 @@
   border-bottom: 1px solid gray;
   margin-bottom: 0.5rem;
   width: 100%;
-  text-align: left;
+  text-align: center;
 }
 
 .single-product-container .single-product-header .single-product-header-content .isInStock {
@@ -331,6 +331,7 @@
   }
   .single-product-container .single-product-header .single-product-header-content .title {
     font-size: 2.7rem;
+    text-align: left;
   }
   .single-product-container .single-product-body-content {
     margin-bottom: 2rem;

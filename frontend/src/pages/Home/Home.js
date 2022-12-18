@@ -1,10 +1,10 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { AdminLoginButton } from "../components/AdminLoginButton";
-import { ProductCard } from "../components/ProductCard";
-import { Spinner } from "../components/Spinner";
+import { AdminLoginButton } from "../../components/AdminLoginButton";
+import { ProductCard } from "../../components/ProductCard";
+import { Spinner } from "../../components/Spinner";
 import PuffLoader from "react-spinners/PuffLoader";
-import '../styles/pages/Home.css'
+import '../../styles/pages/Home/Home.css'
 
 
 

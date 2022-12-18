@@ -23,4 +23,28 @@
   text-decoration: none;
   font-family: $secondaryFont;
   font-weight: bolder;
-}
+};
+
+
+@mixin phoneOnly {
+  @media (max-width: 768px) {
+    @content
+  }
+};
+
+@mixin  forTablet{
+  @media (min-width: 768px) {
+    @content
+  }
+};
+@mixin  forLaptop{
+  @media (min-width: 1366px) {
+    @content
+  }
+};
+@mixin forDesktop{
+  @media (min-width: 1920px) {
+    @content
+  }
+};
+

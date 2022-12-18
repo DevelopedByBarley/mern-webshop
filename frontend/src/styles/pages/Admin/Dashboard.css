@@ -4,11 +4,7 @@
   display: -ms-grid;
   display: grid;
   padding: 2rem;
-  grid-gap: .5rem;
-}
-
-.products-container .product-card {
-  border: 1px solid;
+  grid-gap: 0.5rem;
 }
 
 @media (min-width: 768px) {
@@ -16,5 +12,16 @@
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
+}
+
+@media (min-width: 1366px) {
+  .products-container {
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.products-container .product-card {
+  border: 1px solid;
 }
 /*# sourceMappingURL=Dashboard.css.map */

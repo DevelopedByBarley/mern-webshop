@@ -101,7 +101,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
               {shoppingCart.map((product) => {
                 return (
                   <div className='order-products' key={product._id}>
-                    <input style={{ height: "150px", width: "150px", borderRadius: "50%", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
+                    <input style={{ height: "75px", width: "75px", borderRadius: "50%", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
                     <h1 className='product-title'>{product.title}</h1>
                     <h1 className='product-price'>{product.price} Ft</h1>
                   </div>

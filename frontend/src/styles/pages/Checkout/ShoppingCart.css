@@ -58,25 +58,6 @@
   padding: 2rem 0.2rem;
 }
 
-.shopping-cart-container .cart .shopping-cart-header h1 {
-  font-family: "Anton", sans-serif;
-  font-size: 2.5rem;
-}
-
-.shopping-cart-container .cart .shopping-cart-header .clear-cart {
-  padding: 0.8rem 2rem;
-  border-radius: 10px;
-  margin: 1.2rem 0;
-  border: none;
-  background-color: #3a3a3a;
-  color: white;
-  cursor: pointer;
-  -webkit-transition: all 0.4s ease-in-out;
-  transition: all 0.4s ease-in-out;
-  font-family: #3a3a3a;
-  font-weight: bolder;
-}
-
 @media (min-width: 768px) {
   .shopping-cart-container .cart .shopping-cart-header {
     display: -webkit-box;
@@ -97,6 +78,25 @@
   }
 }
 
+.shopping-cart-container .cart .shopping-cart-header h1 {
+  font-family: "Anton", sans-serif;
+  font-size: 2.5rem;
+}
+
+.shopping-cart-container .cart .shopping-cart-header .clear-cart {
+  padding: 0.8rem 2rem;
+  border-radius: 10px;
+  margin: 1.2rem 0;
+  border: none;
+  background-color: #3a3a3a;
+  color: white;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  font-family: #3a3a3a;
+  font-weight: bolder;
+}
+
 .shopping-cart-container .cart .shopping-cart-products .shopping-products-card {
   border-bottom: 1px solid;
   display: -webkit-box;
@@ -113,6 +113,20 @@
       -ms-flex-direction: column;
           flex-direction: column;
   margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .shopping-cart-container .cart .shopping-cart-products .shopping-products-card {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .delete-cart-item, .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .product-title, .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .product-price {
+    margin: 0 2rem;
+  }
 }
 
 .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .delete-cart-item {
@@ -142,20 +156,6 @@
 .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .product-price {
   font-size: 1.3rem;
   font-weight: bolder;
-}
-
-@media (min-width: 768px) {
-  .shopping-cart-container .cart .shopping-cart-products .shopping-products-card {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    margin: 2rem auto;
-    padding: 2rem;
-  }
-  .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .delete-cart-item, .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .product-title, .shopping-cart-container .cart .shopping-cart-products .shopping-products-card .product-price {
-    margin: 0 2rem;
-  }
 }
 
 .shopping-cart-container .cart .shopping-cart-navigate {

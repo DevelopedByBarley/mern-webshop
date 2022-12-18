@@ -9,14 +9,19 @@
     font-family: $secondaryFont;
     font-size: 2.5rem;
     margin: 1.5rem;
+    text-align: center;
   }
 
   .user-orders {
     display: grid;
     grid-gap: 0.5rem;
-    @media (min-width: $tabletBreakPoint) {
+
+    //USER-ORDER-STABLET-STYLES
+
+    @include forTablet {
       grid-template-columns: repeat(5, 1fr);
     }
+
 
     .link {
       text-decoration: none;
@@ -32,12 +37,17 @@
         & :where(h3) {
           font-family: $secondaryFont;
           font-weight: bolder;
-          margin-top: .4rem;
+          margin-top: 0.4rem;
         }
         hr {
           margin: 1rem 0;
         }
       }
-    } 
+    }
+  }
+
+  .no-orders-title {
+    font-family: $secondaryFont;
+    text-align: center;
   }
 }

@@ -33,6 +33,14 @@
       @include displayFlex(flex, center, center, column);
       padding: 2rem 0.2rem;
 
+
+      // SHOPPING-CRAT-HEADER-TABLET-STYLES
+      @include forTablet{
+        @include displayFlex(flex, center, space-between, row);
+        width: 70%;
+        margin: 0 auto;
+      }
+
       h1 {
         font-family: $primaryFont;
         font-size: 2.5rem;
@@ -43,19 +51,22 @@
       }
     }
 
-    @media (min-width: $tabletBreakPoint) {
-      .shopping-cart-header {
-        @include displayFlex(flex, center, space-between, row);
-        width: 70%;
-        margin: 0 auto;
-      }
-    }
-
     .shopping-cart-products {
       .shopping-products-card {
         border-bottom: 1px solid;
         @include displayFlex(flex, center, center, column);
         margin: 1rem;
+
+        //SHOPPING-PRODUCTS-CARD-TABLET-STYLES
+        @include forTablet {
+          flex-direction: row;
+          margin: 2rem auto;
+          padding: 2rem;
+
+          .delete-cart-item, .product-title, .product-price {
+            margin: 0 2rem;
+          }
+        }
 
         .delete-cart-item {
           cursor: pointer;
@@ -84,19 +95,6 @@
         .product-price {
           font-size: 1.3rem;
           font-weight: bolder;
-        }
-      }
-
-      @media(min-width: $tabletBreakPoint) {
-        .shopping-products-card {
-          flex-direction: row;
-          margin: 2rem auto;
-          padding: 2rem;
-
-          .delete-cart-item, .product-title, .product-price {
-            margin: 0 2rem;
-          }
-
         }
       }
     }

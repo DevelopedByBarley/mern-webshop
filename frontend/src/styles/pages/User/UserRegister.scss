@@ -5,7 +5,7 @@
   height: 100vh;
   width: 100%;
   @include displayFlex(flex, center, center, column);
-  
+
   .register-user-title {
     font-size: 4rem;
     color: $primaryBackground;
@@ -13,22 +13,21 @@
     font-weight: bolder;
     margin: 2rem 0;
   }
-  
+
   form {
     width: 100%;
     text-align: center;
-    
+
     input {
       border-radius: 3px;
       padding: 1rem;
       width: 80%;
-      margin: .5rem auto;
+      margin: 0.5rem auto;
       transition: $transition;
       border: none;
-    }
 
-    @media(min-width: $tabletBreakPoint) {
-      input {
+      //USER-REGISTER-INPUT-TABLET-STYLES
+      @include forTablet {
         width: 30%;
       }
     }

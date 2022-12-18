@@ -1,5 +1,5 @@
-@import "../utils/variables";
-@import "../utils/mixins";
+@import "../../utils/variables";
+@import "../../utils/mixins";
 
 .single-product-container {
   .single-product-header {
@@ -19,7 +19,7 @@
         border-bottom: 1px solid gray;
         margin-bottom: 0.5rem;
         width: 100%;
-        text-align: left;
+        text-align: center;
       }
       .isInStock {
         font-family: $secondaryFont;
@@ -227,6 +227,7 @@
 
         .title {
           font-size: 2.7rem;
+          text-align: left;
         }
       }
     }

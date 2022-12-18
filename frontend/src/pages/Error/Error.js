@@ -1,6 +1,6 @@
-import '../../styles/pages/ComingSoon.css'
+import '../../styles/pages/Error/Error.css'
 
-export function ComingSoon() {
+export function Error() {
   return (
     <div className="error-container">
       <div className="error-title">

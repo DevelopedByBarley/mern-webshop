@@ -25,17 +25,9 @@
   padding: 1rem;
 }
 
-.order-summary .order-products .product-title {
-  font-family: "Anton", sans-serif;
-}
-
-.order-summary .order-products .product-price {
-  font-family: "Zilla Slab", serif;
-}
-
-@media (min-width: 768px) {
+@media (min-width: 1366px) {
   .order-summary .order-products {
-    width: 50%;
+    width: 35%;
     margin: 2rem auto;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -50,6 +42,20 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
+}
+
+@media (min-width: 1920px) {
+  .order-summary .order-products {
+    width: 25%;
+  }
+}
+
+.order-summary .order-products .product-title {
+  font-family: "Anton", sans-serif;
+}
+
+.order-summary .order-products .product-price {
+  font-family: "Zilla Slab", serif;
 }
 
 .send-order {

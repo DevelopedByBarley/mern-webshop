@@ -10,6 +10,12 @@
   position: relative;
 }
 
+@media (max-width: 768px) {
+  .searchBox-container .searchBox {
+    text-align: center;
+  }
+}
+
 .searchBox-container .searchBox input {
   padding: 0.5rem 4rem;
   font-family: "Zilla Slab", serif;
@@ -20,12 +26,6 @@
   position: relative;
   top: 5px;
   cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .searchBox-container .searchBox {
-    text-align: center;
-  }
 }
 
 .searchBox-container .foundProducts {

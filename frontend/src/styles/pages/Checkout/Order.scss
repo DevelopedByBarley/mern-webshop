@@ -9,6 +9,17 @@
     margin: 1rem;
   }
   .order-products {
+
+    @include forLaptop {
+      width: 35%;
+      margin: 2rem auto;
+      @include displayFlex(flex, center, space-around, row);
+    }
+
+    @include forDesktop {
+      width: 25%;
+    }
+
     @include displayFlex(flex, center, center, column);
     border-bottom: 1px solid;
     margin: 1rem;
@@ -23,13 +34,7 @@
     }
   }
 
-  @media (min-width: $tabletBreakPoint) {
-    .order-products {
-      width: 50%;
-      margin: 2rem auto;
-      @include displayFlex(flex, center, space-around, row);
-    }
-  }
+
 }
 
 .send-order {
@@ -43,13 +48,14 @@
     margin: 1rem auto;
     font-family: $secondaryFont;
     color: rgb(37, 114, 37);
-  }
 
-  @media (min-width: $tabletBreakPoint) {
-    input {
+    // SEND-ORDER-INPUT-TABLET-STYLES
+    @include forTablet{
       width: 30%;
     }
   }
+
+
 
   label {
     font-family: $secondaryFont;

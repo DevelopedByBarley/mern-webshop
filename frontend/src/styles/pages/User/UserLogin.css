@@ -40,14 +40,14 @@
   transition: all 0.4s ease-in-out;
 }
 
-.user-login-container form .login-user:hover {
-  background-color: green;
-}
-
 @media (min-width: 768px) {
   .user-login-container form input {
     width: 30%;
   }
+}
+
+.user-login-container form .login-user:hover {
+  background-color: green;
 }
 
 .user-login-container form .login-user {

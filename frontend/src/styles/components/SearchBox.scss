@@ -7,6 +7,11 @@
   .searchBox {
     animation: fading 0.2s;
     position: relative;
+    //SEARCHNOX-PHONE-ONLY-STYLES
+    @include phoneOnly{
+      text-align: center;
+    }
+    
     input {
       padding: 0.5rem 4rem;
       font-family: $secondaryFont;
@@ -18,10 +23,7 @@
       top: 5px;
       cursor: pointer;
     }
-
-    @media(max-width: 768px) {
-      text-align: center;
-    }
+    
   }
 
   .foundProducts {

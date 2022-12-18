@@ -1,5 +1,5 @@
-@import "../utils/variables";
-@import "../utils/mixins";
+@import "../../utils/variables";
+@import "../../utils/mixins";
 
 .home-container {
   width: 100%;
@@ -16,19 +16,24 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 1rem;
 
-    @media (min-width: $tabletBreakPoint) {
+    //PRODUCT-TABLET-STYLES
+    @include forTablet {
       display: grid;
       grid-gap: 1.5rem;
       grid-template-columns: repeat(3, 1fr);
     }
-    @media (min-width: 1366px) {
+
+    //PRODUCT-LAPTOP-STYLES
+    @include forLaptop {
       grid-template-columns: repeat(5, 1fr);
     }
   }
 
   .gaming-consoles-container {
     .gaming-consoles {
-      @media (min-width: $tabletBreakPoint) {
+
+      //--gaming-console tablet styles--
+      @include forTablet { 
         display: grid;
         grid-gap: 1rem;
         grid-template-columns: repeat(9, 1fr);

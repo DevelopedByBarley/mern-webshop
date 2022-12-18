@@ -1,0 +1,23 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+
+.products-container {
+  background-color: red;
+  display: grid;
+  padding: 2rem;
+  grid-gap: 0.5rem;
+
+  //PRODUCT-CONTAINER-TABLET-STYLES
+  @include forTablet {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  //PRODUCT-CONTAINER-LAPTOP-STYLES
+  @include forLaptop {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .product-card {
+    border: 1px solid;
+  }
+}

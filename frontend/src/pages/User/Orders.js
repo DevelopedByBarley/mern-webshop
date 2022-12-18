@@ -23,32 +23,38 @@ export function Orders() {
   return (
     <div className='user-orders-container'>
       <h1 className='user-orders-title'>Korábbi rendelések</h1>
-      <div className='user-orders'>
-        {ordersOufUsers.map((order) => {
-          return (
-            <Link className="link" to={`/user/order/${order._id}`} >
-              <div className='order'>
+      {ordersOufUsers.length > 0? (
+        <div className='user-orders'>
+          {ordersOufUsers.map((order) => {
+            return (
+              <Link className="link" to={`/user/order/${order._id}`} >
+                <div className='order'>
 
-                <h1 className='order-title'>Rendelés azonosító:</h1>
-                <p className='order-id'>{order._id}</p>
-                <hr />
-                <div className='order-payment-type order-data'>
-                  <h3>Fizetés módja:</h3>
-                  <p>{order.paymentType}</p>
+                  <h1 className='order-title'>Rendelés azonosító:</h1>
+                  <p className='order-id'>{order._id}</p>
+                  <hr />
+                  <div className='order-payment-type order-data'>
+                    <h3>Fizetés módja:</h3>
+                    <p>{order.paymentType}</p>
+                  </div>
+                  <div className='order-delivery-type'>
+                    <h3>Kiszállitás módja:</h3>
+                    <p>{order.shippingType}</p>
+                  </div>
+                  <div className='order-status'>
+                    <h3>Rendelés státusza:</h3>
+                    <p>{order.state}</p>
+                  </div>
                 </div>
-                <div className='order-delivery-type'>
-                  <h3>Kiszállitás módja:</h3>
-                  <p>{order.shippingType}</p>
-                </div>
-                <div className='order-status'>
-                  <h3>Rendelés státusza:</h3>
-                  <p>{order.state}</p>
-                </div>
-              </div>
-            </Link>
-          )
-        })}
-      </div>
+              </Link>
+            )
+          })}
+        </div>
+      ) : (
+        <div className='no-orders-title'>
+          <h1>Jelenleg nincs egyetlen rögzitett rendelésed sem!</h1>
+        </div>
+      )}
       <BackButton url={"/"} />
     </div>
   )

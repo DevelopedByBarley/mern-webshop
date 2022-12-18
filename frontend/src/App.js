@@ -6,18 +6,18 @@ import { useEffect, useState } from 'react';
 import { Nav } from './components/Nav';
 import { AdminLogin } from './pages/Admin/AdminLogin';
 import { Dashboard } from './pages/Admin/Dashboard';
-import { Home } from './pages/Home';
+import { Home } from './pages/Home/Home';
 import { UserRegister } from './pages/User/UserRegister';
 import { UserLogin } from './pages/User/UserLogin';
 import { AddProduct } from './pages/Admin/AddProduct';
 import { UpdateProduct } from './pages/Admin/UpdateProduct';
-import { ProductSingle } from './pages/ProductSingle';
+import { ProductSingle } from './pages/Product/ProductSingle';
 import { ShoppingCart } from './pages/Checkout/ShoppingCart';
 import { Order } from './pages/Checkout/Order';
-import { ComingSoon } from './pages/Error/ComingSoon';
-import {Success} from './pages/Checkout/Success';
-import {Cancel} from './pages/Checkout/Cancel';
-import {Oders, Orders} from './pages/User/Orders';
+import { Error } from './pages/Error/Error';
+import { Success } from './pages/Checkout/Success';
+import { Cancel } from './pages/Checkout/Cancel';
+import { Orders } from './pages/User/Orders';
 import { OrderSingle } from './pages/User/OrderSingle';
 
 
@@ -76,7 +76,7 @@ function App() {
       <Nav shoppingCart={shoppingCart} user={user} setUser={setUser} />
 
       <Routes>
-        <Route path='/error-page' element={<ComingSoon />} />
+        <Route path='/error-page' element={<Error />} />
         <Route path='/checkout/order/success' element={<Success />} />
         <Route path='/checkout/order/cancel' element={<Cancel />} />
         <Route path='/' element={<Home getProductSingle={getProductSingle} setShoppingCart={setShoppingCart} user={user} />} />
@@ -90,8 +90,8 @@ function App() {
         <Route path='/user-register' element={<UserRegister />} />
         <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
         <Route path='/user' element={"user account"} />
-        <Route path='/user/orders' element={<Orders /> } />
-        <Route path='/user/order/:orderId' element={<OrderSingle /> } />
+        <Route path='/user/orders' element={<Orders />} />
+        <Route path='/user/order/:orderId' element={<OrderSingle />} />
       </Routes>
     </div>
 

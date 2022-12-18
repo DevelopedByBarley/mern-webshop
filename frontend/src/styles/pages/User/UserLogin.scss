@@ -11,7 +11,6 @@
     color: $primaryBackground;
     font-family: $primaryFont;
     font-weight: bolder;
-
   }
 
   form {
@@ -25,18 +24,17 @@
       margin: 0.5rem;
       width: 100%;
       transition: $transition;
+
+      //USER-LOGIN-FORM-INPUT-TABLET-STYLES
+      @include forTablet {
+        width: 30%;
+      }
     }
 
     .login-user:hover {
       background-color: green;
     }
-
-
-    @media(min-width: $tabletBreakPoint) {
-      input {
-        width: 30%;
-      }
-    }
+    
     .login-user {
       @include grayButton();
     }
@@ -46,5 +44,3 @@
     }
   }
 }
-
-
