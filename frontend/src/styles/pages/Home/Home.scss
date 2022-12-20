@@ -4,17 +4,16 @@
 .home-container {
   width: 100%;
 
-  @include forLaptop{
+  @include forLaptop {
     padding: 2rem;
-
   }
 
   .ads-container {
     min-height: 60vh;
     display: grid;
-    margin-bottom: 1rem;
     grid-gap: 1rem;
-    
+    margin-bottom: 5rem;
+
     @include forLaptop {
       grid-gap: 0;
     }
@@ -22,7 +21,7 @@
     .ads {
       min-height: 350px;
       border: 1px solid;
-      @include displayFlex(flex, center, center, column); 
+      @include displayFlex(flex, center, center, column);
       position: relative;
       overflow: hidden;
 
@@ -32,7 +31,7 @@
         height: 100%;
         transition: $transition;
       }
-      
+
       .content {
         background-color: rgba(0, 0, 0, 0.397);
         text-align: center;
@@ -42,12 +41,11 @@
         width: 100%;
         overflow: hidden;
         transition: $transition;
-        @include displayFlex(flex,center,center,column);
+        @include displayFlex(flex, center, center, column);
         .title {
           font-family: $primaryFont;
           color: rgb(231, 231, 231);
         }
-        
       }
 
       &:hover .content {
@@ -58,15 +56,13 @@
         transform: scale(1.1);
         filter: blur(1);
       }
-
-
     }
 
     @include forLaptop {
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: repeat(11, 1fr);
       width: 100%;
-      margin: 0 auto 5rem auto;
+      margin: 5rem auto 5rem auto;
 
       :nth-child(1) {
         grid-column: 1 / 5;
@@ -87,6 +83,57 @@
       :nth-child(5) {
         grid-column: 5 / 7;
         grid-row: 6 / 11;
+      }
+    }
+  }
+
+  .fast-info-container {
+    display: grid;
+    grid-gap: 0.5rem;
+    overflow: hidden;
+    margin: 0rem 1rem 5rem 1rem;
+  
+
+    @include forLaptop {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .fast-info-card {
+      @include displayFlex(flex, center, center, column);
+      border: 1px solid;
+      min-height: 250px;
+      position: relative;
+      overflow: hidden;
+      .icons {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        background-color: $primaryBackground;
+        @include displayFlex(flex, center, center, column);
+        transition: $transition;
+      }
+
+      .content {
+        background-color: rgb(0, 162, 255);
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        @include displayFlex(flex, center, center, column);
+        left: -100%;
+        transition: $transition;
+
+        .title {
+          color: white;
+          font-family: $primaryFont;
+        }
+      }
+
+      &:hover .content {
+        left: 0;
+      }
+
+      &:hover .icons {
+        transform: translate(100%);
       }
     }
   }

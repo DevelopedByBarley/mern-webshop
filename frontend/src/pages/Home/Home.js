@@ -1,10 +1,7 @@
 import axios from "axios"
-import ps5 from '../../assets/ps5.jpg'
-import unbound from '../../assets/unbound.jpg'
-import RogPhone from '../../assets/RogPhone.jpg'
-import FallenOrder from '../../assets/FallenOrder.jpg'
-import GamePass from '../../assets/GamePass.jpg'
-
+import { TbTruckDelivery } from 'react-icons/tb'
+import { BsBagCheck } from 'react-icons/bs'
+import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { useEffect, useState } from "react"
 import { AdminLoginButton } from "../../components/AdminLoginButton";
 import { ProductCard } from "../../components/ProductCard";
@@ -56,37 +53,67 @@ export function Home({ getProductSingle }) {
 
             <div className="ads-container">
               <div className="ads">
-                <div className="bg-image" style={{ background: `url(${FallenOrder})  center center`, backgroundSize: "cover" }}></div>
+                <div className="bg-image" style={{ background: `url(https://i.imgur.com/to5Zw8l.jpg)  center center`, backgroundSize: "cover" }}></div>
                 <div className="content">
                   <h2 className="title">Nagyszerű leárazás a Star Wars Jedi Fallen Order játékra!</h2>
                 </div>
               </div>
               <div className="ads">
-                <div className="bg-image" style={{ background: `url(${unbound})1px center`, backgroundSize: "cover" }}></div>
+                <div className="bg-image" style={{ background: `url(https://i.imgur.com/l809yPd.png)1px center`, backgroundSize: "cover" }}></div>
                 <div className="content">
                   <h2 className="title">Need for Speed Unbound megvásárolható!</h2>
                 </div>
               </div>
               <div className="ads">
-                <div className="bg-image" style={{ background: `url(${ps5}) center center`, backgroundSize: "cover" }}></div>
+                <div className="bg-image" style={{ background: `url(https://i.imgur.com/WJHYtW6.jpg) center center`, backgroundSize: "cover" }}></div>
                 <div className="content">
                   <h2 className="title">Újra megvásárolható PS4 Konzol!</h2>
                   <h2 className="title">Rendeld meg most!</h2>
                 </div>
               </div>
               <div className="ads">
-                <div className="bg-image" style={{ background: `url(${RogPhone})  center center`, backgroundSize: "cover" }}></div>
+                <div className="bg-image" style={{ background: `url(https://i.imgur.com/H2q3RPO.jpg)  center center`, backgroundSize: "cover" }}></div>
                 <div className="content">
                   <h2 className="title">A telefon egy Gamer PC teljesitményével a zsebedben!</h2>
                 </div>
               </div>
               <div className="ads">
-                <div className="bg-image" style={{ backgroundImage: `url(${GamePass} )`, backgroundSize: "cover" }}></div>
+                <div className="bg-image" style={{ backgroundImage: `url(https://i.imgur.com/eqd3iWX.jpg )`, backgroundSize: "cover" }}></div>
                 <div className="content">
                   <h2 className="title">Xbox Game Pass 1 hónapos tagság!</h2>
                 </div>
               </div>
             </div>
+
+
+            <div className="fast-info-container">
+              <div className="fast-info-card">
+                <div className="icons">
+                  <AiOutlineDollarCircle size={80} className="icon"  color={"white"}/>
+                </div>
+                <div className="content" >
+                  <h1 className="title">Ingyenes szállitás!</h1>
+                </div>
+              </div>
+              <div className="fast-info-card">
+                <div className="icons">
+                  <BsBagCheck size={80} className="icon"  color={"white"}/>
+                </div>
+                <div className="content">
+                  <h1 className="title">Gyors vásárlás!</h1>
+                </div>
+              </div>
+              <div className="fast-info-card">
+                <div className="icons">
+                  <TbTruckDelivery size={80} className="icon"  color={"white"}/>
+                </div>
+                <div className="content">
+                  <h1 className="title">Kiszállitás akár 1 napon belül!</h1>
+                </div>
+              </div>
+            </div>
+
+
 
             <div className="discount-products-container">
               <h1 className="discount-products-title products-title">Kiemelt ajánlataink</h1>
@@ -104,7 +131,7 @@ export function Home({ getProductSingle }) {
               <div className="latest-products products">
                 {latestProducts.map((product) => {
                   return (
-                    <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
+                    <ProductCard key={product._id} product={product} getProductSingle={getProductSingle}/>
                   )
                 })}
               </div>

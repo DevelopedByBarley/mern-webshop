@@ -13,8 +13,8 @@
   min-height: 60vh;
   display: -ms-grid;
   display: grid;
-  margin-bottom: 1rem;
   grid-gap: 1rem;
+  margin-bottom: 5rem;
 }
 
 @media (min-width: 1366px) {
@@ -99,7 +99,7 @@
     -ms-grid-rows: (1fr)[11];
         grid-template-rows: repeat(11, 1fr);
     width: 100%;
-    margin: 0 auto 5rem auto;
+    margin: 5rem auto 5rem auto;
   }
   .home-container .ads-container :nth-child(1) {
     -ms-grid-column: 1;
@@ -141,6 +141,100 @@
     -ms-grid-row-span: 5;
     grid-row: 6 / 11;
   }
+}
+
+.home-container .fast-info-container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 0.5rem;
+  overflow: hidden;
+  margin: 0rem 1rem 5rem 1rem;
+}
+
+@media (min-width: 1366px) {
+  .home-container .fast-info-container {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.home-container .fast-info-container .fast-info-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 1px solid;
+  min-height: 250px;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-container .fast-info-container .fast-info-card .icons {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #3a3a3a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.home-container .fast-info-container .fast-info-card .content {
+  background-color: #00a2ff;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  left: -100%;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.home-container .fast-info-container .fast-info-card .content .title {
+  color: white;
+  font-family: "Anton", sans-serif;
+}
+
+.home-container .fast-info-container .fast-info-card:hover .content {
+  left: 0;
+}
+
+.home-container .fast-info-container .fast-info-card:hover .icons {
+  -webkit-transform: translate(100%);
+          transform: translate(100%);
 }
 
 .home-container .products-title {
