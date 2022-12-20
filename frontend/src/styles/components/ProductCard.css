@@ -6,6 +6,7 @@
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   margin-bottom: 1.5rem;
+  background-color: white;
 }
 
 .product-card .product-card-link {

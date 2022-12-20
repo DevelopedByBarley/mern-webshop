@@ -35,7 +35,7 @@ const orderSchema = new Schema({
   fullPrice: {type: String, require: true},
   state: {
     type: String,
-    default: "under process"
+    default: "Feldolgozás alatt"
   }
 }, { timestamps: true })
 

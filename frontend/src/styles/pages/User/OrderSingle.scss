@@ -1,33 +1,86 @@
 @import "../../utils/variables.scss";
 @import "../../utils/mixins.scss";
 
+.order-single-container {
+  margin: 0.4rem;
 
-  .order-single-container {
-    .order {
-      .order-title {
-        font-family: $primaryFont;
-      }
-      .order-id {
-        font-family: $secondaryFont;
-        font-size: 1.2rem;
-        margin-bottom: 1rem;
-      }
-      
-      .order-shopping-cart {
-        padding: 2rem 0;
-        //background-color: rgba(255, 0, 0, 0.747);
-        .order-products {
-         // background-color: rgba(255, 255, 0, 0.473);
-          display: flex;
-          border-bottom: 1px solid;
+  @include forLaptop {
+    min-height: 85vh;
+    @include displayFlex(flex, center, center, column);
+  }
+  .order {
+    @include forLaptop {
+      width: 60%;
+    }
+    .order-title {
+      font-size: 2.5rem;
+      font-family: $primaryFont;
+    }
+    .order-id {
+      font-family: $secondaryFont;
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      font-weight: bolder;
+    }
+    .order-price {
+      font-family: $secondaryFont;
+      font-size: 1.5rem;
+      font-weight: bolder;
+    }
 
-          .product-img {
-            height: 80;
-            width: 80px;
+    .order-shopping-cart {
+      padding: 2rem 0;
+      //background-color: rgba(255, 0, 0, 0.747);
+      margin: 2rem 0;
+      .order-products {
+        //  background-color: rgba(255, 255, 0, 0.473);
+        display: flex;
+        border-bottom: 1px solid;
+        margin: 1rem 0;
+
+        .product-img {
+          height: 80px;
+          width: 80px;
+          border-radius: 50%;
+        }
+
+        .product-data {
+          // background-color: rgba(0, 128, 0, 0.247);
+          margin: 0.5rem 1rem;
+
+          .title {
+            font-family: $primaryFont;
+            text-align: center;
+          }
+
+          & :where(.discount, .price) {
+            font-family: $secondaryFont;
+            font-size: 1.2rem;
+            margin: 0.5rem 1rem;
           }
         }
       }
+    }
+    .order-status {
+      .state {
+        font-family: $secondaryFont;
+        font-size: 1.4rem;
+        font-weight: bolder;
+        background-color: rgb(212, 76, 140);
+        color: white;
+        width: max-content;
+        padding: 0.5rem 2rem;
+      }
+    }
 
+    .delete-button {
+      text-align: center;
+      .delete-order {
+        @include grayButton();
+        &:hover {
+          background-color: red;
+        }
+      }
     }
   }
-
+}

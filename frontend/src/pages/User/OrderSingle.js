@@ -52,26 +52,28 @@ export function OrderSingle() {
 					<h1 className='order-title'>Rendelés azonositó:</h1>
 					<p className='order-id'>{order._id}</p>
 					<h1 className='full-price-title order-title'>Rendelés teljes összege:</h1>
-					<p>{order.fullPrice} Ft</p>
+					<p className='order-price'>{order.fullPrice} Ft</p>
 					<div className='order-shopping-cart'>
 						{order.shoppingCart?.map((product) => {
 							return (
 								<div key={product._id} className='order-products'>
 									<img src={`/assets/files/${product.image}`} className="product-img" />
 									<div className='product-data'>
-										<h1 className='product-title'>{product.title}</h1>
-										<p className='product-price'>-{product.discount}%</p>
-										<p className='product-price'>{product.price} Ft</p>
+										<h1 className='title'>{product.title}</h1>
+										<p className='discount'>-{product.discount}%</p>
+										<p className='price'>{product.price} Ft</p>
 									</div>
 								</div>
 							)
 						})}
 					</div>
 					<div className='order-status'>
-						<h1 className='order-status-title order-title'>Rendelés státuasza</h1>
-						<p className='order-status'>{order.state} </p>
+						<h1 className='order-status-title order-title'>Rendelés státusza</h1>
+						<p className='state'>{order.state} </p>
 					</div>
+					<div className='delete-button'>
 					<button className='delete-order' onClick={() => setModalToggle(true)}>Megrendelés törlése</button>
+					</div>
 				</div>
 				<BackButton url={"/user/orders"} />
 			</div>

@@ -1,4 +1,10 @@
 import axios from "axios"
+import ps5 from '../../assets/ps5.jpg'
+import unbound from '../../assets/unbound.jpg'
+import RogPhone from '../../assets/RogPhone.jpg'
+import FallenOrder from '../../assets/FallenOrder.jpg'
+import GamePass from '../../assets/GamePass.jpg'
+
 import { useEffect, useState } from "react"
 import { AdminLoginButton } from "../../components/AdminLoginButton";
 import { ProductCard } from "../../components/ProductCard";
@@ -47,6 +53,41 @@ export function Home({ getProductSingle }) {
         :
         (
           <div className="home-container">
+
+            <div className="ads-container">
+              <div className="ads">
+                <div className="bg-image" style={{ background: `url(${FallenOrder})  center center`, backgroundSize: "cover" }}></div>
+                <div className="content">
+                  <h2 className="title">Nagyszerű leárazás a Star Wars Jedi Fallen Order játékra!</h2>
+                </div>
+              </div>
+              <div className="ads">
+                <div className="bg-image" style={{ background: `url(${unbound})1px center`, backgroundSize: "cover" }}></div>
+                <div className="content">
+                  <h2 className="title">Need for Speed Unbound megvásárolható!</h2>
+                </div>
+              </div>
+              <div className="ads">
+                <div className="bg-image" style={{ background: `url(${ps5}) center center`, backgroundSize: "cover" }}></div>
+                <div className="content">
+                  <h2 className="title">Újra megvásárolható PS4 Konzol!</h2>
+                  <h2 className="title">Rendeld meg most!</h2>
+                </div>
+              </div>
+              <div className="ads">
+                <div className="bg-image" style={{ background: `url(${RogPhone})  center center`, backgroundSize: "cover" }}></div>
+                <div className="content">
+                  <h2 className="title">A telefon egy Gamer PC teljesitményével a zsebedben!</h2>
+                </div>
+              </div>
+              <div className="ads">
+                <div className="bg-image" style={{ backgroundImage: `url(${GamePass} )`, backgroundSize: "cover" }}></div>
+                <div className="content">
+                  <h2 className="title">Xbox Game Pass 1 hónapos tagság!</h2>
+                </div>
+              </div>
+            </div>
+
             <div className="discount-products-container">
               <h1 className="discount-products-title products-title">Kiemelt ajánlataink</h1>
               <div className="discount-products products">
@@ -78,8 +119,13 @@ export function Home({ getProductSingle }) {
               </div>
             </div>
 
-            <AdminLoginButton/>
+
+
+
+            <AdminLoginButton />
           </div >
+
+
         )}
     </div>
   )

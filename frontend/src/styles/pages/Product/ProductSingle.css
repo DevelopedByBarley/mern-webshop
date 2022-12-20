@@ -191,6 +191,12 @@
   margin: 1rem;
 }
 
+@media (max-width: 768px) {
+  .single-product-container .comments-container .comment-form {
+    text-align: center;
+  }
+}
+
 .single-product-container .comments-container .comment-form .comment-form-title {
   font-family: "Anton", sans-serif;
 }
@@ -201,6 +207,12 @@
   border-bottom: 1px solid gray;
   padding: 0.5rem;
   margin: 1rem 0;
+}
+
+@media (max-width: 768px) {
+  .single-product-container .comments-container .comment-form .content {
+    text-align: center;
+  }
 }
 
 .single-product-container .comments-container .comment-form .send-comment {
@@ -232,11 +244,12 @@
 .single-product-container .comments-container .comments .comment {
   position: relative;
   border-bottom: 1px solid gray;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 1rem 0;
+  padding: 2rem 1rem;
 }
 
 .single-product-container .comments-container .comments .comment .userName-icon {
+  color: white;
   border: 1px solid gray;
   width: 50px;
   height: 50px;
@@ -256,8 +269,7 @@
           flex-direction: column;
   font-family: "Zilla Slab", serif;
   font-weight: bolder;
-  background-color: black;
-  color: white;
+  background-color: #3a3a3a;
 }
 
 .single-product-container .comments-container .comments .comment .comment-body .userName {
@@ -277,7 +289,7 @@
   cursor: pointer;
   position: absolute;
   right: 10px;
-  top: 50%;
+  top: 40%;
 }
 
 @media (min-width: 768px) {
@@ -295,12 +307,6 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-  }
-}
-
-@media (max-width: 768px) {
-  .single-product-container .comments-container {
-    text-align: center;
   }
 }
 
