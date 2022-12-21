@@ -29,7 +29,7 @@
 }
 
 .order-single-container .order .order-title {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
   font-family: "Anton", sans-serif;
 }
 
@@ -72,11 +72,12 @@
 .order-single-container .order .order-shopping-cart .order-products .product-data .title {
   font-family: "Anton", sans-serif;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .order-single-container .order .order-shopping-cart .order-products .product-data :where(.discount, .price) {
   font-family: "Zilla Slab", serif;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin: 0.5rem 1rem;
 }
 

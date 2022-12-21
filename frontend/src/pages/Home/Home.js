@@ -89,7 +89,7 @@ export function Home({ getProductSingle }) {
             <div className="fast-info-container">
               <div className="fast-info-card">
                 <div className="icons">
-                  <AiOutlineDollarCircle size={80} className="icon"  color={"white"}/>
+                  <AiOutlineDollarCircle size={80} className="icon" color={"white"} />
                 </div>
                 <div className="content" >
                   <h1 className="title">Ingyenes szállitás!</h1>
@@ -97,7 +97,7 @@ export function Home({ getProductSingle }) {
               </div>
               <div className="fast-info-card">
                 <div className="icons">
-                  <BsBagCheck size={80} className="icon"  color={"white"}/>
+                  <BsBagCheck size={80} className="icon" color={"white"} />
                 </div>
                 <div className="content">
                   <h1 className="title">Gyors vásárlás!</h1>
@@ -105,7 +105,7 @@ export function Home({ getProductSingle }) {
               </div>
               <div className="fast-info-card">
                 <div className="icons">
-                  <TbTruckDelivery size={80} className="icon"  color={"white"}/>
+                  <TbTruckDelivery size={80} className="icon" color={"white"} />
                 </div>
                 <div className="content">
                   <h1 className="title">Kiszállitás akár 1 napon belül!</h1>
@@ -131,7 +131,7 @@ export function Home({ getProductSingle }) {
               <div className="latest-products products">
                 {latestProducts.map((product) => {
                   return (
-                    <ProductCard key={product._id} product={product} getProductSingle={getProductSingle}/>
+                    <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
                   )
                 })}
               </div>

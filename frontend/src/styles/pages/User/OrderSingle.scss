@@ -13,7 +13,7 @@
       width: 60%;
     }
     .order-title {
-      font-size: 2.5rem;
+      font-size: 1.5rem;
       font-family: $primaryFont;
     }
     .order-id {
@@ -51,11 +51,12 @@
           .title {
             font-family: $primaryFont;
             text-align: center;
+            font-size: 1.5rem;
           }
 
           & :where(.discount, .price) {
             font-family: $secondaryFont;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin: 0.5rem 1rem;
           }
         }
