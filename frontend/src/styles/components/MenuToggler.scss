@@ -1,0 +1,15 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  cursor: pointer;
+
+  @include forLaptop{
+    display: none;
+  }
+}

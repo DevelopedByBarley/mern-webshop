@@ -35,11 +35,12 @@ export function ImageSlider() {
     backgroundImage: `url(${slides[currentIndex].url})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
-    backgroundPosition: "center"
+    backgroundPosition: "center center",
+    backgroundAttachment: "fixed"
   }
 
   return (
-    <div className="carousel" style={{ height: "80vh" }}>
+    <div className="carousel" style={{ height: "40vh" }}>
       <div className="slides" style={{ height: "100%" }}>
         <div className="slide" style={slideStyles}>
           <div className="content">

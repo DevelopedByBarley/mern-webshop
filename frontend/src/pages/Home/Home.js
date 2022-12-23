@@ -8,6 +8,7 @@ import { ProductCard } from "../../components/ProductCard";
 import { Spinner } from "../../components/Spinner";
 import PuffLoader from "react-spinners/PuffLoader";
 import '../../styles/pages/Home/Home.css'
+import { ImageSlider } from "../../components/ImageSlider"
 
 
 

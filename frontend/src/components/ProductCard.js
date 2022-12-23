@@ -38,7 +38,7 @@ export function ProductCard({ product, getProductSingle }) {
           {product.discount > 0 && (
             <div className="product-discount">- {product.discount} %</div>
           )}
-          <input style={{ height: "210px", width: "150px", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
+          <input style={{ height: "180px", width: "150px", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
           <div className="product-content">
             <h1 className="product-title">{product.title}</h1>
             <div className="isInStock">{product.isInStock ? <MdDone color="green" /> : <CgClose color="red" />} <span style={{ color: product.isInStock ? 'green' : 'red' }}>{product.isInStock ? "Készleten" : "Nincs raktáron"}</span></div>

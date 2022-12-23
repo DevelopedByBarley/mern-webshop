@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.menu-toggle {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
+  cursor: pointer;
+}
+
+@media (min-width: 1366px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+/*# sourceMappingURL=MenuToggler.css.map */
