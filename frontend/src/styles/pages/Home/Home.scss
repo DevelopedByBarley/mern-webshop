@@ -35,30 +35,38 @@
       }
 
       .content {
-        background-color: rgba(47, 67, 131, 0.712);
+        background-color: rgba(47, 67, 131, 0.644);
         text-align: center;
         position: absolute;
         bottom: 0;
-        height: 0px;
+        height: 100%;
         width: 100%;
         overflow: hidden;
         transition: $transition;
         @include displayFlex(flex, center, center, column);
+
+        @include forLaptop {
+          height: 0px;
+        }
+
         .title {
           font-family: $primaryFont;
           color: rgb(231, 231, 231);
         }
       }
 
-      &:hover .content {
-        height: 100%;
-        padding: 1rem;
-        letter-spacing: 1px;
-      }
+      @include forLaptop {
 
-      &:hover .bg-image {
-        transform: scale(1.1);
-        filter: blur(1);
+        &:hover .content {
+          height: 100%;
+          padding: 1rem;
+          letter-spacing: 1px;
+        }
+
+        &:hover .bg-image {
+          transform: scale(1.1);
+          filter: blur(1);
+        }
       }
     }
 
@@ -103,6 +111,7 @@
 
     .fast-info-card {
       @include displayFlex(flex, center, center, column);
+      text-align: center;
       border: 1px solid;
       min-height: 250px;
       position: relative;
@@ -114,6 +123,11 @@
         background-color: $primaryBackground;
         @include displayFlex(flex, center, center, column);
         transition: $transition;
+      }
+
+      .click-me-icon {
+        margin-top: 2rem;
+        color: rgb(57, 182, 255);
       }
 
       .content {
@@ -129,6 +143,10 @@
           color: white;
           font-family: $primaryFont;
         }
+      }
+
+      &:hover {
+        cursor: none;
       }
 
       &:hover .content {

@@ -1,6 +1,7 @@
 import axios from "axios"
 import { TbTruckDelivery } from 'react-icons/tb'
 import { BsBagCheck } from 'react-icons/bs'
+import { GiClick } from 'react-icons/gi'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { useEffect, useState } from "react"
 import { AdminLoginButton } from "../../components/AdminLoginButton";
@@ -8,7 +9,6 @@ import { ProductCard } from "../../components/ProductCard";
 import { Spinner } from "../../components/Spinner";
 import PuffLoader from "react-spinners/PuffLoader";
 import '../../styles/pages/Home/Home.css'
-import { ImageSlider } from "../../components/ImageSlider"
 
 
 
@@ -91,6 +91,7 @@ export function Home({ getProductSingle }) {
               <div className="fast-info-card">
                 <div className="icons">
                   <AiOutlineDollarCircle size={80} className="icon" color={"white"} />
+                  <GiClick className="click-me-icon" size={30} />
                 </div>
                 <div className="content" >
                   <h1 className="title">Ingyenes szállitás!</h1>
@@ -99,6 +100,7 @@ export function Home({ getProductSingle }) {
               <div className="fast-info-card">
                 <div className="icons">
                   <BsBagCheck size={80} className="icon" color={"white"} />
+                  <GiClick className="click-me-icon" size={30} />
                 </div>
                 <div className="content">
                   <h1 className="title">Gyors vásárlás!</h1>
@@ -107,6 +109,7 @@ export function Home({ getProductSingle }) {
               <div className="fast-info-card">
                 <div className="icons">
                   <TbTruckDelivery size={80} className="icon" color={"white"} />
+                  <GiClick className="click-me-icon" size={30}/>
                 </div>
                 <div className="content">
                   <h1 className="title">Kiszállitás akár 1 napon belül!</h1>

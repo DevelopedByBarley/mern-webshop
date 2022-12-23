@@ -50,7 +50,7 @@ const login = async (req, res) => {
       email: email
     })
 
-    if (user && ( await bcrypt.compare(password, user.password))) {
+    if (user && (await bcrypt.compare(password, user.password))) {
       res.status(200).json({
         id: user._id,
         email: user.email,
@@ -89,24 +89,31 @@ const getOrders = async (req, res) => {
 
 const getOrder = async (req, res) => {
   const id = req.params.orderId;
-  console.log(id)
-  try {
-    const order = await Order.findById(id);
-    res.json({order: order})
-  } catch (error) {
-    console.log(error)
-    res.json({order: false})
+  const { userName } = req.user
+
+  if (userName) {
+    try {
+      const order = await Order.findById(id);
+      res.json({ order: order })
+      console.log("User founded!")
+    } catch (error) {
+      console.log(error)
+      res.json({ order: false })
+    }
   }
 }
 
-const deleteOrder = async (req,res) => {
+const deleteOrder = async (req, res) => {
   const orderId = req.params.orderId;
+  const { userName } = req.user
 
-  try {
-    await Order.findByIdAndDelete(orderId);
-    res.json({message: "Order succesfully deleted!"})
-  } catch (error) {
-    console.log(error)
+  if (userName) {
+    try {
+      await Order.findByIdAndDelete(orderId);
+      res.json({ message: "Order succesfully deleted!" })
+    } catch (error) {
+      console.log(error)
+    }
   }
 
 }

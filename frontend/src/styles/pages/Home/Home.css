@@ -54,11 +54,11 @@
 }
 
 .home-container .ads-container .ads .content {
-  background-color: rgba(47, 67, 131, 0.712);
+  background-color: rgba(47, 67, 131, 0.644);
   text-align: center;
   position: absolute;
   bottom: 0;
-  height: 0px;
+  height: 100%;
   width: 100%;
   overflow: hidden;
   -webkit-transition: all 0.4s ease-in-out;
@@ -78,22 +78,29 @@
           flex-direction: column;
 }
 
+@media (min-width: 1366px) {
+  .home-container .ads-container .ads .content {
+    height: 0px;
+  }
+}
+
 .home-container .ads-container .ads .content .title {
   font-family: "Anton", sans-serif;
   color: #e7e7e7;
 }
 
-.home-container .ads-container .ads:hover .content {
-  height: 100%;
-  padding: 1rem;
-  letter-spacing: 1px;
-}
-
-.home-container .ads-container .ads:hover .bg-image {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-filter: blur(1);
-          filter: blur(1);
+@media (min-width: 1366px) {
+  .home-container .ads-container .ads:hover .content {
+    height: 100%;
+    padding: 1rem;
+    letter-spacing: 1px;
+  }
+  .home-container .ads-container .ads:hover .bg-image {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-filter: blur(1);
+            filter: blur(1);
+  }
 }
 
 @media (min-width: 1366px) {
@@ -176,6 +183,7 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  text-align: center;
   border: 1px solid;
   min-height: 250px;
   position: relative;
@@ -204,6 +212,11 @@
   transition: all 0.4s ease-in-out;
 }
 
+.home-container .fast-info-container .fast-info-card .click-me-icon {
+  margin-top: 2rem;
+  color: #39b6ff;
+}
+
 .home-container .fast-info-container .fast-info-card .content {
   background-color: #00a2ff;
   position: absolute;
@@ -230,6 +243,10 @@
 .home-container .fast-info-container .fast-info-card .content .title {
   color: white;
   font-family: "Anton", sans-serif;
+}
+
+.home-container .fast-info-container .fast-info-card:hover {
+  cursor: none;
 }
 
 .home-container .fast-info-container .fast-info-card:hover .content {
