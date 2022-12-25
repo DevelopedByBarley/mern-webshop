@@ -26,9 +26,12 @@ const productQueries = async (req, res) => {
   const latestProducts = await Product.find({}).sort({ _id: -1 }).limit(10);
   const gamingConsoles = await Product.find({
     categories: "gaming-console",
-  }).limit(3)
+  }).limit(3);
+  const smartWatches = await Product.find({
+    categories: "okosóra"
+  }).limit(5);
 
-  res.json({ discountProducts, latestProducts, gamingConsoles });
+  res.json({ discountProducts, latestProducts, gamingConsoles, smartWatches });
 }
 
 

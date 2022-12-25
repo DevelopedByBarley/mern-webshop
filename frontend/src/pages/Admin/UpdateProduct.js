@@ -64,16 +64,16 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
       <h1>Update product</h1>
       <form onSubmit={updateProduct}>
         <input type="text" name="title" placeholder="title" defaultValue={product.title} required />
-        <input type="number" name="relaseDate" defaultValue={product.relaseDate} placeholder="2022/01" />
+        <input type="date" name="relaseDate" defaultValue={product.relaseDate} placeholder="2022/01" />
         <select name="categories" required>
-          <option value="gaming-software">Játék szoftver</option>
-          <option value="gaming-console">Játék konzol</option>
+          <option value="játékszoftver">Játék szoftver</option>
+          <option value="játékkonzol">Játék konzol</option>
           <option value="hardware">Hardver</option>
-          <option value="mobile">Mobil eszközök</option>
+          <option value="mobil">Mobil eszközök</option>
           <option value="tv">Tv</option>
           <option value="monitor">Monitor</option>
-          <option value="smart-watch">Okosóra</option>
-          <option value="smart-home">Okosotthon</option>
+          <option value="okosóra">Okosóra</option>
+          <option value="okosotthon">Okosotthon</option>
         </select>
         <select name="platform" >
           <option value="null">Platform nélkül</option>
@@ -86,16 +86,16 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
         </select>
         <select name="softwareType" placeholder='Játékszoftver tipusa'>
           <option value="null">Szoftver tipus nélkül</option>
-          <option value="action">Akció/Kaland</option>
-          <option value="for-kids">Gyerekeknek</option>
+          <option value="akció">Akció/Kaland</option>
+          <option value="gyerekeknek">Gyerekeknek</option>
           <option value="horror-thriller">Horror/Thriller</option>
-          <option value="strategy">Stratégiai</option>
+          <option value="stratégia">Stratégiai</option>
           <option value="rpg">Szerepjáték/RPG</option>
-          <option value="skillful">Ügyességi</option>
-          <option value="racing">Verseny</option>
-          <option value="simulator">Szimulátor</option>
-          <option value="fighting">Verekedős</option>
-          <option value="dance-music">Tánc/Zene</option>
+          <option value="ügyességi">Ügyességi</option>
+          <option value="verseny">Verseny</option>
+          <option value="szimulátor">Szimulátor</option>
+          <option value="verekedős">Verekedős</option>
+          <option value="tánc-zene">Tánc/Zene</option>
           <option value="sport">Sport</option>
           <option value="party">Party</option>
         </select>

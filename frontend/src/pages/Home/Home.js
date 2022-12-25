@@ -17,6 +17,9 @@ export function Home({ getProductSingle }) {
   const [discountProducts, setDiscountProducts] = useState([]);
   const [latestProducts, setLatestProducts] = useState([]);
   const [gamingConsoleProducts, setGamingConsoleProducts] = useState([]);
+  const [smartWatches, setSmartWatches] = useState([]);
+
+
   const [isPending, setPending] = useState(true);
 
 
@@ -31,6 +34,7 @@ export function Home({ getProductSingle }) {
           setDiscountProducts(res.data.discountProducts)
           setLatestProducts(res.data.latestProducts)
           setGamingConsoleProducts(res.data.gamingConsoles)
+          setSmartWatches(res.data.smartWatches)
         })
         .finally(() => { setPending(false) })
     }, 1200)
@@ -38,7 +42,7 @@ export function Home({ getProductSingle }) {
 
 
 
-
+  console.log(smartWatches)
 
 
 
@@ -109,7 +113,7 @@ export function Home({ getProductSingle }) {
               <div className="fast-info-card">
                 <div className="icons">
                   <TbTruckDelivery size={80} className="icon" color={"white"} />
-                  <GiClick className="click-me-icon" size={30}/>
+                  <GiClick className="click-me-icon" size={30} />
                 </div>
                 <div className="content">
                   <h1 className="title">Kiszállitás akár 1 napon belül!</h1>
@@ -150,6 +154,14 @@ export function Home({ getProductSingle }) {
               </div>
             </div>
 
+            <div className="smart-watches-container">
+              <h1 className="smart-watches-title products-title">Okosóráink!</h1>
+              <div className="smart-watches">
+                {smartWatches.map((product) => {
+                  return <ProductCard key={product._id} product={product} getProductSingle={getProductSingle} />
+                })}
+              </div>
+            </div>
 
 
 

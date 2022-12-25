@@ -1,12 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AEAA,OAAO,CAAC,iHAAI;AFIZ,AAAA,YAAY,CAAC;EACX,QAAQ,EAAE,KAAK;EACf,GAAG,EAAE,IAAI;EACT,IAAI,EAAE,GAAG;EACT,SAAS,EAAE,eAAe;EAC1B,MAAM,EAAE,OAAO;CAKhB;;AG0BC,MAAM,EAAE,SAAS,EAAE,MAAM;EHpC3B,AAAA,YAAY,CAAC;IAQT,OAAO,EAAE,IAAI;GAEhB",
-    "sources": [
-        "MenuToggler.scss",
-        "../utils/variables.scss",
-        "../base/typography.scss",
-        "../utils/mixins.scss"
-    ],
-    "names": [],
-    "file": "MenuToggler.css"
-}
+{"version":3,"sources":["../base/typography.scss","MenuToggler.scss","MenuToggler.css","../utils/mixins.scss"],"names":[],"mappings":"AAAQ,yHAAA;ACIR;EACE,eAAA;EACA,SAAA;EACA,SAAA;EACA,0BAAA;EACA,eAAA;ACFF;ACiCE;EFpCF;IAQI,aAAA;ECDF;AACF","file":"MenuToggler.css"}

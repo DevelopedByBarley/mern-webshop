@@ -1,12 +1,1 @@
-{
-    "version": 3,
-    "mappings": "AEAA,OAAO,CAAC,iHAAI;AFGZ,AAAA,sBAAsB,CAAC;EACrB,gBAAgB,ECAE,OAAO;EDCzB,QAAQ,EAAE,KAAK;EACf,KAAK,EAAE,IAAI;EACX,MAAM,EAAE,IAAI;EACZ,MAAM,EAAE,IAAI;EACZ,IAAI,EAAE,IAAI;EACV,UAAU,ECLC,GAAG,CAAC,IAAG,CAAC,WAAW;CDS/B;;AAXD,AAQE,sBARoB,AAQnB,MAAM,CAAC;EACN,SAAS,EAAE,UAAW;CACvB",
-    "sources": [
-        "BackButton.scss",
-        "../utils/variables.scss",
-        "../base/typography.scss",
-        "../utils/mixins.scss"
-    ],
-    "names": [],
-    "file": "BackButton.css"
-}
+{"version":3,"sources":["../base/typography.scss","BackButton.scss","../utils/variables.scss","BackButton.css"],"names":[],"mappings":"AAAQ,yHAAA;ACGR;EACE,yBAAA;EACA,eAAA;EACA,WAAA;EACA,YAAA;EACA,YAAA;EACA,UAAA;EACA,gCCLW;ACIb;AFEE;EACE,qBAAA;AEAJ","file":"BackButton.css"}

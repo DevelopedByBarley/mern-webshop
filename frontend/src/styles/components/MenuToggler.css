@@ -3,14 +3,11 @@
   position: fixed;
   top: 10px;
   left: 50%;
-  -webkit-transform: translate(-50%);
-          transform: translate(-50%);
+  transform: translate(-50%);
   cursor: pointer;
 }
-
 @media (min-width: 1366px) {
   .menu-toggle {
     display: none;
   }
-}
-/*# sourceMappingURL=MenuToggler.css.map */
+}/*# sourceMappingURL=MenuToggler.css.map */

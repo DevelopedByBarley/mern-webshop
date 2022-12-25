@@ -71,7 +71,7 @@ function App() {
 
 
   return (
-    <div className="app-container" style={{ marginTop: "3rem" }}>
+    <div className="app-container">
 
       <Nav shoppingCart={shoppingCart} user={user} setUser={setUser} />
 

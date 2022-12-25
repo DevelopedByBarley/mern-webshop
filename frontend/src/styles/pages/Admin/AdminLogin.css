@@ -2,35 +2,23 @@
 .admin-login-form {
   height: 80vh;
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   text-align: center;
 }
-
 .admin-login-form .admin-login-title {
   font-family: "Anton", sans-serif;
   color: #3a3a3a;
   font-size: 4rem;
   margin-bottom: 2rem;
 }
-
 .admin-login-form :where(input) {
   margin: 0.5rem;
   padding: 0.5rem 3rem;
   font-family: "Zilla Slab", serif;
 }
-
 .admin-login-form .admin-login {
   padding: 0.8rem 2rem;
   border-radius: 10px;
@@ -39,18 +27,14 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
 }
-
 .admin-login-form .admin-login:hover {
   background-color: green;
 }
-
 .admin-login-form .info {
   font-family: "Zilla Slab", serif;
   font-weight: bolder;
-}
-/*# sourceMappingURL=AdminLogin.css.map */
+}/*# sourceMappingURL=AdminLogin.css.map */

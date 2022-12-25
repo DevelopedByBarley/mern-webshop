@@ -3,31 +3,26 @@
   text-align: left;
   margin: 5rem 0 2rem 0.5rem;
 }
-
 .searchBox-container .searchBox {
   -webkit-animation: fading 0.2s;
           animation: fading 0.2s;
   position: relative;
 }
-
 @media (max-width: 768px) {
   .searchBox-container .searchBox {
     text-align: center;
   }
 }
-
 .searchBox-container .searchBox input {
   padding: 0.5rem 4rem;
   font-family: "Zilla Slab", serif;
   margin: 0 1rem;
 }
-
 .searchBox-container .searchBox .close-icon {
   position: relative;
   top: 5px;
   cursor: pointer;
 }
-
 .searchBox-container .foundProducts {
   text-align: center;
   margin-top: 8px;
@@ -39,85 +34,51 @@
   margin: 0 auto;
   z-index: 98;
 }
-
 .searchBox-container .foundProducts .spinner-container {
   height: 80px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: cover;
-          flex-direction: cover;
+  align-items: center;
+  justify-content: center;
+  flex-direction: cover;
 }
-
 .searchBox-container .foundProducts .product-link {
   text-decoration: none;
 }
-
 .searchBox-container .foundProducts .product-link .product {
   border-bottom: 0.5px solid gray;
   padding: 1rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
 }
-
 .searchBox-container .foundProducts .product-link .product .product-title {
   font-family: "Anton", sans-serif;
   color: black;
   margin: 0 2rem;
 }
-
 .searchBox-container .foundProducts .product-link .product .product-price {
   font-family: "Zilla Slab", serif;
   color: black;
   font-size: 1.2rem;
 }
-
 @media (max-width: 768px) {
   .searchBox-container .foundProducts {
     width: 100%;
     max-width: 1000px;
   }
 }
-
 .searchBox-container .search {
   height: 50px;
   width: 50px;
   border: 1px solid;
   border-radius: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   background-color: #3a3a3a;
 }
-
 .searchBox-container .search .icon {
   cursor: pointer;
   color: white;
@@ -143,5 +104,4 @@
     opacity: 1;
     left: 0;
   }
-}
-/*# sourceMappingURL=SearchBox.css.map */
+}/*# sourceMappingURL=SearchBox.css.map */

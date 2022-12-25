@@ -3,7 +3,7 @@
 
 .home-container {
   @include forLaptop {
-    padding: 2rem;
+    padding: 0 2rem;
   }
 
   @include forDesktop {
@@ -80,18 +80,22 @@
         grid-column: 1 / 7;
         grid-row: 1 / 11;
       }
+
       :nth-child(2) {
         grid-column: 7 / 10;
         grid-row: 1 / 6;
       }
+
       :nth-child(3) {
         grid-column: 10 / 14;
         grid-row: 1 / 6;
       }
+
       :nth-child(4) {
         grid-column: 10 / 14;
         grid-row: 6 / 11;
       }
+
       :nth-child(5) {
         grid-column: 7 / 10;
         grid-row: 6 / 11;
@@ -116,6 +120,7 @@
       min-height: 250px;
       position: relative;
       overflow: hidden;
+
       .icons {
         height: 100%;
         width: 100%;
@@ -186,6 +191,7 @@
 
   .gaming-consoles-container {
     .gaming-consoles {
+
       //--gaming-console tablet styles--
       @include forTablet {
         display: grid;
@@ -195,13 +201,29 @@
         .product-card:nth-child(1) {
           grid-column: 1 / 5;
         }
+
         .product-card:nth-child(2) {
           grid-column: 5 / 7;
         }
+
         .product-card:nth-child(3) {
           grid-column: 7 / 10;
         }
       }
+    }
+  }
+
+
+  .smart-watches-container {
+    
+    .smart-watches {
+      
+      @include forLaptop {
+        display: grid;
+        grid-template-columns: repeat(5,1fr);
+        grid-gap: .5rem
+      }
+
     }
   }
 }

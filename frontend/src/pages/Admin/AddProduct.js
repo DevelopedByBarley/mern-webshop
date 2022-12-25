@@ -57,7 +57,7 @@ export function AddProduct() {
       <form onSubmit={addProduct}>
         <input type="text" name="title" placeholder="title" required />
         <input type="date" name="relaseDate" placeholder="Megjelenés" />
-        <select name="categories" defaultValue="nothing" required>
+        <select name="categories" required>
           <option value="játékszoftver">Játék szoftver</option>
           <option value="játékkonzol">Játék konzol</option>
           <option value="hardware">Hardver</option>
@@ -68,7 +68,7 @@ export function AddProduct() {
           <option value="okosotthon">Okosotthon</option>
         </select>
         <select name="platform">
-          <option value="null">Platform nélkül</option>
+        <option value="null">Platform nélkül</option>
           <option value="ps4">PS4</option>
           <option value="ps5">PS5</option>
           <option value="psVita">PSVita</option>

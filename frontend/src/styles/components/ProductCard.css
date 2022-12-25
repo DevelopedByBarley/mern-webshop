@@ -1,36 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
 .product-card {
-  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   text-align: center;
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   margin-bottom: 1.5rem;
   background-color: white;
 }
-
 .product-card .product-card-link {
   text-decoration: none;
   background-color: red;
 }
-
 .product-card .product-card-link .product-header {
-  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
-  -webkit-filter: grayscale(40%);
-          filter: grayscale(40%);
+  filter: grayscale(40%);
 }
-
 .product-card .product-card-link .product-header:hover {
-  -webkit-filter: grayscale(0);
-          filter: grayscale(0);
+  filter: grayscale(0);
 }
-
 .product-card .product-card-link .product-header .product-image {
   height: 150px;
   width: 150px;
 }
-
 .product-card .product-card-link .product-header .product-discount {
   background-color: red;
   color: white;
@@ -39,34 +29,26 @@
   padding: 0.5rem;
   font-family: "Zilla Slab", serif;
 }
-
 .product-card .product-card-link .product-header .product-content .product-title {
   font-family: "Anton", sans-serif;
   color: #3a3a3a;
   margin: 0.2rem;
   font-size: 1.4rem;
 }
-
 .product-card .product-card-link .product-header .product-content .price {
   font-family: "Zilla Slab", serif;
   color: #3a3a3a;
   margin: 0.2rem 0;
 }
-
 .product-card .product-card-link .product-header .product-icons .product-icon {
   font-family: "Zilla Slab", serif;
   font-weight: bold;
-  color: #af5f5f;
+  color: rgb(175, 95, 95);
 }
-
 .product-card .add-to-cart:hover {
   background-color: green;
 }
-
 .product-card:hover {
-  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 20px 20px;
-          box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 20px 20px;
-  -webkit-transform: scale(1.005);
-          transform: scale(1.005);
-}
-/*# sourceMappingURL=ProductCard.css.map */
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 20px 20px;
+  transform: scale(1.005);
+}/*# sourceMappingURL=ProductCard.css.map */
