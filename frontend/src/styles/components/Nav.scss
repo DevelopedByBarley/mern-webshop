@@ -20,7 +20,7 @@
     width: 100%;
     background-color: $primaryBackground;
     position: fixed;
-    bottom: -100%;
+    bottom: -150%;
     transition: all 0.4s ease-in-out;
     @include displayFlex(flex, center, center, column);
 
@@ -29,7 +29,7 @@
       flex-direction: row;
       height: 50px;
     }
-  
+
     .nav-link {
       font-family: $primaryFont;
       font-size: 2rem;
@@ -40,9 +40,10 @@
       transition: $transition;
 
       @include forLaptop {
+        margin-bottom: 0;
         font-size: 1rem;
-        padding: .7rem;
-        margin: 0 1rem;
+        border-bottom: 0;
+        padding: 1rem 1.5rem;
       }
 
       &:hover {

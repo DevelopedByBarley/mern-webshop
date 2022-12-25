@@ -9,7 +9,45 @@
   transform: translate(-50%);
   cursor: pointer;
 
-  @include forLaptop{
+  @include forLaptop {
     display: none;
   }
+
+  .top-line {
+    height: 2px;
+    border: 2px solid white;
+    display: block;
+    width: 35px;
+    margin: .5rem 0;
+    transition: all .2s ease-in-out;
+
+    &.active {
+      transform: rotate(50deg);
+      position: relative;
+      bottom: -7px;
+
+    }
+  }
+
+  .bottom-line {
+    height: 2px;
+    border: 2px solid white;
+    display: block;
+    width: 35px;
+    transition: all .2s ease-in-out;
+
+    &.active {
+      transform: rotate(-50deg);
+      position: relative;
+      bottom: 5px;
+    }
+  }
+
+
 }
+
+/*
+    transform: rotate(-50deg);
+    position: relative;
+    top: 5px;
+*/
