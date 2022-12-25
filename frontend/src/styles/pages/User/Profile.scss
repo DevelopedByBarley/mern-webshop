@@ -1,0 +1,54 @@
+@import "../../utils/variables.scss";
+@import "../../utils/mixins.scss";
+
+.profile-data-container {
+    @include displayFlex(flex, center, center, column);
+    text-align: center;
+    background-color: $primaryBackground;
+    color: white;
+    min-height: 95vh;
+    animation: fadeIn .4s linear;
+    position: absolute;
+    width: 100%;
+    .user-profile {
+
+        .profile-icon {
+            border: 1px solid rgb(100, 159, 248);
+            border-radius: 15px;
+            max-width: 150px;
+            margin: 1.2rem auto; 
+            .icon {
+                color: rgb(100, 159, 248);
+            }
+        }
+
+        .profile-data-content {
+            @include forLaptop {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .profile-datas {
+                margin: .5rem 0;
+    
+                .title {
+                    margin: .2rem 0;
+                    font-family: $primaryFont;
+                    letter-spacing: 1px;
+                }
+    
+                .data {
+                    font-family: $secondaryFont;
+                }
+            }
+        }
+    }
+
+}
+
+@keyframes fadeIn {
+    from {
+        bottom: -100%;
+    } to {
+        bottom: 0;
+    }
+}

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
 .searchBox-container {
   text-align: left;
-  margin: 5rem 0 2rem 0.5rem;
+  margin: 3.5 rem 0 0 0.5rem;
 }
 .searchBox-container .searchBox {
   -webkit-animation: fading 0.2s;

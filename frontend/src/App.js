@@ -19,6 +19,7 @@ import { Success } from './pages/Checkout/Success';
 import { Cancel } from './pages/Checkout/Cancel';
 import { Orders } from './pages/User/Orders';
 import { OrderSingle } from './pages/User/OrderSingle';
+import { Profile } from './pages/User/Profile';
 
 
 
@@ -89,7 +90,7 @@ function App() {
         <Route path='/product-add' element={<AddProduct />} />
         <Route path='/user-register' element={<UserRegister />} />
         <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
-        <Route path='/user' element={"user account"} />
+        <Route path='/user/profile' element={<Profile />} />
         <Route path='/user/orders' element={<Orders />} />
         <Route path='/user/order/:orderId' element={<OrderSingle />} />
       </Routes>

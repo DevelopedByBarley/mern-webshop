@@ -20,7 +20,7 @@ export function AccountToggle({ user, setUser, setUserToggle, userToggle }) {
     <div className={`account-toggle ${userToggle ? "userToggleActive" : ""}`} >
       <div className="user-data">
         <h4 className='user-name'>Szia {user?.userName}!</h4>
-        <Link to='/error-page' className='account-link account-data'  onClick={() => setUserToggle(false)}>
+        <Link to='/user/profile' className='account-link account-data'  onClick={() => setUserToggle(false)}>
           Adataim <span><CiSettings color='white' size={25} /></span>
         </Link><br />
         <Link to='/user/orders' className='account-link account-latest-deliveries' onClick={() => setUserToggle(false)}>

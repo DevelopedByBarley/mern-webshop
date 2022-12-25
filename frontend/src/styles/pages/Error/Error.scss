@@ -7,7 +7,7 @@
   background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
   background-position: center;
   background-repeat: no-repeat;
-  @include displayFlex(flex, center, center, column);
+  @include displayFlex(flex, flex-start, center, column);
 
   .error-title {
     height: 600px;

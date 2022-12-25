@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.profile-data-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  background-color: #3a3a3a;
+  color: white;
+  min-height: 95vh;
+  -webkit-animation: fadeIn 0.4s linear;
+          animation: fadeIn 0.4s linear;
+  position: absolute;
+  width: 100%;
+}
+.profile-data-container .user-profile .profile-icon {
+  border: 1px solid rgb(100, 159, 248);
+  border-radius: 15px;
+  max-width: 150px;
+  margin: 1.2rem auto;
+}
+.profile-data-container .user-profile .profile-icon .icon {
+  color: rgb(100, 159, 248);
+}
+@media (min-width: 1366px) {
+  .profile-data-container .user-profile .profile-data-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.profile-data-container .user-profile .profile-data-content .profile-datas {
+  margin: 0.5rem 0;
+}
+.profile-data-container .user-profile .profile-data-content .profile-datas .title {
+  margin: 0.2rem 0;
+  font-family: "Anton", sans-serif;
+  letter-spacing: 1px;
+}
+.profile-data-container .user-profile .profile-data-content .profile-datas .data {
+  font-family: "Zilla Slab", serif;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    bottom: -100%;
+  }
+  to {
+    bottom: 0;
+  }
+}/*# sourceMappingURL=Profile.css.map */
