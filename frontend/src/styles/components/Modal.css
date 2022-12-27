@@ -3,7 +3,7 @@
   background-color: #3a3a3a;
   position: fixed;
   border: 1px solid #a71818;
-  top: 1px;
+  top: 0;
   right: 50%;
   -webkit-transform: translate(50%);
           transform: translate(50%);
@@ -12,8 +12,8 @@
   max-width: 500px;
   text-align: center;
   padding: 2rem;
-  -webkit-animation: fadeIn .4s linear;
-          animation: fadeIn .4s linear;
+  -webkit-animation: modalFadeIn .4s linear;
+          animation: modalFadeIn .4s linear;
   -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
@@ -57,7 +57,7 @@
   background-color: #b64d4d;
 }
 
-@-webkit-keyframes fadeIn {
+@-webkit-keyframes modalFadeIn {
   0% {
     top: -100%;
   }
@@ -66,7 +66,7 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes modalFadeIn {
   0% {
     top: -100%;
   }

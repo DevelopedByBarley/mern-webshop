@@ -9,5 +9,10 @@
   max-width: 2500px;
   margin: 0 auto;
   min-height: 100vh;
+  position: relative;
+}
+
+.app-container::after {
+  content: "";
 }
 /*# sourceMappingURL=App.css.map */

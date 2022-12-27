@@ -7,7 +7,7 @@ export function AdminLoginButton() {
     <div className='admin-login-container'>
       <Link to="/admin-login">
         <button className="admin-login">
-          Admin Login
+          Admin
         </button>
       </Link>
     </div>

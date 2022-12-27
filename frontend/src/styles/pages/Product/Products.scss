@@ -2,7 +2,8 @@
 @import "../../utils/mixins";
 
 .platform-products-container {
-
+  min-height: 80vh;
+  margin-top: 4rem;
   .products {
     display: grid;
     @include forTablet {

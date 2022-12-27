@@ -10,7 +10,7 @@ export function Account({ user, setUser }) {
   return (
     <div className='account-container'>
       <div className='account' >
-        {!user && <Link to='/user-login'><CiLogin size={40} color={"#00E7FF"} /></Link>}
+        {!user && <Link to='/user-login'><CiLogin size={40} color={"white"} /></Link>}
         {user && <RiAccountCircleFill color='white' size={40} onClick={() => { setUserToggle(!userToggle) }} />}
       </div>
       <div className='account-menu'>

@@ -6,7 +6,7 @@
   background-color: $primaryBackground;
   position: fixed;
   border: 1px solid rgb(167, 24, 24);
-  top: 1px;
+  top: 0;
   right: 50%;
   transform: translate(50%);
   z-index: 103;
@@ -14,7 +14,7 @@
   max-width: 500px;
   text-align: center;
   padding: 2rem;
-  animation: fadeIn .4s linear;
+  animation: modalFadeIn .4s linear;
   transition: $transition;
 
   .modal-header {
@@ -46,7 +46,7 @@
   }
 }
 
-@keyframes fadeIn {
+@keyframes modalFadeIn {
   0%{top: -100%} 
   100% {top: 0}
 

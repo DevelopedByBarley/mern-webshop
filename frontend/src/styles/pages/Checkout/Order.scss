@@ -17,7 +17,7 @@
     }
 
     @include forDesktop {
-      width: 25%;
+      width: 40%;
     }
 
     @include displayFlex(flex, center, center, column);
@@ -27,10 +27,12 @@
 
     .product-title {
       font-family: $primaryFont;
+      font-size: 1.4rem;
     }
 
     .product-price {
       font-family: $secondaryFont;
+      font-size: 1.3rem;
     }
   }
 

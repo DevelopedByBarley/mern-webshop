@@ -46,16 +46,18 @@
 
 @media (min-width: 1920px) {
   .order-summary .order-products {
-    width: 25%;
+    width: 40%;
   }
 }
 
 .order-summary .order-products .product-title {
   font-family: "Anton", sans-serif;
+  font-size: 1.4rem;
 }
 
 .order-summary .order-products .product-price {
   font-family: "Zilla Slab", serif;
+  font-size: 1.3rem;
 }
 
 .send-order {

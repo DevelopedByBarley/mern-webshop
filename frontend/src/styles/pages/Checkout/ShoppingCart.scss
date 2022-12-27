@@ -2,7 +2,7 @@
 @import "../../utils/mixins.scss";
 
 .shopping-cart-container {
-  height: 80vh;
+  min-height: 80vh;
   width: 100%;
   margin: .5rem;
 

@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.platform-products-container {
+  min-height: 80vh;
+  margin-top: 4rem;
+}
+
 .platform-products-container .products {
   display: -ms-grid;
   display: grid;

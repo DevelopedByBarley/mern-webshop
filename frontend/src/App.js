@@ -98,7 +98,7 @@ function App() {
         <Route path='/user/order/:orderId' element={<OrderSingle />} />
       </Routes>
 
-      <Footer />
+      <Footer/>
     </div>
 
   )
