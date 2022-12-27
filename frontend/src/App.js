@@ -20,6 +20,8 @@ import { Cancel } from './pages/Checkout/Cancel';
 import { Orders } from './pages/User/Orders';
 import { OrderSingle } from './pages/User/OrderSingle';
 import { Profile } from './pages/User/Profile';
+import { Products } from './pages/Product/Products';
+import { Footer } from './components/Footer';
 
 
 
@@ -88,12 +90,15 @@ function App() {
         <Route path='/product-single/:productId' element={<ProductSingle user={user} getProductSingle={getProductSingle} />} />
         <Route path='/product-update/:productId' element={<UpdateProduct />} />
         <Route path='/product-add' element={<AddProduct />} />
+        <Route path='/products/:platformType' element={<Products getProductSingle={getProductSingle} />} />
         <Route path='/user-register' element={<UserRegister />} />
         <Route path='/user-login' element={<UserLogin setUser={setUser} />} />
         <Route path='/user/profile' element={<Profile />} />
         <Route path='/user/orders' element={<Orders />} />
         <Route path='/user/order/:orderId' element={<OrderSingle />} />
       </Routes>
+
+      <Footer />
     </div>
 
   )

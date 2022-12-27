@@ -2,31 +2,37 @@
 .modal-container {
   background-color: #3a3a3a;
   position: fixed;
-  border: 1px solid rgb(167, 24, 24);
+  border: 1px solid #a71818;
   top: 1px;
   right: 50%;
-  transform: translate(50%);
+  -webkit-transform: translate(50%);
+          transform: translate(50%);
   z-index: 103;
   width: 100%;
   max-width: 500px;
   text-align: center;
   padding: 2rem;
-  -webkit-animation: fadeIn 0.4s linear;
-          animation: fadeIn 0.4s linear;
+  -webkit-animation: fadeIn .4s linear;
+          animation: fadeIn .4s linear;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
+
 .modal-container .modal-header .message {
   color: White;
   font-family: "Anton", sans-serif;
   font-size: 1.3rem;
 }
+
 .modal-container .modal-header .message .danger {
-  color: rgb(167, 24, 24);
+  color: #a71818;
   font-size: 1.5rem;
 }
+
 .modal-container .modal-button-container {
   margin: 1rem 0;
 }
+
 .modal-container .modal-button-container :where(button) {
   padding: 0.8rem 2rem;
   border-radius: 10px;
@@ -35,17 +41,20 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
-  margin: 0.5rem;
-  border: 0.5px solid gray;
+  margin: .5rem;
+  border: .5px solid gray;
 }
+
 .modal-container .modal-button-container :nth-child(1):hover {
-  background-color: rgb(185, 138, 50);
+  background-color: #b98a32;
 }
+
 .modal-container .modal-button-container :nth-child(2):hover {
-  background-color: rgb(182, 77, 77);
+  background-color: #b64d4d;
 }
 
 @-webkit-keyframes fadeIn {
@@ -64,4 +73,5 @@
   100% {
     top: 0;
   }
-}/*# sourceMappingURL=Modal.css.map */
+}
+/*# sourceMappingURL=Modal.css.map */

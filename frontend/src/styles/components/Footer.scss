@@ -1,0 +1,45 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.footer {
+
+  background-color: $primaryBackground;
+  @include displayFlex(flex,center,center,column);
+  color: white;
+  padding: 2rem;
+  margin-top: 250px;
+
+  .footer-content {
+    text-align: center;
+    @include forTablet{
+      width: 60%;
+      margin: 1rem auto;
+    }
+
+    @include forLaptop {
+      width: 50%;
+    }
+
+    .title {
+      font-family: $primaryFont;
+    }
+
+    .message {
+      font-family: $secondaryFont;
+      font-size: 1.1rem;
+      margin: 1rem;
+    }
+
+    .footer-icons {
+      margin-top: 2rem;
+     .icon {
+      margin: 1rem 1rem;
+      cursor: pointer;
+      transition: $transition;
+      &:hover {
+        transform: scale(1.20);
+      }
+     }
+    }
+  }
+}

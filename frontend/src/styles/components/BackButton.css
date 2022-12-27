@@ -6,8 +6,12 @@
   height: 50px;
   bottom: 20px;
   left: 10px;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
 }
+
 .back-button-container:hover {
-  transform: scale(1.1);
-}/*# sourceMappingURL=BackButton.css.map */
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+/*# sourceMappingURL=BackButton.css.map */

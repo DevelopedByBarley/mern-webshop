@@ -5,6 +5,7 @@
   top: 5px;
   z-index: 102;
 }
+
 .account-container .account .login-button {
   padding: 0.8rem 2rem;
   border-radius: 10px;
@@ -13,9 +14,19 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
   border: 1px solid white;
+  padding: .8rem .8rem;
+  position: relative;
+  left: 6px;
   margin: 0;
-}/*# sourceMappingURL=Account.css.map */
+}
+
+.account-container .account .login-button:hover {
+  background-color: white;
+  color: black;
+}
+/*# sourceMappingURL=Account.css.map */

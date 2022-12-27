@@ -60,21 +60,18 @@ export function AddProduct() {
         <select name="categories" required>
           <option value="játékszoftver">Játék szoftver</option>
           <option value="játékkonzol">Játék konzol</option>
-          <option value="hardware">Hardver</option>
-          <option value="mobil">Mobil eszközök</option>
-          <option value="tv">Tv</option>
           <option value="monitor">Monitor</option>
           <option value="okosóra">Okosóra</option>
-          <option value="okosotthon">Okosotthon</option>
         </select>
         <select name="platform">
-        <option value="null">Platform nélkül</option>
           <option value="ps4">PS4</option>
           <option value="ps5">PS5</option>
           <option value="psVita">PSVita</option>
           <option value="xboxOne">Xbox One</option>
           <option value="xboxSeriesX">Xbox Series X</option>
           <option value="pc">PC</option>
+          <option value="nintendo">Nintendo</option>
+          <option value="okosóra">okosóra</option>
         </select>
         <select name="softwareType" placeholder='Játékszoftver tipusa'>
           <option value="null">Szoftver tipus nélkül</option>

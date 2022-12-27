@@ -1,0 +1,25 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+
+.platform-products-container {
+
+  .products {
+    display: grid;
+    @include forTablet {
+      margin: 0 auto;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 1rem
+    }
+    @include forLaptop {
+      width: 70%;
+      margin: 0 auto;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 1rem
+    }
+    @include forDesktop {
+      grid-template-columns: repeat(5, 1fr);
+      grid-gap: 1rem
+    }
+  }
+
+}

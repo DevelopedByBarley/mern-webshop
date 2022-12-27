@@ -18,12 +18,15 @@ export function Nav({ shoppingCart, user, setUser }) {
   return (
     <>      <nav className='nav'>
       <div className={`menu  ${isMenuToggle ? "active" : ""}`}  >
-        <MenuToggler setMenuToggle={setMenuToggle} isMenuToggle={isMenuToggle}/>
+        <MenuToggler setMenuToggle={setMenuToggle} isMenuToggle={isMenuToggle} />
         <Link className='nav-link' to={'/'} onClick={closeMenuToggle}> Kezdőlap </Link>
-        <Link className='nav-link' to={'/error-page'} onClick={closeMenuToggle}> Xbox </Link>
-        <Link className='nav-link' to={'/error-page'} onClick={closeMenuToggle}> PC </Link>
-        <Link className='nav-link' to={'/error-page'} onClick={closeMenuToggle}> Playstation </Link>
-        <Link className='nav-link' to={'/error-page'} onClick={closeMenuToggle}> Mobil </Link>
+        <Link className='nav-link' to={'/products/xboxOne'} onClick={closeMenuToggle}> Xbox One </Link>
+        <Link className='nav-link' to={'/products/xboxSeriesX'} onClick={closeMenuToggle}> Xbox Series X </Link>
+        <Link className='nav-link' to={'/products/pc'} onClick={closeMenuToggle}> PC </Link>
+        <Link className='nav-link' to={'/products/ps4'} onClick={closeMenuToggle}> Playstation 4 </Link>
+        <Link className='nav-link' to={'/products/ps5'} onClick={closeMenuToggle}> Playstation 5 </Link>
+        <Link className='nav-link' to={'/products/nintendo'} onClick={closeMenuToggle}> Nintendo </Link>
+        <Link className='nav-link' to={'/products/okosóra'} onClick={closeMenuToggle}> Okosórák </Link>
       </div>
     </nav>
       <Account user={user} setUser={setUser} />

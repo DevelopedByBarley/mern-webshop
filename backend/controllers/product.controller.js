@@ -16,6 +16,19 @@ const getProducts = async (req, res) => {
   }
 }
 
+const getProductsByPlatform = async (req, res) => {
+  const platformType = req.params.platformType;
+  
+  try {
+    const products = await Product.find({
+      platform: platformType
+    })
+    res.json({products: products})
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 
 
 
@@ -25,7 +38,7 @@ const productQueries = async (req, res) => {
   const discountProducts = await Product.where("discount").gt(0).limit(10);
   const latestProducts = await Product.find({}).sort({ _id: -1 }).limit(10);
   const gamingConsoles = await Product.find({
-    categories: "gaming-console",
+    categories: "játékkonzol",
   }).limit(3);
   const smartWatches = await Product.find({
     categories: "okosóra"
@@ -36,12 +49,12 @@ const productQueries = async (req, res) => {
 
 
 const searchProducts = async (req, res) => {
-  const { title} = req.body;
+  const { title } = req.body;
   let query = Product.find();
   if (title != null && title != '') {
-    query =  query.regex('title', new RegExp(title, 'i')).limit(8)
+    query = query.regex('title', new RegExp(title, 'i')).limit(8)
   }
-  
+
   try {
     const products = await query.exec();
     res.send(products)
@@ -257,7 +270,8 @@ module.exports = {
   deleteProduct,
   updateProduct,
   sendComment,
-  deleteComment
+  deleteComment,
+  getProductsByPlatform,
 }
 
 

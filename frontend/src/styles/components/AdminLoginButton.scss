@@ -6,6 +6,7 @@
   text-align: right;
   .admin-login {
     @include grayButton();
+    border: 1px solid gray;
   
     &:hover {
       background-color: red;

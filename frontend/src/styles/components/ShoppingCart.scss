@@ -11,6 +11,7 @@
   width: 120px;
   @include displayFlex(flex, center, center, row);
 
+
   .numer-of-items {
     color: rgb(114, 198, 219);
     font-family: $primaryFont;

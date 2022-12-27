@@ -76,13 +76,14 @@ export function UpdateProduct({ setPopUpActive, setProducts }) {
           <option value="okosotthon">Okosotthon</option>
         </select>
         <select name="platform" >
-          <option value="null">Platform nélkül</option>
           <option value="ps4">PS4</option>
           <option value="ps5">PS5</option>
           <option value="psVita">PSVita</option>
           <option value="xboxOne">Xbox One</option>
           <option value="xboxSeriesX">Xbox Series X</option>
           <option value="pc">PC</option>
+          <option value="nintendo">Nintendo</option>
+          <option value="okosóra">Okosóra</option>
         </select>
         <select name="softwareType" placeholder='Játékszoftver tipusa'>
           <option value="null">Szoftver tipus nélkül</option>

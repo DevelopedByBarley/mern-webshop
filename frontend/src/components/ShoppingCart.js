@@ -2,7 +2,8 @@ import { AiOutlineShoppingCart } from 'react-icons/ai'
 import {Link} from 'react-router-dom'
 import '../styles/components/ShoppingCart.css'
 
-export function ShoppingCart({shoppingCart}) {
+export function ShoppingCart({shoppingCart}) {  
+
   return (
     <>
       <Link to='/checkout/cart' className='link'>

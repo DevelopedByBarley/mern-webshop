@@ -3,36 +3,46 @@
   position: fixed;
   top: 10px;
   left: 50%;
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+          transform: translate(-50%);
   cursor: pointer;
 }
+
 @media (min-width: 1366px) {
   .menu-toggle {
     display: none;
   }
 }
+
 .menu-toggle .top-line {
   height: 2px;
   border: 2px solid white;
   display: block;
   width: 35px;
-  margin: 0.5rem 0;
-  transition: all 0.2s ease-in-out;
+  margin: .5rem 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
+
 .menu-toggle .top-line.active {
-  transform: rotate(50deg);
+  -webkit-transform: rotate(50deg);
+          transform: rotate(50deg);
   position: relative;
   bottom: -7px;
 }
+
 .menu-toggle .bottom-line {
   height: 2px;
   border: 2px solid white;
   display: block;
   width: 35px;
-  transition: all 0.2s ease-in-out;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
+
 .menu-toggle .bottom-line.active {
-  transform: rotate(-50deg);
+  -webkit-transform: rotate(-50deg);
+          transform: rotate(-50deg);
   position: relative;
   bottom: 5px;
 }
@@ -41,4 +51,5 @@
     transform: rotate(-50deg);
     position: relative;
     top: 5px;
-*//*# sourceMappingURL=MenuToggler.css.map */
+*/
+/*# sourceMappingURL=MenuToggler.css.map */

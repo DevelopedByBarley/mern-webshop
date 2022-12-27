@@ -1,1 +1,64 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Rubik+Glitch&family=Zilla+Slab:wght@300&display=swap");
+.footer {
+  background-color: #3a3a3a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+  padding: 2rem;
+  margin-top: 250px;
+}
+
+.footer .footer-content {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .footer .footer-content {
+    width: 60%;
+    margin: 1rem auto;
+  }
+}
+
+@media (min-width: 1366px) {
+  .footer .footer-content {
+    width: 50%;
+  }
+}
+
+.footer .footer-content .title {
+  font-family: "Anton", sans-serif;
+}
+
+.footer .footer-content .message {
+  font-family: "Zilla Slab", serif;
+  font-size: 1.1rem;
+  margin: 1rem;
+}
+
+.footer .footer-content .footer-icons {
+  margin-top: 2rem;
+}
+
+.footer .footer-content .footer-icons .icon {
+  margin: 1rem 1rem;
+  cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.footer .footer-content .footer-icons .icon:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
 /*# sourceMappingURL=Footer.css.map */

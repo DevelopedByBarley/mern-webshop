@@ -2,6 +2,7 @@
 .admin-login-container {
   text-align: right;
 }
+
 .admin-login-container .admin-login {
   padding: 0.8rem 2rem;
   border-radius: 10px;
@@ -10,10 +11,14 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
+  border: 1px solid gray;
 }
+
 .admin-login-container .admin-login:hover {
   background-color: red;
-}/*# sourceMappingURL=AdminLoginButton.css.map */
+}
+/*# sourceMappingURL=AdminLoginButton.css.map */

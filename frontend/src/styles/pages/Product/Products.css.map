@@ -1,0 +1,12 @@
+{
+    "version": 3,
+    "mappings": "AEAA,OAAO,CAAC,iHAAI;AFGZ,AAEE,4BAF0B,CAE1B,SAAS,CAAC;EACR,OAAO,EAAE,IAAI;CAgBd;;AGaD,MAAM,EAAE,SAAS,EAAE,KAAK;EHhC1B,AAEE,4BAF0B,CAE1B,SAAS,CAAC;IAGN,MAAM,EAAE,MAAM;IACd,qBAAqB,EAAE,cAAc;IACrC,QAAQ,EAAE,IACZ;GAWD;;;AGkBD,MAAM,EAAE,SAAS,EAAE,MAAM;EHrC3B,AAEE,4BAF0B,CAE1B,SAAS,CAAC;IAQN,KAAK,EAAE,GAAG;IACV,MAAM,EAAE,MAAM;IACd,qBAAqB,EAAE,cAAc;IACrC,QAAQ,EAAE,IACZ;GAKD;;;AGuBD,MAAM,EAAE,SAAS,EAAE,MAAM;EH1C3B,AAEE,4BAF0B,CAE1B,SAAS,CAAC;IAcN,qBAAqB,EAAE,cAAc;IACrC,QAAQ,EAAE,IACZ;GACD",
+    "sources": [
+        "Products.scss",
+        "../../utils/variables.scss",
+        "../../base/typography.scss",
+        "../../utils/mixins.scss"
+    ],
+    "names": [],
+    "file": "Products.css"
+}

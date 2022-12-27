@@ -4,7 +4,6 @@ import { BsBagCheck } from 'react-icons/bs'
 import { GiClick } from 'react-icons/gi'
 import { AiOutlineDollarCircle } from 'react-icons/ai'
 import { useEffect, useState } from "react"
-import { AdminLoginButton } from "../../components/AdminLoginButton";
 import { ProductCard } from "../../components/ProductCard";
 import { Spinner } from "../../components/Spinner";
 import PuffLoader from "react-spinners/PuffLoader";
@@ -165,7 +164,7 @@ export function Home({ getProductSingle }) {
 
 
 
-            <AdminLoginButton />
+            
           </div >
 
 

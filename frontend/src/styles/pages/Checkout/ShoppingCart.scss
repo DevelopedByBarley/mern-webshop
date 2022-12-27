@@ -4,6 +4,7 @@
 .shopping-cart-container {
   height: 80vh;
   width: 100%;
+  margin: .5rem;
 
   .shopping-cart-empty {
     height: 100%;
@@ -48,6 +49,10 @@
 
       .clear-cart {
         @include grayButton();
+
+        &:hover {
+          background-color: red;
+        }
       }
     }
 

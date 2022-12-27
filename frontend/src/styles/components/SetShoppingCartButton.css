@@ -7,10 +7,13 @@
   background-color: #3a3a3a;
   color: white;
   cursor: pointer;
+  -webkit-transition: all 0.4s ease-in-out;
   transition: all 0.4s ease-in-out;
   font-family: #3a3a3a;
   font-weight: bolder;
 }
+
 .add-to-cart:hover {
   background-color: green;
-}/*# sourceMappingURL=SetShoppingCartButton.css.map */
+}
+/*# sourceMappingURL=SetShoppingCartButton.css.map */
