@@ -1,7 +1,7 @@
 import '../../styles/pages/Admin/AdminLogin.css'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 
 export function AdminLogin() {
@@ -12,6 +12,10 @@ export function AdminLogin() {
     email: "",
     password: ""
   })
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [])
 
   const loginAdmin = (event) => {
     event.preventDefault();
@@ -24,10 +28,10 @@ export function AdminLogin() {
           axios.get('/api/admin/getMe', {
             headers: { Authorization: `Bearer ${token}` }
           })
-          .then(() => {
-            localStorage.setItem('adminToken',token)
-            navigate('/dashboard')
-          })
+            .then(() => {
+              localStorage.setItem('adminToken', token)
+              navigate('/dashboard')
+            })
         }
       })
 
@@ -44,7 +48,7 @@ export function AdminLogin() {
         prev.email = event.target.value;
         return prev
       })} />
-      <input type="password" name="password"  placeholder='Jelszó' className="password" onChange={(event) => setAdmin((prev) => {
+      <input type="password" name="password" placeholder='Jelszó' className="password" onChange={(event) => setAdmin((prev) => {
         prev.password = event.target.value;
         return prev
       })} />
@@ -52,8 +56,8 @@ export function AdminLogin() {
       <div className='info'>
         <p>
           Az admin felületen való bejelentkezés kizáróla Admin részére készült
-          ez a funkció termékekkel, felhasználókkal vagy megrendelésekkel 
-          való müveletek elvégzésére készült! 
+          ez a funkció termékekkel, felhasználókkal vagy megrendelésekkel
+          való müveletek elvégzésére készült!
         </p>
       </div>
     </form>

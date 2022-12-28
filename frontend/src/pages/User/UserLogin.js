@@ -4,12 +4,16 @@ import ClipLoader from "react-spinners/ClipLoader";
 
 import { useNavigate, Link } from "react-router-dom";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "../../components/Spinner";
 
 export function UserLogin({ setUser }) {
   const navigate = useNavigate();
   const [isPending, setPending] = useState(false)
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  },[])
 
 
   const loginUser = (event) => {

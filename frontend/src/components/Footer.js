@@ -9,21 +9,21 @@ export function Footer() {
         <h1 className='title'>Mern Webshop</h1>
         <p className='message'>
           Ez a weboldal munkakeresés céljából készült.
-          Az oldal a jelenlegi tudásomat reprezentálja, 
+          Az oldal a jelenlegi tudásomat reprezentálja,
           a termékek és adatok csak illusztrációk, nem
           fedik a valóságot! Valós fizetés a weboldalon nem lehetséges!
-          <br/>
-          <br/>
+          <br />
+          <br />
           Köszönöm a megtekintést!
-          <br/>
+          <br />
           Ha esetleg valamelyik munkám megtetszett, az alábbi elérhetőségeken megtalál!
 
 
         </p>
         <div className='footer-icons'>
-          <span><BsFacebook className='icon' size={40} /></span>
-          <span><BsLinkedin className='icon' size={40} /></span>
-          <span><BsGithub className='icon' size={40} /></span>
+          <span><a href='https://www.facebook.com/arpad.szaniszlo.1'><BsFacebook className='icon' size={40} /></a></span>
+          <span><a href=''><BsLinkedin className='icon' size={40} /></a></span>
+          <span><a href='https://github.com/DevelopedByBarley'><BsGithub className='icon' size={40} /></a></span>
         </div>
       </div>
       <div className='admin-login'>

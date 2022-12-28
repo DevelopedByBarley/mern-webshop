@@ -9,6 +9,7 @@ export function Orders() {
   const [ordersOufUsers, setOrdersOfUsers] = useState([]);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const userToken = localStorage.getItem('userToken');
     if (userToken) {
       axios.get('/api/user/orders', {

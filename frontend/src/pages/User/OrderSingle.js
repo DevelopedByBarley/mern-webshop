@@ -13,6 +13,7 @@ export function OrderSingle() {
 	const [modalToggle, setModalToggle] = useState(false)
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		const userToken = localStorage.getItem('userToken');
 		if (userToken) {
 			axios.get(`/api/user/order/${orderId}`, {

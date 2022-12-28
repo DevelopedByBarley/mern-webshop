@@ -14,12 +14,7 @@
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: center;
-  background-color: #3a3a3a;
-  color: white;
-  min-height: 95vh;
-  -webkit-animation: fadeIn .4s linear;
-          animation: fadeIn .4s linear;
-  position: absolute;
+  color: #3a3a3a;
   width: 100%;
 }
 
@@ -31,7 +26,7 @@
 }
 
 .profile-data-container .user-profile .profile-icon .icon {
-  color: #649ff8;
+  color: #4790fc;
 }
 
 @media (min-width: 1366px) {
@@ -55,23 +50,5 @@
 
 .profile-data-container .user-profile .profile-data-content .profile-datas .data {
   font-family: "Zilla Slab", serif;
-}
-
-@-webkit-keyframes fadeIn {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: 0;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    bottom: -100%;
-  }
-  to {
-    bottom: 0;
-  }
 }
 /*# sourceMappingURL=Profile.css.map */

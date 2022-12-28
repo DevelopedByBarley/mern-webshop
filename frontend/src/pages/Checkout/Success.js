@@ -5,6 +5,7 @@ import '../../styles/pages/Checkout/PaymentResponse.css'
 export function Success() {
   const navigate = useNavigate();
   useEffect(() => {
+    window.scrollTo(0, 0);
     setTimeout(() => {
     navigate('/')
     },2000)

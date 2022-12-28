@@ -5,11 +5,12 @@
   min-height: 80vh;
   width: 100%;
   margin: .5rem;
+  @include displayFlex(flex,center,center,column);
 
   .shopping-cart-empty {
     height: 100%;
     width: 100%;
-    @include displayFlex(flex, center, center, column);
+    @include displayFlex(flex,center,center,column);
     text-align: center;
 
     

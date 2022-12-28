@@ -4,12 +4,9 @@
 .profile-data-container {
     @include displayFlex(flex, center, center, column);
     text-align: center;
-    background-color: $primaryBackground;
-    color: white;
-    min-height: 95vh;
-    animation: fadeIn .4s linear;
-    position: absolute;
+    color: $primaryBackground;
     width: 100%;
+
     .user-profile {
 
         .profile-icon {
@@ -18,7 +15,7 @@
             max-width: 150px;
             margin: 1.2rem auto; 
             .icon {
-                color: rgb(100, 159, 248);
+                color: rgb(71, 144, 252);
             }
         }
 
@@ -43,12 +40,4 @@
         }
     }
 
-}
-
-@keyframes fadeIn {
-    from {
-        bottom: -100%;
-    } to {
-        bottom: 0;
-    }
 }
