@@ -4,6 +4,7 @@
 .user-orders-container {
   padding: 1rem;
   background-color: rgb(240, 240, 240);
+  min-height: 90vh;
 
   .user-orders-title {
     font-family: $secondaryFont;

@@ -12,6 +12,7 @@ import { IoCloudDone } from 'react-icons/io5'
 import { ProductCard } from '../../components/ProductCard';
 import { Comments } from '../../components/Comments';
 import { BackButton } from '../../components/BackButton';
+import { CurrencyFormatter } from '../../helpers/CurrencyFormatter';
 
 
 export function ProductSingle({ getProductSingle, user }) {
@@ -61,6 +62,7 @@ export function ProductSingle({ getProductSingle, user }) {
               <h1 className='title'>{product.title}</h1>
               <h1 className='isInStock' style={isInStockStyle}>{product.isInStock ? "Raktáron, Szállitással 1-5 munkanap" : "Nincs raktáron"}</h1>
               {product.discount > 0 && <h1 className='discount'>-{product.discount}%</h1>}
+              <p className='price'> {CurrencyFormatter(product.price)}</p>
               <SetShoppingCartButton product={product} getProductSingle={getProductSingle} />
             </div>
           </div>
@@ -87,7 +89,7 @@ export function ProductSingle({ getProductSingle, user }) {
               </div>
 
               <div className='single-product-video'>
-                <iframe className='product-video' src={product.video} title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                <iframe className='product-video' src={product.video} title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
               </div>
             </div>
           </div>

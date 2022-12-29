@@ -16,6 +16,7 @@
   text-align: center;
   color: #3a3a3a;
   width: 100%;
+  min-height: 85vh;
 }
 
 .profile-data-container .user-profile .profile-icon {
@@ -35,11 +36,13 @@
     display: grid;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
   }
 }
 
 .profile-data-container .user-profile .profile-data-content .profile-datas {
-  margin: .5rem 0;
+  margin: .2rem 0;
+  padding: .5rem;
 }
 
 .profile-data-container .user-profile .profile-data-content .profile-datas .title {

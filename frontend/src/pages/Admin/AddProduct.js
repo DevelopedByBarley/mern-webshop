@@ -15,9 +15,13 @@ export function AddProduct() {
   }
 
 
+  // Number Rounding 
+
+ 
+
   const addProduct = async (event) => {
     event.preventDefault();
-    const embedUrl = getEmbedUrl(event); 
+    const embedUrl = getEmbedUrl(event);
     const product = {
       title: event.target.elements.title.value,
       relaseDate: event.target.elements.relaseDate.value,
@@ -32,6 +36,10 @@ export function AddProduct() {
       description: event.target.elements.description.value,
       video: embedUrl,
     }
+
+    console.log(product)
+
+
 
     const file = event.target.elements.imageCover.files[0]
 

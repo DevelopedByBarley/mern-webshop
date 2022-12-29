@@ -78,9 +78,10 @@ const getMe = (req, res) => {
 
 
 const getOrders = async (req, res) => {
-  const { userName } = req.user
-  if (userName) {
-    const orderOfUser = await Order.find({ userName: userName })
+  const { email } = req.user;
+  console.log(email)
+  if (email) {
+    const orderOfUser = await Order.find({ "user.email": email  })
     res.json({ message: "Orders of user found !", orderOfUser: orderOfUser })
   } else {
     res.json({ message: "Orders of user finding error !", orderOfUser: false })

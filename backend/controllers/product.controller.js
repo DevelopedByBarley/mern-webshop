@@ -109,7 +109,7 @@ const setProduct = async (req, res) => {
   const fileName = req.file.filename
   const product = JSON.parse(req.body.product);
   const { discount, price } = product
-
+  const discountedPrice = discount ? price - price * (discount / 100) : price;
 
   try {
     const newProduct = await Product.create({
@@ -122,7 +122,7 @@ const setProduct = async (req, res) => {
       guarantee: product.guarantee,
       isInStock: product.isInStock,
       discount: discount,
-      price: discount ? price - price * (discount / 100) : price,
+      price: Math.round(discountedPrice, 1),
       description: product.description,
       video: product.video,
       image: fileName
@@ -172,6 +172,7 @@ const updateProduct = async (req, res) => {
   const parsedProduct = JSON.parse(product)
   const { discount, price } = parsedProduct;
   let fileName
+  const discountedPrice = discount ? price - price * (discount / 100) : price;
 
 
 
@@ -194,7 +195,7 @@ const updateProduct = async (req, res) => {
       guarantee: parsedProduct.guarantee,
       isInStock: parsedProduct.isInStock,
       discount: discount,
-      price: discount ? price - price * (discount / 100) : price,
+      price: Math.round(discountedPrice, 1),
       description: parsedProduct.description,
       video: parsedProduct.video,
       image: fileName

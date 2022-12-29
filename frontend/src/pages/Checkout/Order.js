@@ -5,6 +5,7 @@ import { Spinner } from '../../components/Spinner';
 import PuffLoader from "react-spinners/PuffLoader";
 import '../../styles/pages/Checkout/Order.css'
 import { BackButton } from '../../components/BackButton';
+import { CurrencyFormatter } from '../../helpers/CurrencyFormatter';
 
 export function Order({ user, shoppingCart, setShoppingCart }) {
   const navigate = useNavigate();
@@ -51,7 +52,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         shoppingCart: shoppingCart,
         shippingType: shippingType,
         paymentType: paymentType,
-        fullPrice: fullPrice
+        fullPrice: CurrencyFormatter(fullPrice)
       }).then((res) => {
         const url = res.data.url;
         window.location.href = url
@@ -63,7 +64,7 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
         shoppingCart: shoppingCart,
         shippingType: shippingType,
         paymentType: paymentType,
-        fullPrice: fullPrice
+        fullPrice: CurrencyFormatter(fullPrice)
       })
         .then((res) => {
           if (res.data.order) {
@@ -94,16 +95,14 @@ export function Order({ user, shoppingCart, setShoppingCart }) {
           <>
             <div className="order-summary">
               <div className='order-summary-header'>
-                <h1> Rendelés értéke: {new Intl.NumberFormat('hu-HU', {
-                  maximumSignificantDigits: 3, style: 'currency', currency: 'HUF'
-                }).format(fullPrice)}</h1>
+                <h1> Rendelés értéke: {CurrencyFormatter(fullPrice)}</h1>
               </div>
               {shoppingCart.map((product) => {
                 return (
                   <div className='order-products' key={product._id}>
                     <input style={{ height: "75px", width: "75px", borderRadius: "50%", margin: ".5rem" }} type="image" img src={`/assets/files/${product.image}`} alt="photo" />
                     <h1 className='product-title'>{product.title}</h1>
-                    <h1 className='product-price'>{product.price} Ft</h1>
+                    <h1 className='product-price'>{CurrencyFormatter(product.price)}</h1>
                   </div>
                 )
               })}

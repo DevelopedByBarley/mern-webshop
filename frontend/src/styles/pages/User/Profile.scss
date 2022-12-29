@@ -6,6 +6,7 @@
     text-align: center;
     color: $primaryBackground;
     width: 100%;
+    min-height: 85vh;
 
     .user-profile {
 
@@ -23,9 +24,11 @@
             @include forLaptop {
                 display: grid;
                 grid-template-columns: 1fr 1fr;
+                grid-gap: 1rem;
             }
             .profile-datas {
-                margin: .5rem 0;
+                margin: .2rem 0;
+                padding: .5rem;
     
                 .title {
                     margin: .2rem 0;

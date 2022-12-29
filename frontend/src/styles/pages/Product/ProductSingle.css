@@ -73,6 +73,13 @@
   padding: 0.5rem;
 }
 
+.single-product-container .single-product-header .single-product-header-content .price {
+  margin: .5rem 0;
+  font-family: "Zilla Slab", serif;
+  font-size: 1.2rem;
+  font-weight: bolder;
+}
+
 .single-product-container .single-product-body .single-product-properties {
   text-align: center;
   font-family: "Zilla Slab", serif;

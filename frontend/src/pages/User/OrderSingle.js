@@ -53,7 +53,7 @@ export function OrderSingle() {
 					<h1 className='order-title'>Rendelés azonositó:</h1>
 					<p className='order-id'>{order._id}</p>
 					<h1 className='full-price-title order-title'>Rendelés teljes összege:</h1>
-					<p className='order-price'>{order.fullPrice} Ft</p>
+					<p className='order-price'>{order.fullPrice}</p>
 					<div className='order-shopping-cart'>
 						{order.shoppingCart?.map((product) => {
 							return (

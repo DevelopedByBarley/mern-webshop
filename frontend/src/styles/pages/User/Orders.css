@@ -2,6 +2,7 @@
 .user-orders-container {
   padding: 1rem;
   background-color: #f0f0f0;
+  min-height: 90vh;
 }
 
 .user-orders-container .user-orders-title {

@@ -5,6 +5,7 @@ import {BackButton} from '../../components/BackButton'
 import { Spinner } from "../../components/Spinner";
 import PuffLoader from "react-spinners/PuffLoader";
 import { AiOutlineCloseCircle } from 'react-icons/ai'
+import { CurrencyFormatter } from '../../helpers/CurrencyFormatter';
 
 
 export function ShoppingCart({ shoppingCart, setShoppingCart }) {
@@ -70,7 +71,7 @@ export function ShoppingCart({ shoppingCart, setShoppingCart }) {
                       <span className="product-title">{product.title}</span>
                       <input type="number" className="shop-quantity" defaultValue={product.quantity} min="1" onChange={(event) => { setShoppingCartQuantity(event, product._id) }} />
                       <span className="product-quantity-unit">db</span>
-                      <span className="product-price">{(product.quantity * product.price)}Ft</span>
+                      <span className="product-price">{CurrencyFormatter(product.quantity * product.price)}</span>
                     </div>
 
                   )

@@ -8,6 +8,7 @@
   top: 5px;
   z-index: 102;
   .account {
+    cursor: pointer;
     .login-button {
       @include grayButton();
       border: 1px solid white;

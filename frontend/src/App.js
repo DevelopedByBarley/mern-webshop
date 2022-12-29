@@ -79,10 +79,10 @@ function App() {
       <Nav shoppingCart={shoppingCart} user={user} setUser={setUser} />
 
       <Routes>
+        <Route path='/' element={<Home getProductSingle={getProductSingle} setShoppingCart={setShoppingCart} user={user} />} />
         <Route path='/error-page' element={<Error />} />
         <Route path='/checkout/order/success' element={<Success />} />
         <Route path='/checkout/order/cancel' element={<Cancel />} />
-        <Route path='/' element={<Home getProductSingle={getProductSingle} setShoppingCart={setShoppingCart} user={user} />} />
         <Route path='/checkout/cart' element={<ShoppingCart shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
         <Route path='/checkout/order' element={<Order user={user} shoppingCart={shoppingCart} setShoppingCart={setShoppingCart} />} />
         <Route path='/dashboard' element={<Dashboard />} />
